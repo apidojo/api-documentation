@@ -3,13 +3,9 @@ title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
-  - ruby
-  - python
-  - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
+  - Visit our website at <a href='https://apidojo.net'>apidojo.net</a> for more information
 
 includes:
   - errors
@@ -22,6 +18,8 @@ code_clipboard: true
 # Introduction
 
 Welcome to the API Dojo documentation! You can use our APIs to access official live and structural data from lots of brands which are from various categories.
+
+We currently provide our services via RapidAPI.com only. You need to register an account on the market platform as developer or consumer to start using our APIs. Please have a look at <a href='https://docs.rapidapi.com/docs/basics-creating-a-project'>Creating a project</a> to get started.
 
 # Authentication
 
