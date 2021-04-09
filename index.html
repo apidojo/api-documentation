@@ -323,6 +323,39 @@
                   <li>
                     <a href="#market-get-movers" class="toc-h2 toc-link" data-title="market/get-movers">market/get-movers</a>
                   </li>
+                  <li>
+                    <a href="#market-get-cross-currencies" class="toc-h2 toc-link" data-title="market/get-cross-currencies">market/get-cross-currencies</a>
+                  </li>
+                  <li>
+                    <a href="#market-get-price-chart" class="toc-h2 toc-link" data-title="market/get-price-chart">market/get-price-chart</a>
+                  </li>
+                  <li>
+                    <a href="#market-get-full" class="toc-h2 toc-link" data-title="market/get-full">market/get-full</a>
+                  </li>
+                  <li>
+                    <a href="#market-get-compact" class="toc-h2 toc-link" data-title="market/get-compact">market/get-compact</a>
+                  </li>
+                  <li>
+                    <a href="#market-get-chart" class="toc-h2 toc-link" data-title="market/get-chart">market/get-chart</a>
+                  </li>
+                  <li>
+                    <a href="#stock-get-statistics" class="toc-h2 toc-link" data-title="stock/get-statistics">stock/get-statistics</a>
+                  </li>
+                  <li>
+                    <a href="#stock-get-financials" class="toc-h2 toc-link" data-title="stock/get-financials">stock/get-financials</a>
+                  </li>
+                  <li>
+                    <a href="#news-list" class="toc-h2 toc-link" data-title="news/list">news/list</a>
+                  </li>
+                  <li>
+                    <a href="#news-list-by-region" class="toc-h2 toc-link" data-title="news/list-by-region">news/list-by-region</a>
+                  </li>
+                  <li>
+                    <a href="#stories-list" class="toc-h2 toc-link" data-title="stories/list">stories/list</a>
+                  </li>
+                  <li>
+                    <a href="#stories-detail" class="toc-h2 toc-link" data-title="stories/detail">stories/detail</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -412,7 +445,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 <table><thead>
 <tr>
 <th>Parameter</th>
-<th>Default</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
@@ -538,12 +571,919 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>id</td>
+<td>String</td>
 <td>The value of id field returned in .../market/auto-complete endpoint.</td>
+</tr>
+</tbody></table>
+<h2 id='market-get-cross-currencies'>market/get-cross-currencies</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://bloomberg-market-and-financial-news.p.rapidapi.com/market/get-cross-currencies?id=aed,aud,brl,cad,chf,cnh,cny,cop,czk,dkk,eur,gbp,hkd,huf,idr,ils,inr,jpy,krw,mxn,myr,nok,nzd,php,pln,rub,sek,sgd,thb,try,twd,usd,zar"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-key: meowmeowmeow"</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-host: bloomberg-market-and-financial-news.p.rapidapi.com"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"MXNJPY:cur"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"baseName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JAPANESE YEN"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"securityType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CROSS"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MXNJPY"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Japan"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JPY"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Currency"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"resourceSubtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cross"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"APAC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ticker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mxnjpy:cur"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tickerName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MXNJPY:CUR"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Currency"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tinyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MXN-JPY"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MXNJPY Spot Exchange Rate - Price of 1 MXN in JPY"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"watchlist"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"resourceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MXNJPY:CUR"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.4411"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"netChange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.0039"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastPriceTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1617965922</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"yearHigh"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.4632"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"dayHigh"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.4447"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"yearLow"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4.2501"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sourceCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MXN"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"dayLow"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.4173"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"pctChange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.07"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Get exchange rate between currencies.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://bloomberg-market-and-financial-news.p.rapidapi.com/market/get-cross-currencies</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>The currency code, separated by comma to query multiple currencies at once</td>
+</tr>
+</tbody></table>
+<h2 id='market-get-price-chart'>market/get-price-chart</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://bloomberg-market-and-financial-news.p.rapidapi.com/market/get-price-chart?id=INMEX:IND&amp;interval=d1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-key: meowmeowmeow"</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-host: bloomberg-market-and-financial-news.p.rapidapi.com"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"INMEX:IND"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"first"</span><span class="p">:</span><span class="w"> </span><span class="mi">1617888600</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"last"</span><span class="p">:</span><span class="w"> </span><span class="mi">1617912600</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"historical"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ticksType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MinuteTick"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ticks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1617888600</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">2968.67</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+      </span><span class="p">],</span><span class="w">
+      </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2962.48"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2992.06"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"hasVolume"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"security"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"ticker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INMEX:IND"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2962.47"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"prevClose"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2964.31"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Get data to draw historical price chart.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET https://bloomberg-market-and-financial-news.p.rapidapi.com/market/get-price-chart</code></p>
+<h3 id='url-parameters-3'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>The value of id field returned in .../market/auto-complete endpoint.</td>
+</tr>
+<tr>
+<td>interval</td>
+<td>String</td>
+<td>One of the followings : d1</td>
+</tr>
+</tbody></table>
+<h2 id='market-get-full'>market/get-full</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://bloomberg-market-and-financial-news.p.rapidapi.com/market/get-full?id=AAPL:US"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-key: meowmeowmeow"</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-host: bloomberg-market-and-financial-news.p.rapidapi.com"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"AAPL:US"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"info"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Apple Inc. designs, manufactures, and markets personal computers and related personal computing and mobile communication devices along with a variety of related software, services, peripherals, and networking solutions. Apple sells its products worldwide through its online stores, its retail stores, its direct sales force, third-party wholesalers, and resellers."</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"securityType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Common Stock"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AAPL"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"exchange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NASDAQ GS"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Company"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fundamentalDataCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"resourceSubtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Public"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"www.apple.com"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1-408-996-1010"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1 Infinite Loop</span><span class="se">\n</span><span class="s2">Cupertino, CA 95014</span><span class="se">\n</span><span class="s2">United States"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AMERICAS"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"ticker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aapl:us"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tickerName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AAPL:US"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stock"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Apple Inc"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"executives"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14014370"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chief Executive Officer"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Timothy Donald Cook </span><span class="se">\"</span><span class="s2">Tim</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"thumbnailImage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iOIEqOOiLpFY/v3/80x80.jpg"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"tenureStart"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8/2011"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="err">...</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"watchlist"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"resourceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AAPL:US"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"totalReturn1Y"</span><span class="p">:</span><span class="w"> </span><span class="s2">"96.08"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"subSector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Technology Hardware"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"130.36"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"netChange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.46"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastPriceTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1617854400</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"peRatio"</span><span class="p">:</span><span class="w"> </span><span class="s2">"35.39"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="s2">"128.95"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="s2">"127.90"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"industry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tech Hardware &amp; Semiconductors"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"yearHigh"</span><span class="p">:</span><span class="w"> </span><span class="s2">"145.09"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"dayHigh"</span><span class="p">:</span><span class="w"> </span><span class="s2">"130.39"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">88844591</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sector"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Technology"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"yearLow"</span><span class="p">:</span><span class="w"> </span><span class="s2">"66.17"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"dayLow"</span><span class="p">:</span><span class="w"> </span><span class="s2">"128.52"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"marketCap"</span><span class="p">:</span><span class="w"> </span><span class="mf">2188496194560.0002</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastPriceAllSessions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"130.20"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"pctChange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.92"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sectorPercentChange1Day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.42"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"industryPercentChange1Day"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.64"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Get all field and information about indices, commodities, currencies, rates, etc...</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>GET https://bloomberg-market-and-financial-news.p.rapidapi.com/market/get-full</code></p>
+<h3 id='url-parameters-4'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>The value of id field returned in .../market/auto-complete endpoint, separated by comma to query multiple stickers at once.</td>
+</tr>
+</tbody></table>
+<h2 id='market-get-compact'>market/get-compact</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://bloomberg-market-and-financial-news.p.rapidapi.com/market/get-compact?id=AAPL:US"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-key: meowmeowmeow"</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-host: bloomberg-market-and-financial-news.p.rapidapi.com"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"AAPL:US"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"securityType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Common Stock"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AAPL"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"exchange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NASDAQ GS"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Company"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fundamentalDataCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"resourceSubtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Public"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AMERICAS"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"ticker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aapl:us"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tickerName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AAPL:US"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stock"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tinyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Apple Inc"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Apple Inc"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"watchlist"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"resourceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AAPL:US"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"130.36"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"netChange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.46"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastPriceTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1617854400</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"pctChange1M"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7.66"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"yearHigh"</span><span class="p">:</span><span class="w"> </span><span class="s2">"145.09"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"dayHigh"</span><span class="p">:</span><span class="w"> </span><span class="s2">"130.39"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">88844591</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"yearLow"</span><span class="p">:</span><span class="w"> </span><span class="s2">"66.17"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"dayLow"</span><span class="p">:</span><span class="w"> </span><span class="s2">"128.52"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"pctChangeYTD"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-1.76"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"lastPriceAllSessions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"130.16"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"pctChange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.92"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Get most informative fields about indices, commodities, currencies, rates, etc...</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>GET https://bloomberg-market-and-financial-news.p.rapidapi.com/market/get-compact</code></p>
+<h3 id='url-parameters-5'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>The value of id field returned in .../market/auto-complete endpoint, separated by comma to query multiple stickers at once.</td>
+</tr>
+</tbody></table>
+<h2 id='market-get-chart'>market/get-chart</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://bloomberg-market-and-financial-news.p.rapidapi.com/market/get-chart?id=INMEX:IND&amp;interval=d1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-key: meowmeowmeow"</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-host: bloomberg-market-and-financial-news.p.rapidapi.com"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"INMEX:IND"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"first"</span><span class="p">:</span><span class="w"> </span><span class="mi">1617888600</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"last"</span><span class="p">:</span><span class="w"> </span><span class="mi">1617912600</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"historical"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"ticksType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MinuteTick"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"ticks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1617888600</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">2968.67</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="err">...</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2962.48"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2992.06"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"hasVolume"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"security"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"ticker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INMEX:IND"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2962.47"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"prevClose"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2964.31"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Get related data for drawing chart.</p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>GET https://bloomberg-market-and-financial-news.p.rapidapi.com/market/get-chart</code></p>
+<h3 id='url-parameters-6'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>The value of id field returned in .../market/auto-complete endpoint</td>
+</tr>
+<tr>
+<td>interval</td>
+<td>String</td>
+<td>One of the followings : d1</td>
+</tr>
+</tbody></table>
+<h2 id='stock-get-statistics'>stock/get-statistics</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://bloomberg-market-and-financial-news.p.rapidapi.com/stock/get-statistics?id=TSLA:US&amp;template=STOCK"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-key: meowmeowmeow"</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-host: bloomberg-market-and-financial-news.p.rapidapi.com"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Key Statistics"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"table"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Current P/E Ratio (ttm)"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"924.82"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Estimated P/E"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"158.95"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(2021-12)"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Relative P/E"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"27.81"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vs SPX:IND"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Earnings Per Share (ttm)"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.74"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Est. EPS"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4.30"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"(2021-12)"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Est. PEG Ratio"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.91"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Market Cap (M)"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"656,347.83"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shares Outstanding (M)"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"959.85"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Price/Book (mrq)"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"29.54"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Price/Sales (ttm)"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20.30"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Next Earnings Announcement"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-04-29"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Average Volume (30-day)"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"39,281,468"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Get statistics information of stocks, indices,etc...</p>
+<h3 id='http-request-8'>HTTP Request</h3>
+<p><code>GET https://bloomberg-market-and-financial-news.p.rapidapi.com/stock/get-statistics</code></p>
+<h3 id='url-parameters-7'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>The value of id field returned in .../market/auto-complete endpoint</td>
+</tr>
+<tr>
+<td>template</td>
+<td>String</td>
+<td>One of the following COMMODITY</td>
+</tr>
+</tbody></table>
+<h2 id='stock-get-financials'>stock/get-financials</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://bloomberg-market-and-financial-news.p.rapidapi.com/stock/get-financials?id=TSLA:US"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-key: meowmeowmeow"</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-host: bloomberg-market-and-financial-news.p.rapidapi.com"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Income Statement"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"securityID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TSLA:US"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"timeBasedSheets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quarterly"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"columnHeadings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"6/2020"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"9/2020"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"12/2020"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"chartData"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Revenue"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"chartType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"isPercentage"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                                </span><span class="mf">6.036E9</span><span class="p">,</span><span class="w">
+                                </span><span class="mf">8.771E9</span><span class="p">,</span><span class="w">
+                                </span><span class="mf">1.0744E10</span><span class="w">
+                            </span><span class="p">]</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="err">...</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Annual"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"columnHeadings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"2017"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"2018"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"2019"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"2020"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"chartData"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Revenue"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"chartType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"isPercentage"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                                </span><span class="mf">1.1758751E10</span><span class="p">,</span><span class="w">
+                                </span><span class="mf">2.1461268E10</span><span class="p">,</span><span class="w">
+                                </span><span class="mf">2.4578E10</span><span class="p">,</span><span class="w">
+                                </span><span class="mf">3.1536E10</span><span class="w">
+                            </span><span class="p">]</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="err">...</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Balance Sheet"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"securityID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TSLA:US"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"timeBasedSheets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quarterly"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"columnHeadings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"6/2020"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"9/2020"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"12/2020"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"chartData"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Total Assets"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"chartType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"isPercentage"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                                </span><span class="mf">3.8135E10</span><span class="p">,</span><span class="w">
+                                </span><span class="mf">4.5691E10</span><span class="p">,</span><span class="w">
+                                </span><span class="mf">5.2148E10</span><span class="w">
+                            </span><span class="p">]</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="err">...</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Annual"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"columnHeadings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"2017"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"2018"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"2019"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"2020"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"chartData"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Total Assets"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"chartType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bar"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"isPercentage"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                                </span><span class="mf">2.8655372E10</span><span class="p">,</span><span class="w">
+                                </span><span class="mf">2.9739614E10</span><span class="p">,</span><span class="w">
+                                </span><span class="mf">3.4309E10</span><span class="p">,</span><span class="w">
+                                </span><span class="mf">5.2148E10</span><span class="w">
+                            </span><span class="p">]</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="err">...</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cash Flow"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"securityID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TSLA:US"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"timeBasedSheets"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quarterly"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"columnHeadings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"6/2020"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"9/2020"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"12/2020"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"chartData"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Operating"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"chartType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"line"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"isPercentage"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                                </span><span class="mf">9.64E8</span><span class="p">,</span><span class="w">
+                                </span><span class="mf">2.4E9</span><span class="p">,</span><span class="w">
+                                </span><span class="mf">3.019E9</span><span class="w">
+                            </span><span class="p">]</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="err">...</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Annual"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"columnHeadings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"2017"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"2018"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"2019"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"2020"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"chartData"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Operating"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"chartType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"line"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"isPercentage"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                                </span><span class="mf">-6.0654E7</span><span class="p">,</span><span class="w">
+                                </span><span class="mf">2.0978020000000002E9</span><span class="p">,</span><span class="w">
+                                </span><span class="mf">2.405E9</span><span class="p">,</span><span class="w">
+                                </span><span class="mf">5.943E9</span><span class="w">
+                            </span><span class="p">]</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="err">...</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Get financial information of stocks.</p>
+<h3 id='http-request-9'>HTTP Request</h3>
+<p><code>GET https://bloomberg-market-and-financial-news.p.rapidapi.com/stock/get-financials</code></p>
+<h3 id='url-parameters-8'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>The value of id field returned in .../market/auto-complete endpoint</td>
+</tr>
+</tbody></table>
+<h2 id='news-list'>news/list</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://bloomberg-market-and-financial-news.p.rapidapi.com/news/list?id=markets"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-key: meowmeowmeow"</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-host: bloomberg-market-and-financial-news.p.rapidapi.com"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bloomberg Markets"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"modules"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hero_1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"single_story"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tracking"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"36ba25c6-8f14-472a-8068-75b40b7ec2dc"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hero"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"stories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-04-08/asia-stocks-set-for-steady-open-treasuries-climb-markets-wrap"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"internalID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QR9J4WT0AFB401"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"U.S. Futures Fluctuate as Treasury Yields Rise: Markets Wrap"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"autoGeneratedSummary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"U.S. equity-index futures struggled for direction on Friday as investors weighed prospects for economic growth against lingering inflation concerns. Treasury yields rose and the dollar gained."</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"abstract"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"Italian yields jump on borrowing plans; dollar index gains"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"Europe stocks headed for sixth weekly rise; oil dips"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"published"</span><span class="p">:</span><span class="w"> </span><span class="mi">1617920145</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1617966895</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"wordCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">501</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"secondaryBrands"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"markets"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"byline"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Emily Barrett and Robert Brand"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"shortURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.bloomberg.com/news/articles/2021-04-08/asia-stocks-set-for-steady-open-treasuries-climb-markets-wrap"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"longURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.bloomberg.com/news/articles/2021-04-08/asia-stocks-set-for-steady-open-treasuries-climb-markets-wrap"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"primaryCategory"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Markets"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"primarySite"</span><span class="p">:</span><span class="w"> </span><span class="s2">"markets"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"eyebrowSite"</span><span class="p">:</span><span class="w"> </span><span class="s2">"markets"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"readings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.bwbx.io/s3/readings/QRAMIET0AFBE1617966895879.mp3"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"voice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Matthew"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"durationMs"</span><span class="p">:</span><span class="w"> </span><span class="mi">213760</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ivdAgOgTiO1s/v0/600x-1.jpg"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"thumbnailImage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ivdAgOgTiO1s/v0/360x-1.jpg"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"card"</span><span class="p">:</span><span class="w"> </span><span class="s2">"article"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"contentTags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"industrial-production"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Topic"</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="err">...</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"newsletterToutLabel"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"newsletterSlug"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="err">...</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>List news by category.</p>
+<h3 id='http-request-10'>HTTP Request</h3>
+<p><code>GET https://bloomberg-market-and-financial-news.p.rapidapi.com/news/list</code></p>
+<h3 id='url-parameters-9'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>One of the following is allowed markets</td>
+</tr>
+</tbody></table>
+<h2 id='news-list-by-region'>news/list-by-region</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://bloomberg-market-and-financial-news.p.rapidapi.com/news/list-by-region?id=asia-home-v3"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-key: meowmeowmeow"</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-host: bloomberg-market-and-financial-news.p.rapidapi.com"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asia-home-v3"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"indexBar"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"quotes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"INDU:IND"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"securityType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Equity Index"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INDU"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"United States"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Index"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"fundamentalDataCurrency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"resourceSubtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Equity"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AMERICAS"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"ticker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"indu:ind"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"tickerName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INDU:IND"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"template"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Index"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"tinyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DOW JONES"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DOW JONES"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"watchlist"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"resourceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INDU:IND"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"eqtIndex"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"last"</span><span class="p">:</span><span class="w"> </span><span class="s2">"33503.57"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"netChange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"57.31"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"lastPriceTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1617854400</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"pctChange1M"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.25"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"yearHigh"</span><span class="p">:</span><span class="w"> </span><span class="s2">"33617.95"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"dayHigh"</span><span class="p">:</span><span class="w"> </span><span class="s2">"33506.80"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">8.452485E+7</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"yearLow"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22682.99"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"dayLow"</span><span class="p">:</span><span class="w"> </span><span class="s2">"33342.64"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"pctChangeYTD"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9.47"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"pctChange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.17"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"isOpen"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"sparkline"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"href"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.bloomberg.com/markets/api/charts/sparkline/INDU:IND.svg?stroke=2"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="err">...</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"stories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-04-08/asia-stocks-set-for-steady-open-treasuries-climb-markets-wrap"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"internalID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QR9J4WT0AFB401"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"U.S. Futures Fluctuate as Treasury Yields Rise: Markets Wrap"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"autoGeneratedSummary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"U.S. equity-index futures struggled for direction on Friday as investors weighed prospects for economic growth against lingering inflation concerns. Treasury yields rose and the dollar gained."</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"abstract"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="s2">"Italian yields jump on borrowing plans; dollar index gains"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"Europe stocks headed for sixth weekly rise; oil dips"</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"published"</span><span class="p">:</span><span class="w"> </span><span class="mi">1617920145</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1617966895</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"wordCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">501</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"secondaryBrands"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="s2">"markets"</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"byline"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Emily Barrett and Robert Brand"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"shortURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.bloomberg.com/news/articles/2021-04-08/asia-stocks-set-for-steady-open-treasuries-climb-markets-wrap"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"longURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.bloomberg.com/news/articles/2021-04-08/asia-stocks-set-for-steady-open-treasuries-climb-markets-wrap"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"primaryCategory"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Markets"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"primarySite"</span><span class="p">:</span><span class="w"> </span><span class="s2">"markets"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"eyebrowSite"</span><span class="p">:</span><span class="w"> </span><span class="s2">"markets"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"readings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.bwbx.io/s3/readings/QRAMIET0AFBE1617966895879.mp3"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"voice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Matthew"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"durationMs"</span><span class="p">:</span><span class="w"> </span><span class="mi">213760</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ivdAgOgTiO1s/v0/600x-1.jpg"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"thumbnailImage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ivdAgOgTiO1s/v0/360x-1.jpg"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"card"</span><span class="p">:</span><span class="w"> </span><span class="s2">"article"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"contentTags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"industrial-production"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Topic"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="err">...</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"newsletterToutLabel"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"newsletterSlug"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"modules"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hfs"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"single_story"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"mobileMaximum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"tracking"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"88cf9e25-dace-4e4e-a85e-3752a533c5ec"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HFS"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"stories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-04-09/when-will-world-be-fully-vaccinated-pace-is-2-400-faster-in-wealthy-countries"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"internalID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QRA35ZDWRGG101"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The World’s Wealthiest Countries Are Getting Vaccinated 25 Times Faster"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Economies with the highest incomes have 40% of the world’s vaccinations, but just 11% of the global population"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"autoGeneratedSummary"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"abstract"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                    </span><span class="nl">"published"</span><span class="p">:</span><span class="w"> </span><span class="mi">1617940871</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"updatedAt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1617940871</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"wordCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">475</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"franchise"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prognosis"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"secondaryBrands"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"business"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"equality"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"politics"</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"byline"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Tom Randall"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"shortURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.bloomberg.com/news/articles/2021-04-09/when-will-world-be-fully-vaccinated-pace-is-2-400-faster-in-wealthy-countries"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"longURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.bloomberg.com/news/articles/2021-04-09/when-will-world-be-fully-vaccinated-pace-is-2-400-faster-in-wealthy-countries"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"primaryCategory"</span><span class="p">:</span><span class="w"> </span><span class="s2">"World"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"primarySite"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bbiz"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"eyebrowSite"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bbiz"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"readings"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.bwbx.io/s3/readings/QRA35ZDWRGG11617969809699.mp3"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"voice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Matthew"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"durationMs"</span><span class="p">:</span><span class="w"> </span><span class="mi">182309</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ifp2ch1F6X1E/v0/600x-1.png"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"thumbnailImage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ifp2ch1F6X1E/v0/360x-1.png"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"card"</span><span class="p">:</span><span class="w"> </span><span class="s2">"article"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"contentTags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CN"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Country"</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="err">...</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"newsletterToutLabel"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"newsletterSlug"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>List latest news from different categories and grouped by region.</p>
+<h3 id='http-request-11'>HTTP Request</h3>
+<p><code>GET https://bloomberg-market-and-financial-news.p.rapidapi.com/news/list-by-region</code></p>
+<h3 id='url-parameters-10'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>One of the followings : home-v3</td>
+</tr>
+</tbody></table>
+<h2 id='stories-list'>stories/list</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://bloomberg-market-and-financial-news.p.rapidapi.com/stories/list?id=usdjpy&amp;template=CURRENCY"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-key: meowmeowmeow"</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-host: bloomberg-market-and-financial-news.p.rapidapi.com"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"stories"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Story"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"card"</span><span class="p">:</span><span class="w"> </span><span class="s2">"article"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Saudi Expansion in Focus for Paymob After Record Egypt Fundraise"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"published"</span><span class="p">:</span><span class="w"> </span><span class="mi">1617876215</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"internalID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QR6O42DWX2PY01"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"thumbnailImage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i6RQ802xNIQ4/v0/600x-1.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"primarySite"</span><span class="p">:</span><span class="w"> </span><span class="s2">"technology"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"shortURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.bloomberg.com/news/articles/2021-04-08/egypt-s-paymob-eyes-saudi-market-as-cashless-transactions-surge"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"longURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.bloomberg.com/news/articles/2021-04-08/egypt-s-paymob-eyes-saudi-market-as-cashless-transactions-surge"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Currencies"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>Get a list of stories related to a sticker.</p>
+<h3 id='http-request-12'>HTTP Request</h3>
+<p><code>GET https://bloomberg-market-and-financial-news.p.rapidapi.com/stories/list</code></p>
+<h3 id='url-parameters-11'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>String</td>
+<td>The value of id field returned in .../market/auto-complete endpoint</td>
+</tr>
+<tr>
+<td>template</td>
+<td>String</td>
+<td>One of the followings : COMMODITY</td>
+</tr>
+</tbody></table>
+<h2 id='stories-detail'>stories/detail</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://bloomberg-market-and-financial-news.p.rapidapi.com/stories/detail"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-key: meowmeowmeow"</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-host: bloomberg-market-and-financial-news.p.rapidapi.com"</span>
+</code></pre></div>
+<p>Get full story.</p>
+<h3 id='http-request-13'>HTTP Request</h3>
+<p><code>GET https://bloomberg-market-and-financial-news.p.rapidapi.com/stories/detail</code></p>
+<h3 id='url-parameters-12'>URL Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>internalID</td>
+<td>String</td>
+<td>Get suitable value from .../stories/list or .../news/list or .../news/list-by-region endpoints</td>
 </tr>
 </tbody></table>
 <h1 id='errors'>Errors</h1>
