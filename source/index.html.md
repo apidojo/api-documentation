@@ -19,217 +19,217 @@ code_clipboard: true
 
 Welcome to the API Dojo documentation! You can use our APIs to access official live and structural data from lots of brands which are from various categories.
 
-We currently provide our services via RapidAPI.com only. You need to register an account on the market platform as developer or consumer to start using our APIs. Please have a look at <a href='https://docs.rapidapi.com/docs/basics-creating-a-project'>Creating a project</a> to get started.
+We currently provide our services via <a href='https://rapidapi.com'>RapidAPI</a> only. You need to register an account on the market platform as developer or consumer to start using our APIs. Please have a look at <a href='https://docs.rapidapi.com/docs/basics-creating-a-project'>Creating a project</a> to get started.
 
 # Authentication
 
 > To authorize, use this code:
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
 ```shell
 # With shell, you can just pass the correct header with each request
 curl "api_endpoint_here" \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
+  -H "x-rapidapi-key: meowmeowmeow"
 ```
 
 > Make sure to replace `meowmeowmeow` with your API key.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+RapidAPI uses token key to allow access to all APIs on the platform. You need to generate a token key for a new app in your developer control panel of RapidAPI at https://rapidapi.com/developer. 
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+You then need to learn how to pass the token key via request HEADER as following :
 
-`Authorization: meowmeowmeow`
+`x-rapidapi-key: meowmeowmeow`
 
 <aside class="notice">
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 
-# Kittens
+# Bloomberg API
 
-## Get All Kittens
+## Market
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
+### market/auto-complete
 
 ```shell
-curl "http://example.com/api/kittens" \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
+curl "https://bloomberg-market-and-financial-news.p.rapidapi.com/market/auto-complete?query=tesla" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: bloomberg-market-and-financial-news.p.rapidapi.com"
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
+{
+    "quote": [
+        {
+            "securityType": "Common Stock",
+            "symbol": "TSLA",
+            "exchange": "NASDAQ GS",
+            "country": "United States",
+            "currency": "USD",
+            "resourceType": "Company",
+            "fundamentalDataCurrency": "USD",
+            "resourceSubtype": "Public",
+            "region": "AMERICAS",
+            "ticker": "tsla:us",
+            "tickerName": "TSLA:US",
+            "template": "Stock",
+            "tinyName": "Tesla Inc",
+            "name": "Tesla Inc",
+            "watchlist": true,
+            "resourceId": "TSLA:US",
+            "id": "TSLA:US",
+            "title": "Tesla Inc",
+            "card": "security"
+        },
+        ...
+    ],
+    "news": [
+        {
+            "title": "Panasonic Bets on Tesla ‘Beer Can’ Battery to Unlock $25,000 EVs",
+            "id": "QQVW38DWLU7D01",
+            "card": "article",
+            "date": 1617930075,
+            "longURL": "https://www.bloomberg.com/news/articles/2021-04-08/panasonic-bets-on-tesla-beer-can-battery-to-unlock-25-000-evs"
+        },
+        ...
+    ]
+}
 ```
 
-This endpoint retrieves all kittens.
+This endpoint queries suggestion by term and phrase.
 
-### HTTP Request
+#### HTTP Request
 
-`GET http://example.com/api/kittens`
+`GET https://bloomberg-market-and-financial-news.p.rapidapi.com/market/auto-complete`
 
-### Query Parameters
+#### Query Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+query | String | Any thing you are familiar with, stock, index, organization, etc...
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
+### market/get-movers
 
 ```shell
-curl "http://example.com/api/kittens/2" \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
+curl "https://bloomberg-market-and-financial-news.p.rapidapi.com/market/get-movers?id=ndx:ind" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: bloomberg-market-and-financial-news.p.rapidapi.com"
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+    "active": [
+        {
+            "securityType": "Common Stock",
+            "symbol": "AAPL",
+            "exchange": "NASDAQ GS",
+            "country": "United States",
+            "currency": "USD",
+            "resourceType": "Company",
+            "fundamentalDataCurrency": "USD",
+            "resourceSubtype": "Public",
+            "region": "AMERICAS",
+            "ticker": "aapl:us",
+            "tickerName": "AAPL:US",
+            "template": "Stock",
+            "tinyName": "Apple Inc",
+            "name": "Apple Inc",
+            "watchlist": true,
+            "resourceId": "AAPL:US",
+            "last": "130.36",
+            "netChange": "2.46",
+            "lastPriceTime": 1617854400,
+            "pctChange1M": "7.66",
+            "yearHigh": "145.09",
+            "dayHigh": "130.39",
+            "volume": 88844591,
+            "yearLow": "66.17",
+            "dayLow": "128.52",
+            "pctChangeYTD": "-1.76",
+            "lastPriceAllSessions": "129.80",
+            "pctChange": "1.92"
+        },
+        ...
+    ],
+    "laggards": [
+        {
+            "securityType": "Common Stock",
+            "symbol": "WBA",
+            "exchange": "NASDAQ GS",
+            "country": "United States",
+            "currency": "USD",
+            "resourceType": "Company",
+            "fundamentalDataCurrency": "USD",
+            "resourceSubtype": "Public",
+            "region": "AMERICAS",
+            "ticker": "wba:us",
+            "tickerName": "WBA:US",
+            "template": "Stock",
+            "tinyName": "Walgreens Boots Alliance Inc",
+            "name": "Walgreens Boots Alliance Inc",
+            "watchlist": true,
+            "resourceId": "WBA:US",
+            "last": "54.79",
+            "netChange": "-0.79",
+            "lastPriceTime": 1617854400,
+            "pctChange1M": "13.06",
+            "yearHigh": "57.05",
+            "dayHigh": "55.39",
+            "volume": 5879775.0,
+            "yearLow": "33.36",
+            "dayLow": "54.48",
+            "pctChangeYTD": "37.39",
+            "lastPriceAllSessions": "54.83",
+            "pctChange": "-1.42"
+        },
+        ...
+    ],
+    "leaders": [
+        {
+            "securityType": "Common Stock",
+            "symbol": "PTON",
+            "exchange": "NASDAQ GS",
+            "country": "United States",
+            "currency": "USD",
+            "resourceType": "Company",
+            "fundamentalDataCurrency": "USD",
+            "resourceSubtype": "Public",
+            "region": "AMERICAS",
+            "ticker": "pton:us",
+            "tickerName": "PTON:US",
+            "template": "Stock",
+            "tinyName": "Peloton Interactive Inc",
+            "name": "Peloton Interactive Inc",
+            "watchlist": true,
+            "resourceId": "PTON:US",
+            "last": "123.62",
+            "netChange": "8.42",
+            "lastPriceTime": 1617854400,
+            "pctChange1M": "6.55",
+            "yearHigh": "171.09",
+            "dayHigh": "124.50",
+            "volume": 14751521,
+            "yearLow": "27.32",
+            "dayLow": "116.63",
+            "pctChangeYTD": "-18.52",
+            "lastPriceAllSessions": "124.15",
+            "pctChange": "7.31"
+        },
+        ...
+    ]
 }
 ```
 
-This endpoint retrieves a specific kitten.
+Get latest information of movers in the market.
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+#### HTTP Request
 
-### HTTP Request
+`GET https://bloomberg-market-and-financial-news.p.rapidapi.com/market/get-movers`
 
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
+#### URL Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the kitten to retrieve
-
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2" \
-  -X DELETE \
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
-```
-
-This endpoint deletes a specific kitten.
-
-### HTTP Request
-
-`DELETE http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
-
+id | The value of id field returned in .../market/auto-complete endpoint.
