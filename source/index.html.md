@@ -338,7 +338,7 @@ Get data to draw historical price chart.
 Parameter | Type | Description
 --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 id | String | The value of id field returned in .../market/auto-complete endpoint.
-interval | String | One of the followings : d1|d3|ytd|m1|m3|m6|y1|y5
+interval | String | One of the followings : d1&#124;d3&#124;ytd&#124;m1&#124;m3&#124;m6&#124;y1&#124;y5
 
 ## market/get-full
 
@@ -528,7 +528,7 @@ Get related data for drawing chart.
 Parameter | Type | Description
 --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 id | String | The value of id field returned in .../market/auto-complete endpoint
-interval | String | One of the followings : d1|d3|ytd|m1|m3|m6|y1|y5
+interval | String | One of the followings : d1&#124;d3&#124;ytd&#124;m1&#124;m3&#124;m6&#124;y1&#124;y5
 
 ## stock/get-statistics
 
@@ -614,7 +614,7 @@ Get statistics information of stocks, indices,etc...
 Parameter | Type | Description
 --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 id | String | The value of id field returned in .../market/auto-complete endpoint
-template | String | One of the following COMMODITY|CURRENCY|INDEX|INDEXFUTURE|RATE|STOCK
+template | String | One of the following COMMODITY&#124;CURRENCY&#124;INDEX&#124;INDEXFUTURE&#124;RATE&#124;STOCK
 
 ## stock/get-financials
 
@@ -879,9 +879,8 @@ List news by category.
 ### URL Parameters
 
 Parameter | Type | Description
---------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
-id | String | One of the following is allowed markets|technology|view|pursuits|politics|green|citylab|businessweek|fixed-income|hyperdrive|
-||cryptocurrencies|wealth|latest|personalFinance|quickTake|world|industries|stocks|currencies|brexit
+--------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+id | String | One of the following is allowed markets&#124;technology&#124;view&#124;pursuits&#124;politics&#124;green&#124;citylab&#124;businessweek&#124;fixed-income&#124;hyperdrive&#124;cryptocurrencies&#124;wealth&#124;latest&#124;personalFinance&#124;quickTake&#124;world&#124;industries&#124;stocks&#124;currencies&#124;brexit
 
 ## news/list-by-region
 
@@ -1056,7 +1055,7 @@ List latest news from different categories and grouped by region.
 
 Parameter | Type | Description
 --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
-id | String | One of the followings : home-v3|asia-home-v3|europe-home-v3|middle-east-home-v3|africa-home-v3|canada-home-v3
+id | String | One of the followings : home-v3&#124;asia-home-v3&#124;europe-home-v3&#124;middle-east-home-v3&#124;africa-home-v3&#124;canada-home-v3
 
 ## stories/list
 
@@ -1099,7 +1098,7 @@ Get a list of stories related to a sticker.
 Parameter | Type | Description
 --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 id | String | The value of id field returned in .../market/auto-complete endpoint
-template | String | One of the followings : COMMODITY|CURRENCY|INDEX|INDEXFUTURE|RATE|STOCK
+template | String | One of the followings : COMMODITY&#124;CURRENCY&#124;INDEX&#124;INDEXFUTURE&#124;RATE&#124;STOCK
 
 ## stories/detail
 
