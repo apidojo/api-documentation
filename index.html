@@ -318,7 +318,10 @@
             <a href="#bloomberg-api" class="toc-h1 toc-link" data-title="Bloomberg API">Bloomberg API</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#market" class="toc-h2 toc-link" data-title="Market">Market</a>
+                    <a href="#market-auto-complete" class="toc-h2 toc-link" data-title="market/auto-complete">market/auto-complete</a>
+                  </li>
+                  <li>
+                    <a href="#market-get-movers" class="toc-h2 toc-link" data-title="market/get-movers">market/get-movers</a>
                   </li>
               </ul>
           </li>
@@ -349,7 +352,7 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 <p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
 </blockquote>
 
-<p>RapidAPI uses token key to allow access to all APIs on the platform. You need to generate a token key for a new app in your developer control panel of RapidAPI at https://rapidapi.com/developer. </p>
+<p>RapidAPI uses token key to allow access to all APIs on the platform. You need to generate a token key for a new app in your developer control panel of RapidAPI at <a href='https://rapidapi.com/developer'>https://rapidapi.com/developer</a>. </p>
 
 <p>You then need to learn how to pass the token key via request HEADER as following :</p>
 
@@ -358,7 +361,7 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 <aside class="notice">
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
-<h1 id='bloomberg-api'>Bloomberg API</h1><h2 id='market'>Market</h2><h3 id='market-auto-complete'>market/auto-complete</h3><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://bloomberg-market-and-financial-news.p.rapidapi.com/market/auto-complete?query=tesla"</span> <span class="se">\</span>
+<h1 id='bloomberg-api'>Bloomberg API</h1><h2 id='market-auto-complete'>market/auto-complete</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://bloomberg-market-and-financial-news.p.rapidapi.com/market/auto-complete?query=tesla"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-rapidapi-key: meowmeowmeow"</span>
   <span class="nt">-H</span> <span class="s2">"x-rapidapi-host: bloomberg-market-and-financial-news.p.rapidapi.com"</span>
 </code></pre></div>
@@ -403,9 +406,9 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint queries suggestion by term and phrase.</p>
-<h4 id='http-request'>HTTP Request</h4>
+<h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://bloomberg-market-and-financial-news.p.rapidapi.com/market/auto-complete</code></p>
-<h4 id='query-parameters'>Query Parameters</h4>
+<h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -419,7 +422,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 <td>Any thing you are familiar with, stock, index, organization, etc...</td>
 </tr>
 </tbody></table>
-<h3 id='market-get-movers'>market/get-movers</h3><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://bloomberg-market-and-financial-news.p.rapidapi.com/market/get-movers?id=ndx:ind"</span> <span class="se">\</span>
+<h2 id='market-get-movers'>market/get-movers</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://bloomberg-market-and-financial-news.p.rapidapi.com/market/get-movers?id=ndx:ind"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-rapidapi-key: meowmeowmeow"</span>
   <span class="nt">-H</span> <span class="s2">"x-rapidapi-host: bloomberg-market-and-financial-news.p.rapidapi.com"</span>
 </code></pre></div>
@@ -529,9 +532,9 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>Get latest information of movers in the market.</p>
-<h4 id='http-request-2'>HTTP Request</h4>
+<h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://bloomberg-market-and-financial-news.p.rapidapi.com/market/get-movers</code></p>
-<h4 id='url-parameters'>URL Parameters</h4>
+<h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
