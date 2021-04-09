@@ -33,7 +33,7 @@ curl "api_endpoint_here" \
 
 > Make sure to replace `meowmeowmeow` with your API key.
 
-RapidAPI uses token key to allow access to all APIs on the platform. You need to generate a token key for a new app in your developer control panel of RapidAPI at https://rapidapi.com/developer. 
+RapidAPI uses token key to allow access to all APIs on the platform. You need to generate a token key for a new app in your developer control panel of RapidAPI at <a href='https://rapidapi.com/developer'>https://rapidapi.com/developer</a>. 
 
 You then need to learn how to pass the token key via request HEADER as following :
 
@@ -45,9 +45,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 
 # Bloomberg API
 
-## Market
-
-### market/auto-complete
+## market/auto-complete
 
 ```shell
 curl "https://bloomberg-market-and-financial-news.p.rapidapi.com/market/auto-complete?query=tesla" \
@@ -98,17 +96,17 @@ curl "https://bloomberg-market-and-financial-news.p.rapidapi.com/market/auto-com
 
 This endpoint queries suggestion by term and phrase.
 
-#### HTTP Request
+### HTTP Request
 
 `GET https://bloomberg-market-and-financial-news.p.rapidapi.com/market/auto-complete`
 
-#### Query Parameters
+### Query Parameters
 
 Parameter | Default | Description
 --------- | ------- | -----------
 query | String | Any thing you are familiar with, stock, index, organization, etc...
 
-### market/get-movers
+## market/get-movers
 
 ```shell
 curl "https://bloomberg-market-and-financial-news.p.rapidapi.com/market/get-movers?id=ndx:ind" \
@@ -224,11 +222,11 @@ curl "https://bloomberg-market-and-financial-news.p.rapidapi.com/market/get-move
 
 Get latest information of movers in the market.
 
-#### HTTP Request
+### HTTP Request
 
 `GET https://bloomberg-market-and-financial-news.p.rapidapi.com/market/get-movers`
 
-#### URL Parameters
+### URL Parameters
 
 Parameter | Description
 --------- | -----------
