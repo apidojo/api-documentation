@@ -690,7 +690,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 <tr>
 <td>interval</td>
 <td>String</td>
-<td>One of the followings : d1</td>
+<td>One of the followings : d1&#124;d3&#124;ytd&#124;m1&#124;m3&#124;m6&#124;y1&#124;y5</td>
 </tr>
 </tbody></table>
 <h2 id='market-get-full'>market/get-full</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://bloomberg-market-and-financial-news.p.rapidapi.com/market/get-full?id=AAPL:US"</span> <span class="se">\</span>
@@ -884,7 +884,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 <tr>
 <td>interval</td>
 <td>String</td>
-<td>One of the followings : d1</td>
+<td>One of the followings : d1&#124;d3&#124;ytd&#124;m1&#124;m3&#124;m6&#124;y1&#124;y5</td>
 </tr>
 </tbody></table>
 <h2 id='stock-get-statistics'>stock/get-statistics</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://bloomberg-market-and-financial-news.p.rapidapi.com/stock/get-statistics?id=TSLA:US&amp;template=STOCK"</span> <span class="se">\</span>
@@ -974,7 +974,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 <tr>
 <td>template</td>
 <td>String</td>
-<td>One of the following COMMODITY</td>
+<td>One of the following COMMODITY&#124;CURRENCY&#124;INDEX&#124;INDEXFUTURE&#124;RATE&#124;STOCK</td>
 </tr>
 </tbody></table>
 <h2 id='stock-get-financials'>stock/get-financials</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://bloomberg-market-and-financial-news.p.rapidapi.com/stock/get-financials?id=TSLA:US"</span> <span class="se">\</span>
@@ -1240,12 +1240,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 <tr>
 <td>id</td>
 <td>String</td>
-<td>One of the following is allowed markets</td>
-</tr>
-<tr>
-<td></td>
-<td>cryptocurrencies</td>
-<td>wealth</td>
+<td>One of the following is allowed markets&#124;technology&#124;view&#124;pursuits&#124;politics&#124;green&#124;citylab&#124;businessweek&#124;fixed-income&#124;hyperdrive&#124;cryptocurrencies&#124;wealth&#124;latest&#124;personalFinance&#124;quickTake&#124;world&#124;industries&#124;stocks&#124;currencies&#124;brexit</td>
 </tr>
 </tbody></table>
 <h2 id='news-list-by-region'>news/list-by-region</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://bloomberg-market-and-financial-news.p.rapidapi.com/news/list-by-region?id=asia-home-v3"</span> <span class="se">\</span>
@@ -1420,7 +1415,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 <tr>
 <td>id</td>
 <td>String</td>
-<td>One of the followings : home-v3</td>
+<td>One of the followings : home-v3&#124;asia-home-v3&#124;europe-home-v3&#124;middle-east-home-v3&#124;africa-home-v3&#124;canada-home-v3</td>
 </tr>
 </tbody></table>
 <h2 id='stories-list'>stories/list</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://bloomberg-market-and-financial-news.p.rapidapi.com/stories/list?id=usdjpy&amp;template=CURRENCY"</span> <span class="se">\</span>
@@ -1467,7 +1462,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 <tr>
 <td>template</td>
 <td>String</td>
-<td>One of the followings : COMMODITY</td>
+<td>One of the followings : COMMODITY&#124;CURRENCY&#124;INDEX&#124;INDEXFUTURE&#124;RATE&#124;STOCK</td>
 </tr>
 </tbody></table>
 <h2 id='stories-detail'>stories/detail</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://bloomberg-market-and-financial-news.p.rapidapi.com/stories/detail?internalID=QFY0Y6T0AFB501"</span> <span class="se">\</span>
