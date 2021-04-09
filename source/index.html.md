@@ -103,7 +103,7 @@ This endpoint queries suggestion by term and phrase.
 ### Query Parameters
 
 Parameter | Type | Description
---------- | ------- | -----------
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 query | String | Any thing you are familiar with, stock, index, organization, etc...
 
 ## market/get-movers
@@ -229,7 +229,7 @@ Get latest information of movers in the market.
 ### URL Parameters
 
 Parameter | Type | Description
---------- | ------- | -----------
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 id | String | The value of id field returned in .../market/auto-complete endpoint.
 
 ## market/get-cross-currencies
@@ -285,7 +285,7 @@ Get exchange rate between currencies.
 ### URL Parameters
 
 Parameter | Type | Description
---------- | ------- | -----------
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 id | String | The currency code, separated by comma to query multiple currencies at once
 
 ## market/get-price-chart
@@ -336,7 +336,7 @@ Get data to draw historical price chart.
 ### URL Parameters
 
 Parameter | Type | Description
---------- | ------- | -----------
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 id | String | The value of id field returned in .../market/auto-complete endpoint.
 interval | String | One of the followings : d1|d3|ytd|m1|m3|m6|y1|y5
 
@@ -416,7 +416,7 @@ Get all field and information about indices, commodities, currencies, rates, etc
 ### URL Parameters
 
 Parameter | Type | Description
---------- | ------- | -----------
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 id | String | The value of id field returned in .../market/auto-complete endpoint, separated by comma to query multiple stickers at once.
 
 ## market/get-compact
@@ -475,7 +475,7 @@ Get most informative fields about indices, commodities, currencies, rates, etc..
 ### URL Parameters
 
 Parameter | Type | Description
---------- | ------- | -----------
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 id | String | The value of id field returned in .../market/auto-complete endpoint, separated by comma to query multiple stickers at once.
 
 ## market/get-chart
@@ -526,7 +526,7 @@ Get related data for drawing chart.
 ### URL Parameters
 
 Parameter | Type | Description
---------- | ------- | -----------
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 id | String | The value of id field returned in .../market/auto-complete endpoint
 interval | String | One of the followings : d1|d3|ytd|m1|m3|m6|y1|y5
 
@@ -612,7 +612,7 @@ Get statistics information of stocks, indices,etc...
 ### URL Parameters
 
 Parameter | Type | Description
---------- | ------- | -----------
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 id | String | The value of id field returned in .../market/auto-complete endpoint
 template | String | One of the following COMMODITY|CURRENCY|INDEX|INDEXFUTURE|RATE|STOCK
 
@@ -792,7 +792,7 @@ Get financial information of stocks.
 ### URL Parameters
 
 Parameter | Type | Description
---------- | ------- | -----------
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 id | String | The value of id field returned in .../market/auto-complete endpoint
 
 ## news/list
@@ -879,8 +879,9 @@ List news by category.
 ### URL Parameters
 
 Parameter | Type | Description
---------- | ------- | -----------
-id | String | One of the following is allowed markets|technology|view|pursuits|politics|green|citylab|businessweek|fixed-income|hyperdrive|cryptocurrencies|wealth|latest|personalFinance|quickTake|world|industries|stocks|currencies|brexit
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+id | String | One of the following is allowed markets|technology|view|pursuits|politics|green|citylab|businessweek|fixed-income|hyperdrive|
+||cryptocurrencies|wealth|latest|personalFinance|quickTake|world|industries|stocks|currencies|brexit
 
 ## news/list-by-region
 
@@ -1054,7 +1055,7 @@ List latest news from different categories and grouped by region.
 ### URL Parameters
 
 Parameter | Type | Description
---------- | ------- | -----------
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 id | String | One of the followings : home-v3|asia-home-v3|europe-home-v3|middle-east-home-v3|africa-home-v3|canada-home-v3
 
 ## stories/list
@@ -1096,14 +1097,14 @@ Get a list of stories related to a sticker.
 ### URL Parameters
 
 Parameter | Type | Description
---------- | ------- | -----------
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 id | String | The value of id field returned in .../market/auto-complete endpoint
 template | String | One of the followings : COMMODITY|CURRENCY|INDEX|INDEXFUTURE|RATE|STOCK
 
 ## stories/detail
 
 ```shell
-curl "https://bloomberg-market-and-financial-news.p.rapidapi.com/stories/detail" \
+curl "https://bloomberg-market-and-financial-news.p.rapidapi.com/stories/detail?internalID=QFY0Y6T0AFB501" \
   -H "x-rapidapi-key: meowmeowmeow"
   -H "x-rapidapi-host: bloomberg-market-and-financial-news.p.rapidapi.com"
 ```
@@ -1117,5 +1118,5 @@ Get full story.
 ### URL Parameters
 
 Parameter | Type | Description
---------- | ------- | -----------
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 internalID | String | Get suitable value from .../stories/list or .../news/list or .../news/list-by-region endpoints
