@@ -5,7 +5,8 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - shell
 
 toc_footers:
-  - Visit our website at <a href='https://apidojo.net'>apidojo.net</a> for more information
+  - Visit our website at <a href='https://apidojo.net' target='_blank'>apidojo.net</a> 
+  for all available APIs
 
 includes:
   - errors
@@ -19,7 +20,7 @@ code_clipboard: true
 
 Welcome to the API Dojo documentation! You can use our APIs to access official live and structural data from lots of brands which are from various categories.
 
-We currently provide our services via <a href='https://rapidapi.com'>RapidAPI</a> only. You need to register an account on the market platform as developer or consumer to start using our APIs. Please have a look at <a href='https://docs.rapidapi.com/docs/basics-creating-a-project'>Creating a project</a> to get started.
+We currently provide our services via <a href='https://rapidapi.com' target='_blank'>RapidAPI</a> only. You need to register an account on the market platform as developer or consumer to start using our APIs. Please have a look at <a href='https://docs.rapidapi.com/docs/basics-creating-a-project'  target='_blank'>Creating a project</a> to get started.
 
 # Authentication
 
@@ -33,7 +34,7 @@ curl "api_endpoint_here" \
 
 > Make sure to replace `meowmeowmeow` with your API key.
 
-RapidAPI uses token key to allow access to all APIs on the platform. You need to generate a token key for a new app in your developer control panel of RapidAPI at <a href='https://rapidapi.com/developer'>https://rapidapi.com/developer</a>. 
+RapidAPI uses token key to allow access to all APIs on the platform. You need to generate a token key for a new app in your developer control panel of RapidAPI at <a href='https://rapidapi.com/developer' target='_blank'>https://rapidapi.com/developer</a>. 
 
 You then need to learn how to pass the token key via request HEADER as following :
 
