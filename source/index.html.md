@@ -3410,8 +3410,8 @@ Parameter | Type | Description
 offset | int | The offset of items to be ignored in response for paging
 limit | int | The number of items to be responded in every request (max 200)
 city | string (required) | The value of city field responded in locations/auto-complete API (do not use this parameter with postal_code)
-state_code (required) | string | The value of state_code field responded in locations/auto-complete API (do not use this parameter with postal_code)
-postal_code (required) | string | Zip code or postal code (do not use this parameter with city and state_code)
+state_code | string (required) | The value of state_code field responded in locations/auto-complete API (do not use this parameter with postal_code)
+postal_code | string (required) | Zip code or postal code (do not use this parameter with city and state_code)
 radius | int | Radius in miles to look for properties (1 to 20)
 baths_min | int | Min baths of properties
 beds_min | int | Min beds of properties
@@ -3713,8 +3713,8 @@ This endpoint is used to list similar properties
 Parameter | Type | Description
 --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 property_id | string (required) | The value of property_id field returned in  .../properties/list-.... or  .../properties/v2/list-... endpoints.
-limit | int | The number of items responded 
 prop_status | string (required) | One of the followings : for_sale&#124;for_rent
+limit | int | The number of items responded 
 
 ## properties/detail
 
