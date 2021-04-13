@@ -4309,13 +4309,13 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 <td>The value of city field responded in locations/auto-complete API (do not use this parameter with postal_code)</td>
 </tr>
 <tr>
-<td>state_code (required)</td>
-<td>string</td>
+<td>state_code</td>
+<td>string (required)</td>
 <td>The value of state_code field responded in locations/auto-complete API (do not use this parameter with postal_code)</td>
 </tr>
 <tr>
-<td>postal_code (required)</td>
-<td>string</td>
+<td>postal_code</td>
+<td>string (required)</td>
 <td>Zip code or postal code (do not use this parameter with city and state_code)</td>
 </tr>
 <tr>
@@ -4688,14 +4688,14 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 <td>The value of property_id field returned in  .../properties/list-.... or  .../properties/v2/list-... endpoints.</td>
 </tr>
 <tr>
-<td>limit</td>
-<td>int</td>
-<td>The number of items responded</td>
-</tr>
-<tr>
 <td>prop_status</td>
 <td>string (required)</td>
 <td>One of the followings : for_sale&#124;for_rent</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>int</td>
+<td>The number of items responded</td>
 </tr>
 </tbody></table>
 <h2 id='properties-detail'>properties/detail</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://realtor.p.rapidapi.com/properties/detail?property_id=1658306335&amp;prop_status=recently_sold"</span> <span class="se">\</span>
