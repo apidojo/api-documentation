@@ -48,6 +48,8 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 
 Some of our private APIs get redirected to other links because of new update made by RapidAPI. Please see the short video clip at <a href='https://www.youtube.com/watch?v=Ypf_938bJzA'  target='_blank'>https://www.youtube.com/watch?v=Ypf_938bJzA</a> to know how to overcome this issue and access the API normally.
 
+We have reported the issue to RapidAPI, we need to wait for them and a hot fix released.
+
 # Bloomberg API
 
 ## market/auto-complete
@@ -4280,3 +4282,942 @@ Parameter | Type | Description
 --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 lon | double (required) | The longitude co-ordinate
 lat | double (required) | The latitude co-ordinate
+
+# Realtor CA API
+
+## locations/auto-complete
+
+```shell
+curl "https://realtor-canadian-real-estate.p.rapidapi.com/locations/auto-complete?Area=Quebec&CultureId=1" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: realtor-canadian-real-estate.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "ErrorCode": {
+        "Id": 200,
+        "Description": "Success - Success - OK",
+        "Status": "Via-Cache:False",
+        "ProductName": "! Push to PR-Stage - Realtor API (Maintenance)^30626 [Friday, March 26, 2021 9:52:23 AM]",
+        "Version": "1.0.7755.17782"
+    },
+    "SubArea": [
+        {
+            "Location": "Quebec City, QC, Canada",
+            "Longitude": "-71.2079809",
+            "Latitude": "46.8138783",
+            "Height": 0.25113899999999489,
+            "Width": 0.415504999999996,
+            "InternalResult": "False",
+            "Viewport": {
+                "NorthEast": {
+                    "Latitude": "46.9819379",
+                    "Longitude": "-71.13394"
+                },
+                "SouthWest": {
+                    "Latitude": "46.7307989",
+                    "Longitude": "-71.549445"
+                }
+            },
+            "GEOId": "g30_f2m68c6b",
+            "Polygons": []
+        }
+    ]
+}
+```
+
+This endpoint is used to get auto complete suggestions by city, ward, street name
+
+### HTTP Request
+
+`GET https://realtor-canadian-real-estate.p.rapidapi.com/locations/auto-complete`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+Area | string (required) | City, ward, street name
+CultureId | int | 1 - English&#124;2 - French
+
+
+
+## properties/list-commercial
+
+```shell
+curl "https://realtor-canadian-real-estate.p.rapidapi.com/properties/list-commercial?CultureId=1&LatitudeMax=81.14747595814636&LongitudeMax=-10.267941690981388&LatitudeMin=-22.26872153207163&LongitudeMin=-136.83037765324116&TransactionTypeId=2&PriceMin=0&BedRange=0-0&BathRange=0-0&OpenHouse=false&NumberOfDays=0&RecordsPerPage=50&CurrentPage=1&SortBy=1&SortOrder=D" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: realtor-canadian-real-estate.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "ErrorCode": {
+        "Id": 200,
+        "Description": "Success - OK",
+        "Status": "Pins-Via-Cache:false;Sidebar-Items-Via-Cache:0;",
+        "ProductName": "! Push to PR-Stage - Realtor API (Maintenance)^30626 [Friday, March 26, 2021 9:52:23 AM]",
+        "Version": "1.0.7755.17782"
+    },
+    "Paging": {
+        "RecordsPerPage": 50,
+        "CurrentPage": 1,
+        "TotalRecords": 49419,
+        "MaxRecords": 500,
+        "TotalPages": 10,
+        "RecordsShowing": 500,
+        "Pins": 435
+    },
+    "Results": [
+        {
+            "Id": "21934857",
+            "MlsNumber": "1214731",
+            "PublicRemarks": "Located in a central commercial zone on Burnwood Drive, this property is ready to be leased or owned. This building has approximately 10,000 square feet of space in total. The owner is willing to sell the building whole or will subdivide into individual units of typically 2000 square feet per unit. The building and or individual units is also available for lease. Financing is available for the whole building or for the individual units. (23149588)",
+            "Building": {
+                "SizeInterior": "10000 sqft",
+                "Type": "Retail"
+            },
+            "Individual": [
+                {
+                    "IndividualID": 1944382,
+                    "Name": "WAYNE SHEPPARD",
+                    "Organization": {
+                        "OrganizationID": 104938,
+                        "Name": "RE/MAX Realty Professionals Ltd. - Goose Bay",
+                        "Logo": "https://cdn.realtor.ca/organization/en-CA/TS637429401840000000/lowres/default/remaxoa.gif",
+                        "Address": {
+                            "AddressText": "P.O. Box 776, Station C|Happy Valley - Goose Bay, Newfoundland & Labrador A0P1C0",
+                            "PermitShowAddress": true,
+                            "DisseminationArea": null
+                        },
+                        "Phones": [
+                            {
+                                "PhoneType": "Telephone",
+                                "PhoneNumber": "896-9234",
+                                "AreaCode": "709",
+                                "PhoneTypeId": "1"
+                            },
+                            ...
+                        ],
+                        "OrganizationType": "Firm",
+                        "Designation": "Brokerage",
+                        "PermitFreetextEmail": true,
+                        "PermitShowListingLink": true,
+                        "RelativeDetailsURL": "/office/firm/104938/remax-realty-professionals-ltd-goose-bay-po-box-776-station-c-happy-valley-goose-bay-newfoundland-labrador-a0p1c0",
+                        "PhotoLastupdate": "2020-12-07 12:16:24 PM"
+                    },
+                    "Phones": [
+                        {
+                            "PhoneType": "Telephone",
+                            "PhoneNumber": "896-9234",
+                            "AreaCode": "709",
+                            "PhoneTypeId": "1"
+                        },
+                        ...
+                    ],
+                    "Emails": [
+                        {
+                            "ContactId": "452275500"
+                        }
+                    ],
+                    "PermitFreetextEmail": true,
+                    "FirstName": "WAYNE",
+                    "LastName": "SHEPPARD",
+                    "CorporationDisplayTypeId": "0",
+                    "PermitShowListingLink": true,
+                    "RelativeDetailsURL": "/agent/1944382/wayne-sheppard-po-box-776-station-c-happy-valley---goose-bay-newfoundland-labrador-a0p1c0",
+                    "RankMyAgentKey": "",
+                    "RealSatisfiedKey": ""
+                }
+            ],
+            "Property": {
+                "Price": "$123,456,789",
+                "Type": "Retail",
+                "Address": {
+                    "AddressText": "19-21 Burnwood Drive|Happy Valley - Goose Bay, Newfoundland & Labrador A0P1C0",
+                    "Longitude": "-60.384115",
+                    "Latitude": "53.308552",
+                    "PermitShowAddress": true,
+                    "DisseminationArea": null
+                },
+                "Photo": [
+                    {
+                        "SequenceId": "1",
+                        "HighResPath": "https://cdn.realtor.ca/listings/TS637269670394830000/reb117/highres/1/1214731_1.jpg",
+                        "MedResPath": "https://cdn.realtor.ca/listings/TS637269670394830000/reb117/medres/1/1214731_1.jpg",
+                        "LowResPath": "https://cdn.realtor.ca/listings/TS637269670394830000/reb117/lowres/1/1214731_1.jpg",
+                        "LastUpdated": "2020-06-05 3:17:19 PM"
+                    }
+                ],
+                "TypeId": "305",
+                "OwnershipType": "Freehold",
+                "ConvertedPrice": "$123,456,789 ",
+                "OwnershipTypeGroupIds": [
+                    1
+                ],
+                "PriceUnformattedValue": "123456789"
+            },
+            "Business": {
+                "BusinessSubType": "Restaurant, Furniture/household, Specialty retail, Sales/service",
+                "BusinessType": "Restaurant (Restaurant), Retail and Wholesale (Furniture/household), Retail and Wholesale (Specialty retail), Retail and Wholesale (Sales/service)"
+            },
+            "Land": {
+                "SizeTotal": "1/2 acre|10,890 - 21,799 sqft (1/4 - 1/2 ac)"
+            },
+            "PostalCode": "A0P1C0",
+            "RelativeDetailsURL": "/real-estate/21934857/19-21-burnwood-drive-happy-valley-goose-bay",
+            "StatusId": "1",
+            "PhotoChangeDateUTC": "2020-06-05 7:17:19 PM",
+            "Distance": "",
+            "RelativeURLEn": "/real-estate/21934857/19-21-burnwood-drive-happy-valley-goose-bay",
+            "RelativeURLFr": "/immobilier/21934857/19-21-burnwood-drive-happy-valley-goose-bay"
+        }...
+    ],
+    "Pins": [
+        {
+            "key": "L1|24|-110",
+            "propertyId": "",
+            "count": 1,
+            "longitude": "-110",
+            "latitude": "24"
+        },
+        ...
+    ],
+    "GroupingLevel": "1"
+}
+```
+
+This endpoint is used to list commercial properties both for lease and for sale
+
+### HTTP Request
+
+`GET https://realtor-canadian-real-estate.p.rapidapi.com/properties/list-commercial`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+LongitudeMin | double (required) | South West longitude
+LatitudeMin | double (required) | South West latitude
+LongitudeMax | double (required) | North East longitude
+LatitudeMax | double (required) | North East latitude
+CurrentPage | int | The current page on which items are displayed 
+RecordsPerPage | int | Number items returned per request, max 50
+BuildingSizeRange | string | 0-5000:0-5,000 sqft&#124;5001-10000:5,001-10,000 sqft&#124;10001-15000:10,001-15,000 sqft&#124;250001-0:Over 250,000 sqft
+BedRange | string | 0-0:Any&#124;1-1:1&#124;1-0:1+&#124;2-2:2&#124;2-0:2+&#124;3-3:3&#124;3-0:3+&#124;4-4:4&#124;4-0:4+&#124;5-5:5&#124;5-0:5+
+BathRange | string | 0-0:Any&#124;1-1:1&#124;1-0:1+&#124;2-2:2&#124;2-0:2+&#124;3-3:3&#124;3-0:3+&#124;4-4:4&#124;4-0:4+&#124;5-5:5&#124;5-0:5+
+UnitRange | string | 0-0:Any&#124;1-1:1&#124;1-0:1+&#124;2-2:2&#124;2-0:2+&#124;3-3:3&#124;3-0:3+&#124;4-4:4&#124;4-0:4+&#124;5-5:5&#124;5-0:5+&#124;....&#124;9-0:9+
+LandSizeRange | string | 0-0:Any&#124;1-0:1+ acres&#124;2-0:2+ acres&#124;5-0:5+ acres&#124;10-0:10+ acres&#124;50-0:50+ acres&#124;100-0:100+ acres&#124;200-0:200+ acres&#124;300-0:300+ acres&#124;400-0:400+ acres&#124;500-0:500+ acres&#124;1000-0:1000+ acres
+SortBy | int | 1-Price($)&#124;6-Date&#124;11-Virtual Tour&#124;12-Open Houses&#124;13-More Photos
+SortOrder | string | A - ascending &#124; D - descending
+NumberOfDays | int | Listed since
+Keywords | string | Get suitable values from .../keywords/list endpoint, separated by comma for multiple keywords, Ex : Inlaw suite,Income suite
+BuildingTypeId | int | 0-No Preference&#124;1-House&#124;2-Duplex&#124;3-Triplex&#124;5-Residential Commercial Mix&#124;6-Mobile Home&#124;12-Special Purpose&#124;14-Other&#124;16-Row / Townhouse&#124;17-Apartment&#124;19-Fourplex&#124;20-Garden Home&#124;26-Modular&#124;27-Manufactured Home/Mobile&#124;28-Commercial Apartment&#124;29-Manufactured Home
+OpenHouseStartDate | string | Format date as MM/dd/yyyy, ex : 03/20/2020
+OpenHouseEndDate | string | Format date as MM/dd/yyyy, ex : 03/31/2020
+OpenHouse | boolean | false/true - Need to use together with OpenHouseStartDate and OpenHouseEndDate parameters
+CultureId | int | 1 - English&#124;2 - French
+FarmTypeId | int | 0-No Preference&#124;1-Animal&#124;2-Boarding&#124;3-Cash Crop&#124;4-Feed Lot&#124;5-Nursery&#124;6-Market Gardening&#124;7-Hobby Farm&#124;8-Vineyard&#124;9-Orchard&#124;10-Greenhouse&#124;12-Mixed
+PriceMin | int | Filter by min price, applied when TransactionTypeId = 2
+PriceMax | int | Filter by max price, applied when TransactionTypeId = 2
+TransactionTypeId | int | 2-For sale&#124;3-For lease
+ZoningTypeGroupId | int | 1-Agricultural&#124;2-Commercial Mixed&#124;3-Commercial Office&#124;4-Commercial Retail&#124;5-Industrial&#124;6-Industrial-Heavy&#124;7-Industrial-Light&#124;8-Industrial-Medium&#124;9-Institutional&#124;10-Other&#124;11-Recreational&#124;12-Residential-High Density&#124;13-Residential-Low Density&#124;14-Residential - Medium Density
+ConstructionStyleId | int | 0-No Preference&#124;1-Attached&#124;3-Detached&#124;5-Semi-detached&#124;7-Stacked&#124;9-Link
+PropertySearchTypeId | int | 0-No Preference&#124;1-Residential&#124;2-Recreational&#124;3-Condo/Strata&#124;4-Agriculture&#124;5-Parking&#124;6-Vacant Land&#124;8-Multi Family
+
+## properties/list-residential
+
+```shell
+curl "https://realtor-canadian-real-estate.p.rapidapi.com/properties/list-residential?CultureId=1&LatitudeMax=43.8554579&LongitudeMax=-79.1168971&LatitudeMin=43.5810245&LongitudeMin=-79.639219&TransactionTypeId=2&PriceMin=0&RentMin=0&BedRange=0-0&BathRange=0-0&OpenHouse=false&NumberOfDays=0&RecordsPerPage=50&CurrentPage=1&SortBy=1&SortOrder=D" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: realtor-canadian-real-estate.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "ErrorCode": {
+        "Id": 200,
+        "Description": "Success - OK",
+        "Status": "Pins-Via-Cache:false;Sidebar-Items-Via-Cache:0;",
+        "ProductName": "! Push to PR-Stage - Realtor API (Maintenance)^30626 [Friday, March 26, 2021 9:52:23 AM]",
+        "Version": "1.0.7755.17782"
+    },
+    "Paging": {
+        "RecordsPerPage": 50,
+        "CurrentPage": 1,
+        "TotalRecords": 6038,
+        "MaxRecords": 500,
+        "TotalPages": 10,
+        "RecordsShowing": 500,
+        "Pins": 1896
+    },
+    "Results": [
+        {
+            "Id": "22114201",
+            "MlsNumber": "C4833856",
+            "PublicRemarks": "Awe-Inspiring In Scale & Grandeur In Toronto's Elite Bridle Path Community. Breathtaking Foyer With Dramatic Double Staircase & Iconic Handcrafted Detail Welcomes You Into This World-Class Residence. Spectacular Great Room With Soaring Ceilings. Fabulous Master Bedroom Oasis. Gorgeous Rotunda. Brilliant Natural Light. Timeless Craftsmanship And Exquisitely Proportioned Rooms. In-Law Suite With Elevator. Rare Opportunity For Multigenerational Living.**** EXTRAS **** Spk To La For More Info. Gated Entry To 2-Acre Estate With Manicured Gardens, Outdoor Fireplace, Tennis Court & Custom Fountain. Top Rated Private Schools & Easy Access To Walking/Cycling Trails, Luxury Shopping & Convenient Airport Access. (26948057)",
+            "Building": {
+                "BathroomTotal": "13",
+                "Bedrooms": "5 + 4",
+                "StoriesTotal": "2",
+                "Type": "House"
+            },
+            "Individual": [
+                {
+                    "IndividualID": 1411636,
+                    "Name": "DEBRA FELDMAN",
+                    "Organization": {
+                        "OrganizationID": 276796,
+                        "Name": "FOREST HILL REAL ESTATE INC.",
+                        "Logo": "https://cdn.realtor.ca/organization/en-CA/TS637513416440000000/lowres/276796.jpg",
+                        "Address": {
+                            "AddressText": "1440 DON MILLS RD STE 108|TORONTO, Ontario M3B3M1",
+                            "PermitShowAddress": true,
+                            "DisseminationArea": null
+                        },
+                        "Phones": [
+                            {
+                                "PhoneType": "Telephone",
+                                "PhoneNumber": "929-4343",
+                                "AreaCode": "416",
+                                "PhoneTypeId": "1"
+                            }
+                        ],
+                        "OrganizationType": "Firm",
+                        "Designation": "Brokerage",
+                        "PermitFreetextEmail": true,
+                        "PermitShowListingLink": true,
+                        "RelativeDetailsURL": "/office/firm/276796/forest-hill-real-estate-inc-1440-don-mills-rd-ste-108-toronto-ontario-m3b3m1",
+                        "PhotoLastupdate": "2021-03-14 6:00:44 PM"
+                    },
+                    "Phones": [
+                        {
+                            "PhoneType": "Telephone",
+                            "PhoneNumber": "929-4343",
+                            "AreaCode": "416",
+                            "PhoneTypeId": "1"
+                        }
+                    ],
+                    "Websites": [
+                        {
+                            "Website": "http://www.feldmanfinehomes.com",
+                            "WebsiteTypeId": "1"
+                        }
+                    ],
+                    "Emails": [
+                        {
+                            "ContactId": "455714084"
+                        }
+                    ],
+                    "Photo": "https://cdn.realtor.ca/individual/TS637163341800000000/lowres/1122608.jpg",
+                    "Position": "Salesperson",
+                    "PermitFreetextEmail": true,
+                    "FirstName": "DEBRA",
+                    "LastName": "FELDMAN",
+                    "CorporationDisplayTypeId": "0",
+                    "PermitShowListingLink": true,
+                    "RelativeDetailsURL": "/agent/1411636/debra-feldman-1440-don-mills-rd-ste-108-toronto-ontario-m3b3m1",
+                    "AgentPhotoLastUpdated": "2020-02-03 13:43:00",
+                    "PhotoHighRes": "https://cdn.realtor.ca/individual/TS637163341800000000/highres/1122608.jpg",
+                    "RankMyAgentKey": "",
+                    "RealSatisfiedKey": ""
+                },
+                {
+                    "IndividualID": 1897006,
+                    "Name": "MATHEW ADAM POTTENS",
+                    "Organization": {
+                        "OrganizationID": 276796,
+                        "Name": "FOREST HILL REAL ESTATE INC.",
+                        "Logo": "https://cdn.realtor.ca/organization/en-CA/TS637513416440000000/lowres/276796.jpg",
+                        "Address": {
+                            "AddressText": "1440 DON MILLS RD STE 108|TORONTO, Ontario M3B3M1",
+                            "PermitShowAddress": true,
+                            "DisseminationArea": null
+                        },
+                        "Phones": [
+                            {
+                                "PhoneType": "Telephone",
+                                "PhoneNumber": "929-4343",
+                                "AreaCode": "416",
+                                "PhoneTypeId": "1"
+                            }
+                        ],
+                        "OrganizationType": "Firm",
+                        "Designation": "Brokerage",
+                        "PermitFreetextEmail": true,
+                        "PermitShowListingLink": true,
+                        "RelativeDetailsURL": "/office/firm/276796/forest-hill-real-estate-inc-1440-don-mills-rd-ste-108-toronto-ontario-m3b3m1",
+                        "PhotoLastupdate": "2021-03-14 6:00:44 PM"
+                    },
+                    "Phones": [
+                        {
+                            "PhoneType": "Telephone",
+                            "PhoneNumber": "929-4343",
+                            "AreaCode": "416",
+                            "PhoneTypeId": "1"
+                        }
+                    ],
+                    "Emails": [
+                        {
+                            "ContactId": "462983949"
+                        }
+                    ],
+                    "Photo": "https://cdn.realtor.ca/individual/TS637159194600000000/lowres/1215009.jpg",
+                    "Position": "Broker",
+                    "PermitFreetextEmail": true,
+                    "FirstName": "MATHEW ADAM",
+                    "LastName": "POTTENS",
+                    "CccMember": true,
+                    "CorporationDisplayTypeId": "0",
+                    "PermitShowListingLink": true,
+                    "RelativeDetailsURL": "/agent/1897006/mathew-adam-pottens-1440-don-mills-rd-ste-108-toronto-ontario-m3b3m1",
+                    "AgentPhotoLastUpdated": "2020-01-29 18:31:00",
+                    "PhotoHighRes": "https://cdn.realtor.ca/individual/TS637159194600000000/highres/1215009.jpg",
+                    "RankMyAgentKey": "",
+                    "RealSatisfiedKey": ""
+                }
+            ],
+            "Property": {
+                "Price": "$29,800,000",
+                "Type": "Single Family",
+                "Address": {
+                    "AddressText": "71 THE BRIDLE PATH|Toronto, Ontario M3B2B2",
+                    "Longitude": "-79.3687317",
+                    "Latitude": "43.7356304",
+                    "PermitShowAddress": true,
+                    "DisseminationArea": null
+                },
+                "Photo": [
+                    {
+                        "SequenceId": "1",
+                        "HighResPath": "https://cdn.realtor.ca/listings/TS637305224686800000/reb82/highres/6/c4833856_1.jpg",
+                        "MedResPath": "https://cdn.realtor.ca/listings/TS637305224686800000/reb82/medres/6/c4833856_1.jpg",
+                        "LowResPath": "https://cdn.realtor.ca/listings/TS637305224686800000/reb82/lowres/6/c4833856_1.jpg",
+                        "LastUpdated": "2020-07-16 6:54:28 PM"
+                    }
+                ],
+                "Parking": [
+                    {
+                        "Name": "Garage"
+                    }
+                ],
+                "ParkingSpaceTotal": "31",
+                "TypeId": "300",
+                "OwnershipType": "Freehold",
+                "AmmenitiesNearBy": "Hospital, Park, Public Transit",
+                "ConvertedPrice": "$29,800,000 ",
+                "OwnershipTypeGroupIds": [
+                    1
+                ],
+                "ParkingType": "Garage",
+                "PriceUnformattedValue": "29800000"
+            },
+            "Business": {},
+            "Land": {
+                "SizeTotal": "246.38 x 353.63 FT ; Irregular"
+            },
+            "PostalCode": "M3B2B2",
+            "RelativeDetailsURL": "/real-estate/22114201/71-the-bridle-path-toronto-bridle-path-sunnybrook-york-mills",
+            "StatusId": "1",
+            "PriceChangeDateUTC": "2021-02-19 7:15:27 PM",
+            "PhotoChangeDateUTC": "2020-07-16 10:54:29 PM",
+            "Distance": "",
+            "RelativeURLEn": "/real-estate/22114201/71-the-bridle-path-toronto-bridle-path-sunnybrook-york-mills",
+            "RelativeURLFr": "/immobilier/22114201/71-the-bridle-path-toronto"
+        },
+        ...
+    ],
+    "Pins": [
+        {
+            "key": "L9|43.595|-79.5",
+            "propertyId": "",
+            "count": 1,
+            "longitude": "-79.5",
+            "latitude": "43.595"
+        },
+        ...
+    ],
+    "GroupingLevel": "9"
+}
+```
+
+This endpoint is used to list residential properties both for rent and for sale
+
+### HTTP Request
+
+`GET https://realtor-canadian-real-estate.p.rapidapi.com/properties/list-residential`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+LongitudeMin | double (required) | South West longitude
+LatitudeMin | double (required) | South West latitude
+LongitudeMax | double (required) | North East longitude
+LatitudeMax | double (required) | North East latitude
+CurrentPage | int | The current page on which items are displayed 
+RecordsPerPage | int | Number items returned per request, max 50
+BuildingSizeRange | string | 0-5000:0-5,000 sqft&#124;5001-10000:5,001-10,000 sqft&#124;10001-15000:10,001-15,000 sqft&#124;250001-0:Over 250,000 sqft
+BedRange | string | 0-0:Any&#124;1-1:1&#124;1-0:1+&#124;2-2:2&#124;2-0:2+&#124;3-3:3&#124;3-0:3+&#124;4-4:4&#124;4-0:4+&#124;5-5:5&#124;5-0:5+
+BathRange | string | 0-0:Any&#124;1-1:1&#124;1-0:1+&#124;2-2:2&#124;2-0:2+&#124;3-3:3&#124;3-0:3+&#124;4-4:4&#124;4-0:4+&#124;5-5:5&#124;5-0:5+
+UnitRange | string | 0-0:Any&#124;1-1:1&#124;1-0:1+&#124;2-2:2&#124;2-0:2+&#124;3-3:3&#124;3-0:3+&#124;4-4:4&#124;4-0:4+&#124;5-5:5&#124;5-0:5+&#124;....&#124;9-0:9+
+LandSizeRange | string | 0-0:Any&#124;1-0:1+ acres&#124;2-0:2+ acres&#124;5-0:5+ acres&#124;10-0:10+ acres&#124;50-0:50+ acres&#124;100-0:100+ acres&#124;200-0:200+ acres&#124;300-0:300+ acres&#124;400-0:400+ acres&#124;500-0:500+ acres&#124;1000-0:1000+ acres
+ZoningTypeGroupId | int | 1-Agricultural&#124;2-Commercial Mixed&#124;3-Commercial Office&#124;4-Commercial Retail&#124;5-Industrial&#124;6-Industrial-Heavy&#124;7-Industrial-Light&#124;8-Industrial-Medium&#124;9-Institutional&#124;10-Other&#124;11-Recreational&#124;12-Residential-High Density&#124;13-Residential-Low Density&#124;14-Residential - Medium Density
+ParkingTypeId | int | 1-Attached garage&#124;2-Integrated garage&#124;3-Detached garage&#124;4-Garage&#124;5-Carport&#124;6-Underground&#124;7-Indoor&#124;8-Open&#124;9-Covered&#124;10-Parking pad&#124;11-Paved Yard&#124;35-Boat House&#124;36-Concrete&#124;37-Heated Garage
+RentMin | int | Filter by min price, applied when TransactionTypeId = 3
+RentMax | int | Filter by max price, applied when TransactionTypeId = 3
+PriceMin | int | Filter by min price, applied when TransactionTypeId = 2
+PriceMax | int | Filter by min price, applied when TransactionTypeId = 2
+TransactionTypeId | int | 2-For sale&#124;3-For rent
+NumberOfDays | int | Listed since
+OpenHouseStartDate | string | Format date as MM/dd/yyyy, ex : 03/20/2020
+OpenHouseEndDate | string | Format date as MM/dd/yyyy, ex : 03/31/2020
+OpenHouse | boolean | false/true - Need to use together with OpenHouseStartDate and OpenHouseEndDate parameters
+CultureId | int | 1 - English&#124;2 - French
+SortOrder | string | A - ascending &#124; D - descending
+SortBy | int | 1-Price($)&#124;6-Date&#124;11-Virtual Tour&#124;12-Open Houses&#124;13-More Photos
+BuildingTypeId | int | 0-No Preference&#124;1-House&#124;2-Duplex&#124;3-Triplex&#124;5-Residential Commercial Mix&#124;6-Mobile Home&#124;12-Special Purpose&#124;14-Other&#124;16-Row / Townhouse&#124;17-Apartment&#124;19-Fourplex&#124;20-Garden Home&#124;26-Modular&#124;27-Manufactured Home/Mobile&#124;28-Commercial Apartment&#124;29-Manufactured Home
+Keywords | string | Get suitable values from .../keywords/list endpoint, separated by comma for multiple keywords, Ex : Inlaw suite,Income suite
+FarmTypeId | int | 0-No Preference&#124;1-Animal&#124;2-Boarding&#124;3-Cash Crop&#124;4-Feed Lot&#124;5-Nursery&#124;6-Market Gardening&#124;7-Hobby Farm&#124;8-Vineyard&#124;9-Orchard&#124;10-Greenhouse&#124;12-Mixed
+PropertySearchTypeId | int | 0-No Preference&#124;1-Residential&#124;2-Recreational&#124;3-Condo/Strata&#124;4-Agriculture&#124;5-Parking&#124;6-Vacant Land&#124;8-Multi Family
+ConstructionStyleId | int | 0-No Preference&#124;1-Attached&#124;3-Detached&#124;5-Semi-detached&#124;7-Stacked&#124;9-Link
+
+## properties/list-by-mls
+
+```shell
+curl "https://realtor-canadian-real-estate.p.rapidapi.com/properties/list-by-mls?CultureId=1&ReferenceNumber=C4833856" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: realtor-canadian-real-estate.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "ErrorCode": {
+        "Id": 200,
+        "Description": "Success - OK",
+        "Status": "Pins-Via-Cache:false;Sidebar-Items-Via-Cache:0;",
+        "ProductName": "! Push to PR-Stage - Realtor API (Maintenance)^30626 [Friday, March 26, 2021 9:52:23 AM]",
+        "Version": "1.0.7755.17831"
+    },
+    "Paging": {
+        "RecordsPerPage": 9,
+        "CurrentPage": 1,
+        "TotalRecords": 1,
+        "MaxRecords": 500,
+        "TotalPages": 1,
+        "RecordsShowing": 1,
+        "Pins": 0
+    },
+    "Results": [
+        {
+            "Id": "22114201",
+            "MlsNumber": "C4833856",
+            "PublicRemarks": "Awe-Inspiring In Scale & Grandeur In Toronto's Elite Bridle Path Community. Breathtaking Foyer With Dramatic Double Staircase & Iconic Handcrafted Detail Welcomes You Into This World-Class Residence. Spectacular Great Room With Soaring Ceilings. Fabulous Master Bedroom Oasis. Gorgeous Rotunda. Brilliant Natural Light. Timeless Craftsmanship And Exquisitely Proportioned Rooms. In-Law Suite With Elevator. Rare Opportunity For Multigenerational Living.**** EXTRAS **** Spk To La For More Info. Gated Entry To 2-Acre Estate With Manicured Gardens, Outdoor Fireplace, Tennis Court & Custom Fountain. Top Rated Private Schools & Easy Access To Walking/Cycling Trails, Luxury Shopping & Convenient Airport Access. (26948057)",
+            "Building": {
+                "BathroomTotal": "13",
+                "Bedrooms": "5 + 4",
+                "StoriesTotal": "2",
+                "Type": "House"
+            },
+            "Individual": [
+                {
+                    "IndividualID": 1411636,
+                    "Name": "DEBRA FELDMAN",
+                    "Organization": {
+                        "OrganizationID": 276796,
+                        "Name": "FOREST HILL REAL ESTATE INC.",
+                        "Logo": "https://cdn.realtor.ca/organization/en-CA/TS637513416440000000/lowres/276796.jpg",
+                        "Address": {
+                            "AddressText": "1440 DON MILLS RD STE 108|TORONTO, Ontario M3B3M1",
+                            "PermitShowAddress": true,
+                            "DisseminationArea": null
+                        },
+                        "Phones": [
+                            {
+                                "PhoneType": "Telephone",
+                                "PhoneNumber": "929-4343",
+                                "AreaCode": "416",
+                                "PhoneTypeId": "1"
+                            }
+                        ],
+                        "OrganizationType": "Firm",
+                        "Designation": "Brokerage",
+                        "PermitFreetextEmail": true,
+                        "PermitShowListingLink": true,
+                        "RelativeDetailsURL": "/office/firm/276796/forest-hill-real-estate-inc-1440-don-mills-rd-ste-108-toronto-ontario-m3b3m1",
+                        "PhotoLastupdate": "2021-03-14 6:00:44 PM"
+                    },
+                    "Phones": [
+                        {
+                            "PhoneType": "Telephone",
+                            "PhoneNumber": "929-4343",
+                            "AreaCode": "416",
+                            "PhoneTypeId": "1"
+                        }
+                    ],
+                    "Websites": [
+                        {
+                            "Website": "http://www.feldmanfinehomes.com",
+                            "WebsiteTypeId": "1"
+                        }
+                    ],
+                    "Emails": [
+                        {
+                            "ContactId": "455714084"
+                        }
+                    ],
+                    "Photo": "https://cdn.realtor.ca/individual/TS637163341800000000/lowres/1122608.jpg",
+                    "Position": "Salesperson",
+                    "PermitFreetextEmail": true,
+                    "FirstName": "DEBRA",
+                    "LastName": "FELDMAN",
+                    "CorporationDisplayTypeId": "0",
+                    "PermitShowListingLink": true,
+                    "RelativeDetailsURL": "/agent/1411636/debra-feldman-1440-don-mills-rd-ste-108-toronto-ontario-m3b3m1",
+                    "AgentPhotoLastUpdated": "2020-02-03 13:43:00",
+                    "PhotoHighRes": "https://cdn.realtor.ca/individual/TS637163341800000000/highres/1122608.jpg",
+                    "RankMyAgentKey": "",
+                    "RealSatisfiedKey": ""
+                },
+                ...
+            ],
+            "Property": {
+                "Price": "$29,800,000",
+                "Type": "Single Family",
+                "Address": {
+                    "AddressText": "71 THE BRIDLE PATH|Toronto, Ontario M3B2B2",
+                    "Longitude": "-79.3687317",
+                    "Latitude": "43.7356304",
+                    "PermitShowAddress": true,
+                    "DisseminationArea": null
+                },
+                "Photo": [
+                    {
+                        "SequenceId": "1",
+                        "HighResPath": "https://cdn.realtor.ca/listings/TS637305224686800000/reb82/highres/6/c4833856_1.jpg",
+                        "MedResPath": "https://cdn.realtor.ca/listings/TS637305224686800000/reb82/medres/6/c4833856_1.jpg",
+                        "LowResPath": "https://cdn.realtor.ca/listings/TS637305224686800000/reb82/lowres/6/c4833856_1.jpg",
+                        "LastUpdated": "2020-07-16 6:54:28 PM"
+                    }
+                ],
+                "Parking": [
+                    {
+                        "Name": "Garage"
+                    }
+                ],
+                "ParkingSpaceTotal": "31",
+                "TypeId": "300",
+                "OwnershipType": "Freehold",
+                "AmmenitiesNearBy": "Hospital, Park, Public Transit",
+                "ConvertedPrice": "$29,800,000 ",
+                "OwnershipTypeGroupIds": [
+                    1
+                ],
+                "ParkingType": "Garage",
+                "PriceUnformattedValue": "29800000"
+            },
+            "Business": {},
+            "Land": {
+                "SizeTotal": "246.38 x 353.63 FT ; Irregular"
+            },
+            "PostalCode": "M3B2B2",
+            "RelativeDetailsURL": "/real-estate/22114201/71-the-bridle-path-toronto-bridle-path-sunnybrook-york-mills",
+            "StatusId": "1",
+            "PriceChangeDateUTC": "2021-02-19 7:15:27 PM",
+            "PhotoChangeDateUTC": "2020-07-16 10:54:29 PM",
+            "Distance": "",
+            "RelativeURLEn": "/real-estate/22114201/71-the-bridle-path-toronto-bridle-path-sunnybrook-york-mills",
+            "RelativeURLFr": "/immobilier/22114201/71-the-bridle-path-toronto"
+        }
+    ],
+    "Pins": [],
+    "GroupingLevel": ""
+}
+```
+
+This endpoint is used to list properties by listing ID or MLS number
+
+### HTTP Request
+
+`GET https://realtor-canadian-real-estate.p.rapidapi.com/properties/list-by-mls`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+ReferenceNumber | string (required) | List ID or MLS number
+CultureId | int | 1 - English&#124;2 - French
+
+## properties/detail
+
+```shell
+curl "https://realtor-canadian-real-estate.p.rapidapi.com/properties/detail?CultureId=1&ReferenceNumber=C4833856&PropertyID=22114201&PreferedMeasurementUnit=1" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: realtor-canadian-real-estate.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "ErrorCode": {
+        "Id": 200,
+        "Description": "Success - OK",
+        "ProductName": "! Push to PR-Stage - Realtor API (Maintenance)^30626 [Friday, March 26, 2021 9:52:23 AM]",
+        "Version": "1.0.7755.17782"
+    },
+    "HashCode": "880180196",
+    "Id": "22114201",
+    "MlsNumber": "C4833856",
+    "PublicRemarks": "Awe-Inspiring In Scale & Grandeur In Toronto's Elite Bridle Path Community. Breathtaking Foyer With Dramatic Double Staircase & Iconic Handcrafted Detail Welcomes You Into This World-Class Residence. Spectacular Great Room With Soaring Ceilings. Fabulous Master Bedroom Oasis. Gorgeous Rotunda. Brilliant Natural Light. Timeless Craftsmanship And Exquisitely Proportioned Rooms. In-Law Suite With Elevator. Rare Opportunity For Multigenerational Living.**** EXTRAS **** Spk To La For More Info. Gated Entry To 2-Acre Estate With Manicured Gardens, Outdoor Fireplace, Tennis Court & Custom Fountain. Top Rated Private Schools & Easy Access To Walking/Cycling Trails, Luxury Shopping & Convenient Airport Access. (26948057)",
+    "LastUpdated": "2021-03-14 6:00:44 PM",
+    "Building": {
+        "BathroomTotal": "13",
+        "Bedrooms": "5 + 4",
+        "StoriesTotal": "2",
+        "Type": "House",
+        "Age": "",
+        "BasementDevelopment": "Finished",
+        "BasementFeatures": "Separate entrance",
+        "BasementType": "N/A (Finished)",
+        "ConstructionStyleAttachment": "Detached",
+        "CoolingType": "Central air conditioning",
+        "ExteriorFinish": "Stone",
+        "HeatingFuel": "Natural gas",
+        "HeatingType": "Forced air (Natural gas)",
+        "Room": [
+            {
+                "Type": "Living room",
+                "Width": "6.17 m",
+                "Length": "8.56 m",
+                "Level": "Main level",
+                "Dimension": "8.56 m x 6.17 m"
+            },
+            ...
+        ],
+        "DisplayAsYears": "2",
+        "FireplacePresent": "Yes"
+    },
+    "Land": {
+        "SizeTotal": "246.38 x 353.63 FT ; Irregular"
+    },
+    "Individual": [
+        {
+            "IndividualID": 1411636,
+            "Name": "DEBRA FELDMAN",
+            "Organization": {
+                "OrganizationID": 276796,
+                "Name": "FOREST HILL REAL ESTATE INC.",
+                "Logo": "https://cdn.realtor.ca/organization/en-CA/TS637513416440000000/lowres/276796.jpg",
+                "Address": {
+                    "AddressText": "1440 DON MILLS RD STE 108|TORONTO, Ontario M3B3M1",
+                    "PermitShowAddress": true,
+                    "DisseminationArea": null
+                },
+                "Phones": [
+                    {
+                        "PhoneType": "Telephone",
+                        "PhoneNumber": "929-4343",
+                        "AreaCode": "416",
+                        "PhoneTypeId": "1"
+                    }
+                ],
+                "OrganizationType": "Firm",
+                "Designation": "Brokerage",
+                "PermitFreetextEmail": true,
+                "PermitShowListingLink": true,
+                "RelativeDetailsURL": "/office/firm/276796/forest-hill-real-estate-inc-1440-don-mills-rd-ste-108-toronto-ontario-m3b3m1",
+                "PhotoLastupdate": "2021-03-14 6:00:44 PM"
+            },
+            "Phones": [
+                {
+                    "PhoneType": "Telephone",
+                    "PhoneNumber": "929-4343",
+                    "AreaCode": "416",
+                    "PhoneTypeId": "1"
+                }
+            ],
+            "Websites": [
+                {
+                    "Website": "http://www.feldmanfinehomes.com",
+                    "WebsiteTypeId": "1"
+                }
+            ],
+            "Emails": [
+                {
+                    "ContactId": "455714084"
+                }
+            ],
+            "Photo": "https://cdn.realtor.ca/individual/TS637163341800000000/lowres/1122608.jpg",
+            "Position": "Salesperson",
+            "PermitFreetextEmail": true,
+            "FirstName": "DEBRA",
+            "LastName": "FELDMAN",
+            "CorporationDisplayTypeId": "0",
+            "PermitShowListingLink": true,
+            "RelativeDetailsURL": "/agent/1411636/debra-feldman-1440-don-mills-rd-ste-108-toronto-ontario-m3b3m1",
+            "AgentPhotoLastUpdated": "2020-02-03 13:43:00",
+            "PhotoHighRes": "https://cdn.realtor.ca/individual/TS637163341800000000/highres/1122608.jpg",
+            "RankMyAgentKey": "",
+            "RealSatisfiedKey": ""
+        },
+        ...
+    ],
+    "Property": {
+        "Price": "$29,800,000",
+        "Type": "Single Family",
+        "Address": {
+            "AddressText": "71 THE BRIDLE PATH|Toronto, Ontario M3B2B2",
+            "Longitude": "-79.3687317",
+            "Latitude": "43.7356304",
+            "CommunityName": "Bridle Path-Sunnybrook-York Mills",
+            "PermitShowAddress": true,
+            "DisseminationArea": "35202630"
+        },
+        "Photo": [
+            {
+                "SequenceId": "1",
+                "HighResPath": "https://cdn.realtor.ca/listing/TS637305224686800000/reb82/highres/6/c4833856_1.jpg",
+                "MedResPath": "https://cdn.realtor.ca/listing/TS637305224686800000/reb82/medres/6/c4833856_1.jpg",
+                "LowResPath": "https://cdn.realtor.ca/listing/TS637305224686800000/reb82/lowres/6/c4833856_1.jpg",
+                "LastUpdated": "2020-07-16 6:54:28 PM"
+            },
+            ...
+        ],
+        "Parking": [
+            {
+                "Name": "Garage"
+            }
+        ],
+        "ParkingSpaceTotal": "31",
+        "TypeId": "300",
+        "OwnershipType": "Freehold",
+        "AmmenitiesNearBy": "Hospital, Park, Public Transit",
+        "OwnershipTypeGroupIds": [
+            1
+        ],
+        "ParkingType": "Garage",
+        "PriceUnformattedValue": "29800000",
+        "PoolType": "Indoor pool",
+        "TransactionType": "For sale",
+        "TaxAmount": "$128,774.44"
+    },
+    "UploadedBy": "Toronto Regional Real Estate Board",
+    "Business": {},
+    "RelativeURLEn": "/real-estate/22114201/71-the-bridle-path-toronto-bridle-path-sunnybrook-york-mills",
+    "RelativeURLFr": "/immobilier/22114201/71-the-bridle-path-toronto",
+    "History": [],
+    "UploadedByWebsite": "http://www.trebhome.com/",
+    "UploadedByAddress": {
+        "AddressText": "1400 Don Mills Road, Toronto, Ontario M3B 3N1",
+        "PermitShowAddress": true,
+        "DisseminationArea": null
+    }
+}
+```
+
+This endpoint is used to get details information of specific property
+
+### HTTP Request
+
+`GET https://realtor-canadian-real-estate.p.rapidapi.com/properties/detail`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+ReferenceNumber | string (required) | The value of MlsNumber field from list-commercial or list-residential endpoints
+PropertyID | int (required) | The value of Id field from list-commercial or list-residential endpoints
+PreferedMeasurementUnit | int | 1-Metric&#124;2-Imperial
+CultureId | int | 1 - English&#124;2 - French
+
+## properties/get-statistics
+
+```shell
+curl "https://realtor-canadian-real-estate.p.rapidapi.com/properties/get-statistics?CultureId=1&Longitude=-85.8230136&Latitude=49.1241922" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: realtor-canadian-real-estate.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "ErrorCode": {
+        "Id": 200,
+        "Description": "Success - OK",
+        "ProductName": "! Push to PR-Stage - Realtor API (Maintenance)^30626 [Friday, March 26, 2021 9:52:23 AM]",
+        "Version": "1.0.7755.17831"
+    },
+    "Data": [
+        {
+            "key": "",
+            "value": [
+                {
+                    "key": "Daytime Population",
+                    "value": "204"
+                },
+                ...
+            ]
+        },
+        ...
+    ]
+}
+```
+
+This endpoint is used to get statistic information of surround area by GEO location
+
+### HTTP Request
+
+`GET https://realtor-canadian-real-estate.p.rapidapi.com/properties/get-statistics`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+Latitude | double (required) | Latitude of specific location
+Longitude | double (required) | Longitude of specific location
+CultureId | int | 1 - English&#124;2 - French
+
+## keywords/list
+
+```shell
+curl "https://realtor-canadian-real-estate.p.rapidapi.com/keywords/list" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: realtor-canadian-real-estate.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "ErrorCode": {
+        "Id": 200,
+        "Description": "Success - OK",
+        "ProductName": "! Push to PR-Stage - Realtor API (Maintenance)^30626 [Friday, March 26, 2021 9:52:23 AM]",
+        "Version": "1.0.7755.17831"
+    },
+    "Words": [
+        {
+            "Id": "1",
+            "Value": "Hot tub",
+            "CultureId": "1"
+        },
+        ...
+    ]
+}
+```
+
+This endpoint is used to list all supported tags/keywords for filtering
+
+### HTTP Request
+
+`GET https://realtor-canadian-real-estate.p.rapidapi.com/keywords/list`
