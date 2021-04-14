@@ -44,6 +44,10 @@ You then need to learn how to pass the token key via request HEADER as following
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 
+# Redirected issues
+
+Some of our private APIs get redirected to other links because of new update made by RapidAPI. Please see the short video clip at https://www.youtube.com/watch?v=Ypf_938bJzA to know how to overcome this issue and access the API normally.
+
 # Bloomberg API
 
 ## market/auto-complete
