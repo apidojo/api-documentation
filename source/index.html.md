@@ -1745,7 +1745,7 @@ age_min | int | Min age of home
 age_max | int | Max age of home
 lot_sqft_max | int | Max Lot/Acreage size
 lot_sqft_min | int | Min Lot/Acreage size
-prop_type | string | One of the followings (separated by comma for multiple values): single_family,multi_family,condo,mobile,land,farm,other
+prop_type | string | One of the followings (separated by comma for multiple values): single_family&#124;multi_family&#124;condo&#124;mobile&#124;land&#124;farm&#124;other
 sort | string | One of the followings : sold_date&#124;beds_high&#124;price_low&#124;price_high&#124;lot_sqft_high
 
 ## properties/v2/list-for-rent
@@ -1920,8 +1920,8 @@ baths_min | int | Min baths of properties
 beds_min | int | Min beds of properties
 price_min | int | Option filter by setting min price
 price_max | int | Option filter by setting max price
-prop_type | string | One of the followings (separated by comma for multiple values): single_family,multi_family,condo,mobile,land,farm,other
-prop_sub_type | string | One of the followings (separated by comma for multiple values): condo,cond_op,townhouse,co_op
+prop_type | string | One of the followings (separated by comma for multiple values): single_family&#124;multi_family&#124;condo&#124;mobile&#124;land&#124;farm&#124;other
+prop_sub_type | string | One of the followings (separated by comma for multiple values): condo&#124;cond_op&#124;townhouse&#124;co_op
 sort | string | One of the followings : relevance&#124;newest&#124;price_low&#124;price_high&#124;photos&#124;open_house_date&#124;sqft_high&#124;price_reduced_date
 allows_cats | boolean | false/true - Whether or not cats are allowed to live in properties
 allows_dogs | boolean | false/true - Whether or not dogs are allowed to live in properties
@@ -1929,7 +1929,7 @@ lot_sqft_max | int | Max Lot/Acreage size
 lot_sqft_min | int | Min Lot/Acreage size
 sqft_min | int | Min size of the properties
 sqft_max | int | Max size of the properties
-features | string | One of the followings (separated by comma for multiple values): recreation_facilities,swimming_pool,washer_dryer,garage_1_or_more,central_air,fireplace,spa_or_hot_tub,dishwasher,community_doorman,community_elevator,furnished,laundry_room,community_no_fee,community_outdoor_space,pets_allowed
+features | string | One of the followings (separated by comma for multiple values): recreation_facilities&#124;swimming_pool&#124;washer_dryer&#124;garage_1_or_more&#124;central_air&#124;fireplace&#124;spa_or_hot_tub&#124;dishwasher&#124;community_doorman&#124;community_elevator&#124;furnished&#124;laundry_room&#124;community_no_fee&#124;community_outdoor_space&#124;pets_allowed
 
 ## properties/v2/list-for-sale
 
@@ -2130,8 +2130,8 @@ sqft_min | int | Min size of the properties
 sqft_max | int | Max size of the properties
 lot_sqft_max | int | Max Lot/Acreage size
 lot_sqft_min | int | Min Lot/Acreage size
-prop_type | string | One of the followings (separated by comma for multiple values): single_family,multi_family,condo,mobile,land,farm,other
-prop_sub_type | string | One of the followings (separated by comma for multiple values): condo,cond_op,townhouse,co_op
+prop_type | string | One of the followings (separated by comma for multiple values): single_family&#124;multi_family&#124;condo&#124;mobile&#124;land&#124;farm&#124;other
+prop_sub_type | string | One of the followings (separated by comma for multiple values): condo&#124;cond_op&#124;townhouse&#124;co_op
 is_matterports | boolean | true/false - 3D tours only
 is_foreclosure | boolean | true/false - Foreclosures only
 has_open_house | boolean | true/false - Open houses only
@@ -2139,7 +2139,7 @@ is_pending | boolean | true/false - Pending only
 is_new_plan | boolean | true/false - Homes not yet built
 is_contingent | boolean | true/false - Contingent only
 is_new_construction | boolean | true/false - New construction only
-features | string | One of the followings (separated by comma for multiple values): garage_2_or_more,view,waterfront,golf_course_view,swimming_pool,cul_de_sac,hardwood_floors,basement,fireplace,energy_efficient,disability_features,dining_room,washer_dryer,family_room,den_or_office,game_room,central_air,central_heat,forced_air,single_story,two_or_more_stories,corner_lot,water_view,golf_course_lot_or_frontage,hill_or_mountain_view,ocean_view,city_view,lake_view,river_view,community_security_features,community_swimming_pool,community_boat_facilities,recreation_facilities,community_clubhouse,community_horse_facilities,community_tennis_court,community_park,community_golf,senior_community,community_spa_or_hot_tub,rv_or_boat_parking,horse_facilities,tennis_court,spa_or_hot_tub,garage_1_or_more,garage_3_or_more,carport
+features | string | One of the followings (separated by comma for multiple values): garage_2_or_more&#124;view&#124;waterfront&#124;golf_course_view&#124;swimming_pool&#124;cul_de_sac&#124;hardwood_floors&#124;basement&#124;fireplace&#124;energy_efficient&#124;disability_features&#124;dining_room&#124;washer_dryer&#124;family_room&#124;den_or_office&#124;game_room&#124;central_air&#124;central_heat&#124;forced_air&#124;single_story&#124;two_or_more_stories&#124;corner_lot&#124;water_view&#124;golf_course_lot_or_frontage&#124;hill_or_mountain_view&#124;ocean_view&#124;city_view&#124;lake_view&#124;river_view&#124;community_security_features&#124;community_swimming_pool&#124;community_boat_facilities&#124;recreation_facilities&#124;community_clubhouse&#124;community_horse_facilities&#124;community_tennis_court&#124;community_park&#124;community_golf&#124;senior_community&#124;community_spa_or_hot_tub&#124;rv_or_boat_parking&#124;horse_facilities&#124;tennis_court&#124;spa_or_hot_tub&#124;garage_1_or_more&#124;garage_3_or_more&#124;carport
 sort | string | One of the followings (separated by comma for multiple values): relevance&#124;newest&#124;price_low&#124;price_high&#124;photos&#124;open_house_date&#124;sqft_high&#124;price_reduced_date
 
 ## properties/v2/list-by-mls
@@ -3121,7 +3121,7 @@ age_min | int | Min age of home
 age_max | int | Max age of home
 lot_sqft_max | int | Max Lot/Acreage size
 lot_sqft_min | int | Min Lot/Acreage size
-prop_type | string | One of the followings (separated by comma for multiple values): single_family, condo, mobile, multi_family, farm, land
+prop_type | string | One of the followings (separated by comma for multiple values): single_family&#124; condo&#124; mobile&#124; multi_family&#124; farm&#124; land
 sort | string | One of the followings : sold_date&#124;beds_high&#124;price_low&#124;price_high&#124;lot_sqft_high
 
 ## properties/list-for-sale
@@ -3300,13 +3300,13 @@ sqft_min | int | Min size of the properties
 sqft_max | int | Max size of the properties
 lot_sqft_max | int | Max Lot/Acreage size
 lot_sqft_min | int | Min Lot/Acreage size
-prop_type | string | One of the followings (separated by comma for multiple values): single_family,condo,mobile,multi_family,farm,land
+prop_type | string | One of the followings (separated by comma for multiple values): single_family&#124;condo&#124;mobile&#124;multi_family&#124;farm&#124;land
 is_matterports | boolean | true/false - 3D tours only
 is_foreclosure | boolean | true/false - Foreclosures only
 is_pending | boolean | true/false - Pending only
 is_contingent | boolean | true/false - Contingent only
 is_new_construction | boolean | true/false - New construction only
-features | string | One of the followings (separated by comma for multiple values): basement,den_or_office,dining_room,family_room,game_room,washer_dryer,energy_efficient_home,central_air,central_heat,forced_air,carport,garage_1_or_more,garage_2_or_more,garage_3_or_more,rv_or_boat_parking,disability_features,fireplace,hardwood_floors,horse_facilities,spa_or_hot_tub,swimming_pool,tennis_court,single_story,two_or_more_stories,lease_option,pets_allowed,corner_lot,cul_de_sac,golf_course_lot_or_frontage,waterfront,city_view,golf_course_view,hill_mountain,lake_view,ocean_view,river_view,water_view,view,community_swimming_pool,community_boat_facilities,community_spa_or_hot_tub,community_tennis_court,community_golf,community_clubhouse,community_security_features,senior_community,community_horse_facilities,community_park,recreation_facilities,exercise_area
+features | string | One of the followings (separated by comma for multiple values): basement&#124;den_or_office&#124;dining_room&#124;family_room&#124;game_room&#124;washer_dryer&#124;energy_efficient_home&#124;central_air&#124;central_heat&#124;forced_air&#124;carport&#124;garage_1_or_more&#124;garage_2_or_more&#124;garage_3_or_more&#124;rv_or_boat_parking&#124;disability_features&#124;fireplace&#124;hardwood_floors&#124;horse_facilities&#124;spa_or_hot_tub&#124;swimming_pool&#124;tennis_court&#124;single_story&#124;two_or_more_stories&#124;lease_option&#124;pets_allowed&#124;corner_lot&#124;cul_de_sac&#124;golf_course_lot_or_frontage&#124;waterfront&#124;city_view&#124;golf_course_view&#124;hill_mountain&#124;lake_view&#124;ocean_view&#124;river_view&#124;water_view&#124;view&#124;community_swimming_pool&#124;community_boat_facilities&#124;community_spa_or_hot_tub&#124;community_tennis_court&#124;community_golf&#124;community_clubhouse&#124;community_security_features&#124;senior_community&#124;community_horse_facilities&#124;community_park&#124;recreation_facilities&#124;exercise_area
 sort | string | One of the followings (relevance &#124; price_low &#124; price_high &#124; photos &#124; newest &#124; open_house_date &#124; sqft_high &#124; price_reduced_date)
 
 ## properties/list-for-rent
@@ -3423,14 +3423,14 @@ baths_min | int | Min baths of properties
 beds_min | int | Min beds of properties
 price_min | int | Option filter by setting min price
 price_max | int | Option filter by setting max price
-prop_type | string | One of the followings (separated by comma for multiple values): apartment,single_family,mapi_condo_townhome,other
-sort | string | One of the followings : completeness,photos,freshest&#124;price_low&#124;price_high&#124;photos&#124;newest
+prop_type | string | One of the followings (separated by comma for multiple values): apartment&#124;single_family&#124;mapi_condo_townhome&#124;other
+sort | string | One of the followings : completeness&#124;photos&#124;freshest&#124;price_low&#124;price_high&#124;photos&#124;newest
 allows_cats | boolean | false/true - Whether or not cats are allowed to live in properties
 allows_dogs | boolean | false/true - Whether or not dogs are allowed to live in properties
-no_pets_allowed | boolean | true/false - Pets are allowed or not (cannot be used with allows_dogs, allows_cats)
+no_pets_allowed | boolean | true/false - Pets are allowed or not (cannot be used with allows_dogs&#124; allows_cats)
 sqft_min | int | Min size of the properties
 sqft_max | int | Max size of the properties
-mapi_community_features | string | One of the followings (separated by comma for multiple values): community_washer_dryer,community_parking,central_air,community_pool,community_gym
+mapi_community_features | string | One of the followings (separated by comma for multiple values): community_washer_dryer&#124;community_parking&#124;central_air&#124;community_pool&#124;community_gym
 listed_date_min | string | Date string format yyyy-MM-dd'T'HH:mm:ss'Z' , such as : 2019-08-01T16:24:40Z .The date from which the properties have been public
 
 ## properties/list-by-mls
