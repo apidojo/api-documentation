@@ -886,7 +886,7 @@ List news by category.
 ### URL Parameters
 
 Parameter | Type | Description
---------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 id | string (required) | One of the following is allowed markets&#124;technology&#124;view&#124;pursuits&#124;politics&#124;green&#124;citylab&#124;businessweek&#124;fixed-income&#124;hyperdrive&#124;cryptocurrencies&#124;wealth&#124;latest&#124;personalFinance&#124;quickTake&#124;world&#124;industries&#124;stocks&#124;currencies&#124;brexit
 
 ## news/list-by-region
