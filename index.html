@@ -410,6 +410,32 @@
                   </li>
               </ul>
           </li>
+          <li>
+            <a href="#realtor-ca-api" class="toc-h1 toc-link" data-title="Realtor CA API">Realtor CA API</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#locations-auto-complete-2" class="toc-h2 toc-link" data-title="locations/auto-complete">locations/auto-complete</a>
+                  </li>
+                  <li>
+                    <a href="#properties-list-commercial" class="toc-h2 toc-link" data-title="properties/list-commercial">properties/list-commercial</a>
+                  </li>
+                  <li>
+                    <a href="#properties-list-residential" class="toc-h2 toc-link" data-title="properties/list-residential">properties/list-residential</a>
+                  </li>
+                  <li>
+                    <a href="#properties-list-by-mls-2" class="toc-h2 toc-link" data-title="properties/list-by-mls">properties/list-by-mls</a>
+                  </li>
+                  <li>
+                    <a href="#properties-detail-2" class="toc-h2 toc-link" data-title="properties/detail">properties/detail</a>
+                  </li>
+                  <li>
+                    <a href="#properties-get-statistics" class="toc-h2 toc-link" data-title="properties/get-statistics">properties/get-statistics</a>
+                  </li>
+                  <li>
+                    <a href="#keywords-list" class="toc-h2 toc-link" data-title="keywords/list">keywords/list</a>
+                  </li>
+              </ul>
+          </li>
       </ul>
     </div>
     <div class="page-wrapper">
@@ -442,6 +468,8 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 <h1 id='redirected-issues'>Redirected issues</h1>
 <p>Some of our private APIs get redirected to other links because of new update made by RapidAPI. Please see the short video clip at <a href='https://www.youtube.com/watch?v=Ypf_938bJzA'  target='_blank'>https://www.youtube.com/watch?v=Ypf_938bJzA</a> to know how to overcome this issue and access the API normally.</p>
+
+<p>We have reported the issue to RapidAPI, we need to wait for them and a hot fix released.</p>
 <h1 id='bloomberg-api'>Bloomberg API</h1><h2 id='market-auto-complete'>market/auto-complete</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://bloomberg-market-and-financial-news.p.rapidapi.com/market/auto-complete?query=tesla"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-rapidapi-key: meowmeowmeow"</span>
   <span class="nt">-H</span> <span class="s2">"x-rapidapi-host: bloomberg-market-and-financial-news.p.rapidapi.com"</span>
@@ -5275,6 +5303,1181 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 <td>The latitude co-ordinate</td>
 </tr>
 </tbody></table>
+<h1 id='realtor-ca-api'>Realtor CA API</h1><h2 id='locations-auto-complete-2'>locations/auto-complete</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://realtor-canadian-real-estate.p.rapidapi.com/locations/auto-complete?Area=Quebec&amp;CultureId=1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-key: meowmeowmeow"</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-host: realtor-canadian-real-estate.p.rapidapi.com"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"ErrorCode"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success - Success - OK"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Via-Cache:False"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ProductName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"! Push to PR-Stage - Realtor API (Maintenance)^30626 [Friday, March 26, 2021 9:52:23 AM]"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.7755.17782"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"SubArea"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"Location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Quebec City, QC, Canada"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Longitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-71.2079809"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Latitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"46.8138783"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Height"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.25113899999999489</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Width"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.415504999999996</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"InternalResult"</span><span class="p">:</span><span class="w"> </span><span class="s2">"False"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Viewport"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"NorthEast"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"Latitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"46.9819379"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"Longitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-71.13394"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"SouthWest"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"Latitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"46.7307989"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"Longitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-71.549445"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"GEOId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"g30_f2m68c6b"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Polygons"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint is used to get auto complete suggestions by city, ward, street name</p>
+<h3 id='http-request-32'>HTTP Request</h3>
+<p><code>GET https://realtor-canadian-real-estate.p.rapidapi.com/locations/auto-complete</code></p>
+<h3 id='query-parameters-20'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Area</td>
+<td>string (required)</td>
+<td>City, ward, street name</td>
+</tr>
+<tr>
+<td>CultureId</td>
+<td>int</td>
+<td>1 - English&#124;2 - French</td>
+</tr>
+</tbody></table>
+<h2 id='properties-list-commercial'>properties/list-commercial</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://realtor-canadian-real-estate.p.rapidapi.com/properties/list-commercial?CultureId=1&amp;LatitudeMax=81.14747595814636&amp;LongitudeMax=-10.267941690981388&amp;LatitudeMin=-22.26872153207163&amp;LongitudeMin=-136.83037765324116&amp;TransactionTypeId=2&amp;PriceMin=0&amp;BedRange=0-0&amp;BathRange=0-0&amp;OpenHouse=false&amp;NumberOfDays=0&amp;RecordsPerPage=50&amp;CurrentPage=1&amp;SortBy=1&amp;SortOrder=D"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-key: meowmeowmeow"</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-host: realtor-canadian-real-estate.p.rapidapi.com"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"ErrorCode"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success - OK"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pins-Via-Cache:false;Sidebar-Items-Via-Cache:0;"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ProductName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"! Push to PR-Stage - Realtor API (Maintenance)^30626 [Friday, March 26, 2021 9:52:23 AM]"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.7755.17782"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Paging"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"RecordsPerPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"CurrentPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"TotalRecords"</span><span class="p">:</span><span class="w"> </span><span class="mi">49419</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"MaxRecords"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"TotalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"RecordsShowing"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Pins"</span><span class="p">:</span><span class="w"> </span><span class="mi">435</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21934857"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"MlsNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1214731"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"PublicRemarks"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Located in a central commercial zone on Burnwood Drive, this property is ready to be leased or owned. This building has approximately 10,000 square feet of space in total. The owner is willing to sell the building whole or will subdivide into individual units of typically 2000 square feet per unit. The building and or individual units is also available for lease. Financing is available for the whole building or for the individual units. (23149588)"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Building"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"SizeInterior"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10000 sqft"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Retail"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"Individual"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"IndividualID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1944382</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WAYNE SHEPPARD"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"Organization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"OrganizationID"</span><span class="p">:</span><span class="w"> </span><span class="mi">104938</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RE/MAX Realty Professionals Ltd. - Goose Bay"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"Logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.realtor.ca/organization/en-CA/TS637429401840000000/lowres/default/remaxoa.gif"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"Address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"AddressText"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P.O. Box 776, Station C|Happy Valley - Goose Bay, Newfoundland &amp; Labrador A0P1C0"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"PermitShowAddress"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"DisseminationArea"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"Phones"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="nl">"PhoneType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Telephone"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"PhoneNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"896-9234"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"AreaCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"709"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"PhoneTypeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+                            </span><span class="p">},</span><span class="w">
+                            </span><span class="err">...</span><span class="w">
+                        </span><span class="p">],</span><span class="w">
+                        </span><span class="nl">"OrganizationType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Firm"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"Designation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brokerage"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"PermitFreetextEmail"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"PermitShowListingLink"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"RelativeDetailsURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/office/firm/104938/remax-realty-professionals-ltd-goose-bay-po-box-776-station-c-happy-valley-goose-bay-newfoundland-labrador-a0p1c0"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"PhotoLastupdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-07 12:16:24 PM"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"Phones"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"PhoneType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Telephone"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"PhoneNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"896-9234"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"AreaCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"709"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"PhoneTypeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="err">...</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"Emails"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"ContactId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"452275500"</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"PermitFreetextEmail"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"FirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WAYNE"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"LastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SHEPPARD"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"CorporationDisplayTypeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"PermitShowListingLink"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"RelativeDetailsURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/agent/1944382/wayne-sheppard-po-box-776-station-c-happy-valley---goose-bay-newfoundland-labrador-a0p1c0"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"RankMyAgentKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"RealSatisfiedKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"Property"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"Price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$123,456,789"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Retail"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"Address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"AddressText"</span><span class="p">:</span><span class="w"> </span><span class="s2">"19-21 Burnwood Drive|Happy Valley - Goose Bay, Newfoundland &amp; Labrador A0P1C0"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"Longitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-60.384115"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"Latitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"53.308552"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"PermitShowAddress"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"DisseminationArea"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"Photo"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"SequenceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"HighResPath"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.realtor.ca/listings/TS637269670394830000/reb117/highres/1/1214731_1.jpg"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"MedResPath"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.realtor.ca/listings/TS637269670394830000/reb117/medres/1/1214731_1.jpg"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"LowResPath"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.realtor.ca/listings/TS637269670394830000/reb117/lowres/1/1214731_1.jpg"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"LastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-06-05 3:17:19 PM"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"TypeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"305"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"OwnershipType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freehold"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"ConvertedPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$123,456,789 "</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"OwnershipTypeGroupIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="mi">1</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"PriceUnformattedValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123456789"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"Business"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"BusinessSubType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Restaurant, Furniture/household, Specialty retail, Sales/service"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"BusinessType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Restaurant (Restaurant), Retail and Wholesale (Furniture/household), Retail and Wholesale (Specialty retail), Retail and Wholesale (Sales/service)"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"Land"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"SizeTotal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1/2 acre|10,890 - 21,799 sqft (1/4 - 1/2 ac)"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"PostalCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A0P1C0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"RelativeDetailsURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/real-estate/21934857/19-21-burnwood-drive-happy-valley-goose-bay"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"StatusId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"PhotoChangeDateUTC"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-06-05 7:17:19 PM"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Distance"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"RelativeURLEn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/real-estate/21934857/19-21-burnwood-drive-happy-valley-goose-bay"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"RelativeURLFr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/immobilier/21934857/19-21-burnwood-drive-happy-valley-goose-bay"</span><span class="w">
+        </span><span class="p">}</span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"Pins"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L1|24|-110"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"propertyId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-110"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"GroupingLevel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint is used to list commercial properties both for lease and for sale</p>
+<h3 id='http-request-33'>HTTP Request</h3>
+<p><code>GET https://realtor-canadian-real-estate.p.rapidapi.com/properties/list-commercial</code></p>
+<h3 id='query-parameters-21'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>LongitudeMin</td>
+<td>double (required)</td>
+<td>South West longitude</td>
+</tr>
+<tr>
+<td>LatitudeMin</td>
+<td>double (required)</td>
+<td>South West latitude</td>
+</tr>
+<tr>
+<td>LongitudeMax</td>
+<td>double (required)</td>
+<td>North East longitude</td>
+</tr>
+<tr>
+<td>LatitudeMax</td>
+<td>double (required)</td>
+<td>North East latitude</td>
+</tr>
+<tr>
+<td>CurrentPage</td>
+<td>int</td>
+<td>The current page on which items are displayed</td>
+</tr>
+<tr>
+<td>RecordsPerPage</td>
+<td>int</td>
+<td>Number items returned per request, max 50</td>
+</tr>
+<tr>
+<td>BuildingSizeRange</td>
+<td>string</td>
+<td>0-5000:0-5,000 sqft&#124;5001-10000:5,001-10,000 sqft&#124;10001-15000:10,001-15,000 sqft&#124;250001-0:Over 250,000 sqft</td>
+</tr>
+<tr>
+<td>BedRange</td>
+<td>string</td>
+<td>0-0:Any&#124;1-1:1&#124;1-0:1+&#124;2-2:2&#124;2-0:2+&#124;3-3:3&#124;3-0:3+&#124;4-4:4&#124;4-0:4+&#124;5-5:5&#124;5-0:5+</td>
+</tr>
+<tr>
+<td>BathRange</td>
+<td>string</td>
+<td>0-0:Any&#124;1-1:1&#124;1-0:1+&#124;2-2:2&#124;2-0:2+&#124;3-3:3&#124;3-0:3+&#124;4-4:4&#124;4-0:4+&#124;5-5:5&#124;5-0:5+</td>
+</tr>
+<tr>
+<td>UnitRange</td>
+<td>string</td>
+<td>0-0:Any&#124;1-1:1&#124;1-0:1+&#124;2-2:2&#124;2-0:2+&#124;3-3:3&#124;3-0:3+&#124;4-4:4&#124;4-0:4+&#124;5-5:5&#124;5-0:5+&#124;....&#124;9-0:9+</td>
+</tr>
+<tr>
+<td>LandSizeRange</td>
+<td>string</td>
+<td>0-0:Any&#124;1-0:1+ acres&#124;2-0:2+ acres&#124;5-0:5+ acres&#124;10-0:10+ acres&#124;50-0:50+ acres&#124;100-0:100+ acres&#124;200-0:200+ acres&#124;300-0:300+ acres&#124;400-0:400+ acres&#124;500-0:500+ acres&#124;1000-0:1000+ acres</td>
+</tr>
+<tr>
+<td>SortBy</td>
+<td>int</td>
+<td>1-Price($)&#124;6-Date&#124;11-Virtual Tour&#124;12-Open Houses&#124;13-More Photos</td>
+</tr>
+<tr>
+<td>SortOrder</td>
+<td>string</td>
+<td>A - ascending &#124; D - descending</td>
+</tr>
+<tr>
+<td>NumberOfDays</td>
+<td>int</td>
+<td>Listed since</td>
+</tr>
+<tr>
+<td>Keywords</td>
+<td>string</td>
+<td>Get suitable values from .../keywords/list endpoint, separated by comma for multiple keywords, Ex : Inlaw suite,Income suite</td>
+</tr>
+<tr>
+<td>BuildingTypeId</td>
+<td>int</td>
+<td>0-No Preference&#124;1-House&#124;2-Duplex&#124;3-Triplex&#124;5-Residential Commercial Mix&#124;6-Mobile Home&#124;12-Special Purpose&#124;14-Other&#124;16-Row / Townhouse&#124;17-Apartment&#124;19-Fourplex&#124;20-Garden Home&#124;26-Modular&#124;27-Manufactured Home/Mobile&#124;28-Commercial Apartment&#124;29-Manufactured Home</td>
+</tr>
+<tr>
+<td>OpenHouseStartDate</td>
+<td>string</td>
+<td>Format date as MM/dd/yyyy, ex : 03/20/2020</td>
+</tr>
+<tr>
+<td>OpenHouseEndDate</td>
+<td>string</td>
+<td>Format date as MM/dd/yyyy, ex : 03/31/2020</td>
+</tr>
+<tr>
+<td>OpenHouse</td>
+<td>boolean</td>
+<td>false/true - Need to use together with OpenHouseStartDate and OpenHouseEndDate parameters</td>
+</tr>
+<tr>
+<td>CultureId</td>
+<td>int</td>
+<td>1 - English&#124;2 - French</td>
+</tr>
+<tr>
+<td>FarmTypeId</td>
+<td>int</td>
+<td>0-No Preference&#124;1-Animal&#124;2-Boarding&#124;3-Cash Crop&#124;4-Feed Lot&#124;5-Nursery&#124;6-Market Gardening&#124;7-Hobby Farm&#124;8-Vineyard&#124;9-Orchard&#124;10-Greenhouse&#124;12-Mixed</td>
+</tr>
+<tr>
+<td>PriceMin</td>
+<td>int</td>
+<td>Filter by min price, applied when TransactionTypeId = 2</td>
+</tr>
+<tr>
+<td>PriceMax</td>
+<td>int</td>
+<td>Filter by max price, applied when TransactionTypeId = 2</td>
+</tr>
+<tr>
+<td>TransactionTypeId</td>
+<td>int</td>
+<td>2-For sale&#124;3-For lease</td>
+</tr>
+<tr>
+<td>ZoningTypeGroupId</td>
+<td>int</td>
+<td>1-Agricultural&#124;2-Commercial Mixed&#124;3-Commercial Office&#124;4-Commercial Retail&#124;5-Industrial&#124;6-Industrial-Heavy&#124;7-Industrial-Light&#124;8-Industrial-Medium&#124;9-Institutional&#124;10-Other&#124;11-Recreational&#124;12-Residential-High Density&#124;13-Residential-Low Density&#124;14-Residential - Medium Density</td>
+</tr>
+<tr>
+<td>ConstructionStyleId</td>
+<td>int</td>
+<td>0-No Preference&#124;1-Attached&#124;3-Detached&#124;5-Semi-detached&#124;7-Stacked&#124;9-Link</td>
+</tr>
+<tr>
+<td>PropertySearchTypeId</td>
+<td>int</td>
+<td>0-No Preference&#124;1-Residential&#124;2-Recreational&#124;3-Condo/Strata&#124;4-Agriculture&#124;5-Parking&#124;6-Vacant Land&#124;8-Multi Family</td>
+</tr>
+</tbody></table>
+<h2 id='properties-list-residential'>properties/list-residential</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://realtor-canadian-real-estate.p.rapidapi.com/properties/list-residential?CultureId=1&amp;LatitudeMax=43.8554579&amp;LongitudeMax=-79.1168971&amp;LatitudeMin=43.5810245&amp;LongitudeMin=-79.639219&amp;TransactionTypeId=2&amp;PriceMin=0&amp;RentMin=0&amp;BedRange=0-0&amp;BathRange=0-0&amp;OpenHouse=false&amp;NumberOfDays=0&amp;RecordsPerPage=50&amp;CurrentPage=1&amp;SortBy=1&amp;SortOrder=D"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-key: meowmeowmeow"</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-host: realtor-canadian-real-estate.p.rapidapi.com"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"ErrorCode"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success - OK"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pins-Via-Cache:false;Sidebar-Items-Via-Cache:0;"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ProductName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"! Push to PR-Stage - Realtor API (Maintenance)^30626 [Friday, March 26, 2021 9:52:23 AM]"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.7755.17782"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Paging"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"RecordsPerPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"CurrentPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"TotalRecords"</span><span class="p">:</span><span class="w"> </span><span class="mi">6038</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"MaxRecords"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"TotalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"RecordsShowing"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Pins"</span><span class="p">:</span><span class="w"> </span><span class="mi">1896</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22114201"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"MlsNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C4833856"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"PublicRemarks"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Awe-Inspiring In Scale &amp; Grandeur In Toronto's Elite Bridle Path Community. Breathtaking Foyer With Dramatic Double Staircase &amp; Iconic Handcrafted Detail Welcomes You Into This World-Class Residence. Spectacular Great Room With Soaring Ceilings. Fabulous Master Bedroom Oasis. Gorgeous Rotunda. Brilliant Natural Light. Timeless Craftsmanship And Exquisitely Proportioned Rooms. In-Law Suite With Elevator. Rare Opportunity For Multigenerational Living.**** EXTRAS **** Spk To La For More Info. Gated Entry To 2-Acre Estate With Manicured Gardens, Outdoor Fireplace, Tennis Court &amp; Custom Fountain. Top Rated Private Schools &amp; Easy Access To Walking/Cycling Trails, Luxury Shopping &amp; Convenient Airport Access. (26948057)"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Building"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"BathroomTotal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"Bedrooms"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5 + 4"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"StoriesTotal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"House"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"Individual"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"IndividualID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1411636</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEBRA FELDMAN"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"Organization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"OrganizationID"</span><span class="p">:</span><span class="w"> </span><span class="mi">276796</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FOREST HILL REAL ESTATE INC."</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"Logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.realtor.ca/organization/en-CA/TS637513416440000000/lowres/276796.jpg"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"Address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"AddressText"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1440 DON MILLS RD STE 108|TORONTO, Ontario M3B3M1"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"PermitShowAddress"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"DisseminationArea"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"Phones"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="nl">"PhoneType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Telephone"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"PhoneNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"929-4343"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"AreaCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"416"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"PhoneTypeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">],</span><span class="w">
+                        </span><span class="nl">"OrganizationType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Firm"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"Designation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brokerage"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"PermitFreetextEmail"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"PermitShowListingLink"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"RelativeDetailsURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/office/firm/276796/forest-hill-real-estate-inc-1440-don-mills-rd-ste-108-toronto-ontario-m3b3m1"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"PhotoLastupdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-14 6:00:44 PM"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"Phones"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"PhoneType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Telephone"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"PhoneNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"929-4343"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"AreaCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"416"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"PhoneTypeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"Websites"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"Website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.feldmanfinehomes.com"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"WebsiteTypeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"Emails"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"ContactId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"455714084"</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"Photo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.realtor.ca/individual/TS637163341800000000/lowres/1122608.jpg"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"Position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Salesperson"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"PermitFreetextEmail"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"FirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEBRA"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"LastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FELDMAN"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"CorporationDisplayTypeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"PermitShowListingLink"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"RelativeDetailsURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/agent/1411636/debra-feldman-1440-don-mills-rd-ste-108-toronto-ontario-m3b3m1"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"AgentPhotoLastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-03 13:43:00"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"PhotoHighRes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.realtor.ca/individual/TS637163341800000000/highres/1122608.jpg"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"RankMyAgentKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"RealSatisfiedKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"IndividualID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1897006</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MATHEW ADAM POTTENS"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"Organization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"OrganizationID"</span><span class="p">:</span><span class="w"> </span><span class="mi">276796</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FOREST HILL REAL ESTATE INC."</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"Logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.realtor.ca/organization/en-CA/TS637513416440000000/lowres/276796.jpg"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"Address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"AddressText"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1440 DON MILLS RD STE 108|TORONTO, Ontario M3B3M1"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"PermitShowAddress"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"DisseminationArea"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"Phones"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="nl">"PhoneType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Telephone"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"PhoneNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"929-4343"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"AreaCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"416"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"PhoneTypeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">],</span><span class="w">
+                        </span><span class="nl">"OrganizationType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Firm"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"Designation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brokerage"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"PermitFreetextEmail"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"PermitShowListingLink"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"RelativeDetailsURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/office/firm/276796/forest-hill-real-estate-inc-1440-don-mills-rd-ste-108-toronto-ontario-m3b3m1"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"PhotoLastupdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-14 6:00:44 PM"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"Phones"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"PhoneType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Telephone"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"PhoneNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"929-4343"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"AreaCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"416"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"PhoneTypeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"Emails"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"ContactId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"462983949"</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"Photo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.realtor.ca/individual/TS637159194600000000/lowres/1215009.jpg"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"Position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Broker"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"PermitFreetextEmail"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"FirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MATHEW ADAM"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"LastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POTTENS"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"CccMember"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"CorporationDisplayTypeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"PermitShowListingLink"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"RelativeDetailsURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/agent/1897006/mathew-adam-pottens-1440-don-mills-rd-ste-108-toronto-ontario-m3b3m1"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"AgentPhotoLastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-29 18:31:00"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"PhotoHighRes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.realtor.ca/individual/TS637159194600000000/highres/1215009.jpg"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"RankMyAgentKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"RealSatisfiedKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"Property"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"Price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$29,800,000"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Single Family"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"Address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"AddressText"</span><span class="p">:</span><span class="w"> </span><span class="s2">"71 THE BRIDLE PATH|Toronto, Ontario M3B2B2"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"Longitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-79.3687317"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"Latitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"43.7356304"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"PermitShowAddress"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"DisseminationArea"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"Photo"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"SequenceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"HighResPath"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.realtor.ca/listings/TS637305224686800000/reb82/highres/6/c4833856_1.jpg"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"MedResPath"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.realtor.ca/listings/TS637305224686800000/reb82/medres/6/c4833856_1.jpg"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"LowResPath"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.realtor.ca/listings/TS637305224686800000/reb82/lowres/6/c4833856_1.jpg"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"LastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-16 6:54:28 PM"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"Parking"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Garage"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"ParkingSpaceTotal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"31"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"TypeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"OwnershipType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freehold"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"AmmenitiesNearBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hospital, Park, Public Transit"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"ConvertedPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$29,800,000 "</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"OwnershipTypeGroupIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="mi">1</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"ParkingType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Garage"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"PriceUnformattedValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"29800000"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"Business"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+            </span><span class="nl">"Land"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"SizeTotal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"246.38 x 353.63 FT ; Irregular"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"PostalCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"M3B2B2"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"RelativeDetailsURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/real-estate/22114201/71-the-bridle-path-toronto-bridle-path-sunnybrook-york-mills"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"StatusId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"PriceChangeDateUTC"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-19 7:15:27 PM"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"PhotoChangeDateUTC"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-16 10:54:29 PM"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Distance"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"RelativeURLEn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/real-estate/22114201/71-the-bridle-path-toronto-bridle-path-sunnybrook-york-mills"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"RelativeURLFr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/immobilier/22114201/71-the-bridle-path-toronto"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"Pins"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L9|43.595|-79.5"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"propertyId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-79.5"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"43.595"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"GroupingLevel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint is used to list residential properties both for rent and for sale</p>
+<h3 id='http-request-34'>HTTP Request</h3>
+<p><code>GET https://realtor-canadian-real-estate.p.rapidapi.com/properties/list-residential</code></p>
+<h3 id='query-parameters-22'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>LongitudeMin</td>
+<td>double (required)</td>
+<td>South West longitude</td>
+</tr>
+<tr>
+<td>LatitudeMin</td>
+<td>double (required)</td>
+<td>South West latitude</td>
+</tr>
+<tr>
+<td>LongitudeMax</td>
+<td>double (required)</td>
+<td>North East longitude</td>
+</tr>
+<tr>
+<td>LatitudeMax</td>
+<td>double (required)</td>
+<td>North East latitude</td>
+</tr>
+<tr>
+<td>CurrentPage</td>
+<td>int</td>
+<td>The current page on which items are displayed</td>
+</tr>
+<tr>
+<td>RecordsPerPage</td>
+<td>int</td>
+<td>Number items returned per request, max 50</td>
+</tr>
+<tr>
+<td>BuildingSizeRange</td>
+<td>string</td>
+<td>0-5000:0-5,000 sqft&#124;5001-10000:5,001-10,000 sqft&#124;10001-15000:10,001-15,000 sqft&#124;250001-0:Over 250,000 sqft</td>
+</tr>
+<tr>
+<td>BedRange</td>
+<td>string</td>
+<td>0-0:Any&#124;1-1:1&#124;1-0:1+&#124;2-2:2&#124;2-0:2+&#124;3-3:3&#124;3-0:3+&#124;4-4:4&#124;4-0:4+&#124;5-5:5&#124;5-0:5+</td>
+</tr>
+<tr>
+<td>BathRange</td>
+<td>string</td>
+<td>0-0:Any&#124;1-1:1&#124;1-0:1+&#124;2-2:2&#124;2-0:2+&#124;3-3:3&#124;3-0:3+&#124;4-4:4&#124;4-0:4+&#124;5-5:5&#124;5-0:5+</td>
+</tr>
+<tr>
+<td>UnitRange</td>
+<td>string</td>
+<td>0-0:Any&#124;1-1:1&#124;1-0:1+&#124;2-2:2&#124;2-0:2+&#124;3-3:3&#124;3-0:3+&#124;4-4:4&#124;4-0:4+&#124;5-5:5&#124;5-0:5+&#124;....&#124;9-0:9+</td>
+</tr>
+<tr>
+<td>LandSizeRange</td>
+<td>string</td>
+<td>0-0:Any&#124;1-0:1+ acres&#124;2-0:2+ acres&#124;5-0:5+ acres&#124;10-0:10+ acres&#124;50-0:50+ acres&#124;100-0:100+ acres&#124;200-0:200+ acres&#124;300-0:300+ acres&#124;400-0:400+ acres&#124;500-0:500+ acres&#124;1000-0:1000+ acres</td>
+</tr>
+<tr>
+<td>ZoningTypeGroupId</td>
+<td>int</td>
+<td>1-Agricultural&#124;2-Commercial Mixed&#124;3-Commercial Office&#124;4-Commercial Retail&#124;5-Industrial&#124;6-Industrial-Heavy&#124;7-Industrial-Light&#124;8-Industrial-Medium&#124;9-Institutional&#124;10-Other&#124;11-Recreational&#124;12-Residential-High Density&#124;13-Residential-Low Density&#124;14-Residential - Medium Density</td>
+</tr>
+<tr>
+<td>ParkingTypeId</td>
+<td>int</td>
+<td>1-Attached garage&#124;2-Integrated garage&#124;3-Detached garage&#124;4-Garage&#124;5-Carport&#124;6-Underground&#124;7-Indoor&#124;8-Open&#124;9-Covered&#124;10-Parking pad&#124;11-Paved Yard&#124;35-Boat House&#124;36-Concrete&#124;37-Heated Garage</td>
+</tr>
+<tr>
+<td>RentMin</td>
+<td>int</td>
+<td>Filter by min price, applied when TransactionTypeId = 3</td>
+</tr>
+<tr>
+<td>RentMax</td>
+<td>int</td>
+<td>Filter by max price, applied when TransactionTypeId = 3</td>
+</tr>
+<tr>
+<td>PriceMin</td>
+<td>int</td>
+<td>Filter by min price, applied when TransactionTypeId = 2</td>
+</tr>
+<tr>
+<td>PriceMax</td>
+<td>int</td>
+<td>Filter by min price, applied when TransactionTypeId = 2</td>
+</tr>
+<tr>
+<td>TransactionTypeId</td>
+<td>int</td>
+<td>2-For sale&#124;3-For rent</td>
+</tr>
+<tr>
+<td>NumberOfDays</td>
+<td>int</td>
+<td>Listed since</td>
+</tr>
+<tr>
+<td>OpenHouseStartDate</td>
+<td>string</td>
+<td>Format date as MM/dd/yyyy, ex : 03/20/2020</td>
+</tr>
+<tr>
+<td>OpenHouseEndDate</td>
+<td>string</td>
+<td>Format date as MM/dd/yyyy, ex : 03/31/2020</td>
+</tr>
+<tr>
+<td>OpenHouse</td>
+<td>boolean</td>
+<td>false/true - Need to use together with OpenHouseStartDate and OpenHouseEndDate parameters</td>
+</tr>
+<tr>
+<td>CultureId</td>
+<td>int</td>
+<td>1 - English&#124;2 - French</td>
+</tr>
+<tr>
+<td>SortOrder</td>
+<td>string</td>
+<td>A - ascending &#124; D - descending</td>
+</tr>
+<tr>
+<td>SortBy</td>
+<td>int</td>
+<td>1-Price($)&#124;6-Date&#124;11-Virtual Tour&#124;12-Open Houses&#124;13-More Photos</td>
+</tr>
+<tr>
+<td>BuildingTypeId</td>
+<td>int</td>
+<td>0-No Preference&#124;1-House&#124;2-Duplex&#124;3-Triplex&#124;5-Residential Commercial Mix&#124;6-Mobile Home&#124;12-Special Purpose&#124;14-Other&#124;16-Row / Townhouse&#124;17-Apartment&#124;19-Fourplex&#124;20-Garden Home&#124;26-Modular&#124;27-Manufactured Home/Mobile&#124;28-Commercial Apartment&#124;29-Manufactured Home</td>
+</tr>
+<tr>
+<td>Keywords</td>
+<td>string</td>
+<td>Get suitable values from .../keywords/list endpoint, separated by comma for multiple keywords, Ex : Inlaw suite,Income suite</td>
+</tr>
+<tr>
+<td>FarmTypeId</td>
+<td>int</td>
+<td>0-No Preference&#124;1-Animal&#124;2-Boarding&#124;3-Cash Crop&#124;4-Feed Lot&#124;5-Nursery&#124;6-Market Gardening&#124;7-Hobby Farm&#124;8-Vineyard&#124;9-Orchard&#124;10-Greenhouse&#124;12-Mixed</td>
+</tr>
+<tr>
+<td>PropertySearchTypeId</td>
+<td>int</td>
+<td>0-No Preference&#124;1-Residential&#124;2-Recreational&#124;3-Condo/Strata&#124;4-Agriculture&#124;5-Parking&#124;6-Vacant Land&#124;8-Multi Family</td>
+</tr>
+<tr>
+<td>ConstructionStyleId</td>
+<td>int</td>
+<td>0-No Preference&#124;1-Attached&#124;3-Detached&#124;5-Semi-detached&#124;7-Stacked&#124;9-Link</td>
+</tr>
+</tbody></table>
+<h2 id='properties-list-by-mls-2'>properties/list-by-mls</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://realtor-canadian-real-estate.p.rapidapi.com/properties/list-by-mls?CultureId=1&amp;ReferenceNumber=C4833856"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-key: meowmeowmeow"</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-host: realtor-canadian-real-estate.p.rapidapi.com"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"ErrorCode"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success - OK"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pins-Via-Cache:false;Sidebar-Items-Via-Cache:0;"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ProductName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"! Push to PR-Stage - Realtor API (Maintenance)^30626 [Friday, March 26, 2021 9:52:23 AM]"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.7755.17831"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Paging"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"RecordsPerPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"CurrentPage"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"TotalRecords"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"MaxRecords"</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"TotalPages"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"RecordsShowing"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Pins"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Results"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22114201"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"MlsNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C4833856"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"PublicRemarks"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Awe-Inspiring In Scale &amp; Grandeur In Toronto's Elite Bridle Path Community. Breathtaking Foyer With Dramatic Double Staircase &amp; Iconic Handcrafted Detail Welcomes You Into This World-Class Residence. Spectacular Great Room With Soaring Ceilings. Fabulous Master Bedroom Oasis. Gorgeous Rotunda. Brilliant Natural Light. Timeless Craftsmanship And Exquisitely Proportioned Rooms. In-Law Suite With Elevator. Rare Opportunity For Multigenerational Living.**** EXTRAS **** Spk To La For More Info. Gated Entry To 2-Acre Estate With Manicured Gardens, Outdoor Fireplace, Tennis Court &amp; Custom Fountain. Top Rated Private Schools &amp; Easy Access To Walking/Cycling Trails, Luxury Shopping &amp; Convenient Airport Access. (26948057)"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Building"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"BathroomTotal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"Bedrooms"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5 + 4"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"StoriesTotal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"House"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"Individual"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"IndividualID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1411636</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEBRA FELDMAN"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"Organization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"OrganizationID"</span><span class="p">:</span><span class="w"> </span><span class="mi">276796</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FOREST HILL REAL ESTATE INC."</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"Logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.realtor.ca/organization/en-CA/TS637513416440000000/lowres/276796.jpg"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"Address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"AddressText"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1440 DON MILLS RD STE 108|TORONTO, Ontario M3B3M1"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"PermitShowAddress"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"DisseminationArea"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="nl">"Phones"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="nl">"PhoneType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Telephone"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"PhoneNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"929-4343"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"AreaCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"416"</span><span class="p">,</span><span class="w">
+                                </span><span class="nl">"PhoneTypeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">],</span><span class="w">
+                        </span><span class="nl">"OrganizationType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Firm"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"Designation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brokerage"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"PermitFreetextEmail"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"PermitShowListingLink"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"RelativeDetailsURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/office/firm/276796/forest-hill-real-estate-inc-1440-don-mills-rd-ste-108-toronto-ontario-m3b3m1"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"PhotoLastupdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-14 6:00:44 PM"</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="nl">"Phones"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"PhoneType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Telephone"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"PhoneNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"929-4343"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"AreaCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"416"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"PhoneTypeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"Websites"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"Website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.feldmanfinehomes.com"</span><span class="p">,</span><span class="w">
+                            </span><span class="nl">"WebsiteTypeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"Emails"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nl">"ContactId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"455714084"</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                    </span><span class="p">],</span><span class="w">
+                    </span><span class="nl">"Photo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.realtor.ca/individual/TS637163341800000000/lowres/1122608.jpg"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"Position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Salesperson"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"PermitFreetextEmail"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"FirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEBRA"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"LastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FELDMAN"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"CorporationDisplayTypeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"PermitShowListingLink"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"RelativeDetailsURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/agent/1411636/debra-feldman-1440-don-mills-rd-ste-108-toronto-ontario-m3b3m1"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"AgentPhotoLastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-03 13:43:00"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"PhotoHighRes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.realtor.ca/individual/TS637163341800000000/highres/1122608.jpg"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"RankMyAgentKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"RealSatisfiedKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="err">...</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"Property"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"Price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$29,800,000"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Single Family"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"Address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"AddressText"</span><span class="p">:</span><span class="w"> </span><span class="s2">"71 THE BRIDLE PATH|Toronto, Ontario M3B2B2"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"Longitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-79.3687317"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"Latitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"43.7356304"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"PermitShowAddress"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"DisseminationArea"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"Photo"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"SequenceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"HighResPath"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.realtor.ca/listings/TS637305224686800000/reb82/highres/6/c4833856_1.jpg"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"MedResPath"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.realtor.ca/listings/TS637305224686800000/reb82/medres/6/c4833856_1.jpg"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"LowResPath"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.realtor.ca/listings/TS637305224686800000/reb82/lowres/6/c4833856_1.jpg"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"LastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-16 6:54:28 PM"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"Parking"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Garage"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"ParkingSpaceTotal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"31"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"TypeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"OwnershipType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freehold"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"AmmenitiesNearBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hospital, Park, Public Transit"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"ConvertedPrice"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$29,800,000 "</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"OwnershipTypeGroupIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="mi">1</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"ParkingType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Garage"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"PriceUnformattedValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"29800000"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"Business"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+            </span><span class="nl">"Land"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"SizeTotal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"246.38 x 353.63 FT ; Irregular"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"PostalCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"M3B2B2"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"RelativeDetailsURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/real-estate/22114201/71-the-bridle-path-toronto-bridle-path-sunnybrook-york-mills"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"StatusId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"PriceChangeDateUTC"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-19 7:15:27 PM"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"PhotoChangeDateUTC"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-16 10:54:29 PM"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Distance"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"RelativeURLEn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/real-estate/22114201/71-the-bridle-path-toronto-bridle-path-sunnybrook-york-mills"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"RelativeURLFr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/immobilier/22114201/71-the-bridle-path-toronto"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"Pins"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"GroupingLevel"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint is used to list properties by listing ID or MLS number</p>
+<h3 id='http-request-35'>HTTP Request</h3>
+<p><code>GET https://realtor-canadian-real-estate.p.rapidapi.com/properties/list-by-mls</code></p>
+<h3 id='query-parameters-23'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ReferenceNumber</td>
+<td>string (required)</td>
+<td>List ID or MLS number</td>
+</tr>
+<tr>
+<td>CultureId</td>
+<td>int</td>
+<td>1 - English&#124;2 - French</td>
+</tr>
+</tbody></table>
+<h2 id='properties-detail-2'>properties/detail</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://realtor-canadian-real-estate.p.rapidapi.com/properties/detail?CultureId=1&amp;ReferenceNumber=C4833856&amp;PropertyID=22114201&amp;PreferedMeasurementUnit=1"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-key: meowmeowmeow"</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-host: realtor-canadian-real-estate.p.rapidapi.com"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"ErrorCode"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success - OK"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ProductName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"! Push to PR-Stage - Realtor API (Maintenance)^30626 [Friday, March 26, 2021 9:52:23 AM]"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.7755.17782"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"HashCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"880180196"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22114201"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"MlsNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C4833856"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"PublicRemarks"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Awe-Inspiring In Scale &amp; Grandeur In Toronto's Elite Bridle Path Community. Breathtaking Foyer With Dramatic Double Staircase &amp; Iconic Handcrafted Detail Welcomes You Into This World-Class Residence. Spectacular Great Room With Soaring Ceilings. Fabulous Master Bedroom Oasis. Gorgeous Rotunda. Brilliant Natural Light. Timeless Craftsmanship And Exquisitely Proportioned Rooms. In-Law Suite With Elevator. Rare Opportunity For Multigenerational Living.**** EXTRAS **** Spk To La For More Info. Gated Entry To 2-Acre Estate With Manicured Gardens, Outdoor Fireplace, Tennis Court &amp; Custom Fountain. Top Rated Private Schools &amp; Easy Access To Walking/Cycling Trails, Luxury Shopping &amp; Convenient Airport Access. (26948057)"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"LastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-14 6:00:44 PM"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Building"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"BathroomTotal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Bedrooms"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5 + 4"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"StoriesTotal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"House"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Age"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"BasementDevelopment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Finished"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"BasementFeatures"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Separate entrance"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"BasementType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N/A (Finished)"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ConstructionStyleAttachment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Detached"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"CoolingType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Central air conditioning"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ExteriorFinish"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Stone"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"HeatingFuel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Natural gas"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"HeatingType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Forced air (Natural gas)"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Room"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Living room"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"Width"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6.17 m"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"Length"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8.56 m"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"Level"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Main level"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"Dimension"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8.56 m x 6.17 m"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="err">...</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"DisplayAsYears"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"FireplacePresent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yes"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Land"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"SizeTotal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"246.38 x 353.63 FT ; Irregular"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Individual"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"IndividualID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1411636</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEBRA FELDMAN"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Organization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"OrganizationID"</span><span class="p">:</span><span class="w"> </span><span class="mi">276796</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FOREST HILL REAL ESTATE INC."</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"Logo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.realtor.ca/organization/en-CA/TS637513416440000000/lowres/276796.jpg"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"Address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"AddressText"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1440 DON MILLS RD STE 108|TORONTO, Ontario M3B3M1"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"PermitShowAddress"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"DisseminationArea"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nl">"Phones"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nl">"PhoneType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Telephone"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"PhoneNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"929-4343"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"AreaCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"416"</span><span class="p">,</span><span class="w">
+                        </span><span class="nl">"PhoneTypeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nl">"OrganizationType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Firm"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"Designation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brokerage"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"PermitFreetextEmail"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"PermitShowListingLink"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"RelativeDetailsURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/office/firm/276796/forest-hill-real-estate-inc-1440-don-mills-rd-ste-108-toronto-ontario-m3b3m1"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"PhotoLastupdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-03-14 6:00:44 PM"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"Phones"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"PhoneType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Telephone"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"PhoneNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"929-4343"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"AreaCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"416"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"PhoneTypeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"Websites"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"Website"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.feldmanfinehomes.com"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"WebsiteTypeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"Emails"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"ContactId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"455714084"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nl">"Photo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.realtor.ca/individual/TS637163341800000000/lowres/1122608.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Salesperson"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"PermitFreetextEmail"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"FirstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEBRA"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"LastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FELDMAN"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"CorporationDisplayTypeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"PermitShowListingLink"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"RelativeDetailsURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/agent/1411636/debra-feldman-1440-don-mills-rd-ste-108-toronto-ontario-m3b3m1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"AgentPhotoLastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-03 13:43:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"PhotoHighRes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.realtor.ca/individual/TS637163341800000000/highres/1122608.jpg"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"RankMyAgentKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"RealSatisfiedKey"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"Property"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$29,800,000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Single Family"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"AddressText"</span><span class="p">:</span><span class="w"> </span><span class="s2">"71 THE BRIDLE PATH|Toronto, Ontario M3B2B2"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Longitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-79.3687317"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Latitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"43.7356304"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"CommunityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bridle Path-Sunnybrook-York Mills"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"PermitShowAddress"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"DisseminationArea"</span><span class="p">:</span><span class="w"> </span><span class="s2">"35202630"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"Photo"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"SequenceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"HighResPath"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.realtor.ca/listing/TS637305224686800000/reb82/highres/6/c4833856_1.jpg"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"MedResPath"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.realtor.ca/listing/TS637305224686800000/reb82/medres/6/c4833856_1.jpg"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"LowResPath"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://cdn.realtor.ca/listing/TS637305224686800000/reb82/lowres/6/c4833856_1.jpg"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"LastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-07-16 6:54:28 PM"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="err">...</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"Parking"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Garage"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"ParkingSpaceTotal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"31"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"TypeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"300"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"OwnershipType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Freehold"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"AmmenitiesNearBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hospital, Park, Public Transit"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"OwnershipTypeGroupIds"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="mi">1</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"ParkingType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Garage"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"PriceUnformattedValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"29800000"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"PoolType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Indoor pool"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"TransactionType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"For sale"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"TaxAmount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$128,774.44"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"UploadedBy"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Toronto Regional Real Estate Board"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Business"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="nl">"RelativeURLEn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/real-estate/22114201/71-the-bridle-path-toronto-bridle-path-sunnybrook-york-mills"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"RelativeURLFr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/immobilier/22114201/71-the-bridle-path-toronto"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"History"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"UploadedByWebsite"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.trebhome.com/"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"UploadedByAddress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"AddressText"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1400 Don Mills Road, Toronto, Ontario M3B 3N1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"PermitShowAddress"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"DisseminationArea"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint is used to get details information of specific property</p>
+<h3 id='http-request-36'>HTTP Request</h3>
+<p><code>GET https://realtor-canadian-real-estate.p.rapidapi.com/properties/detail</code></p>
+<h3 id='query-parameters-24'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ReferenceNumber</td>
+<td>string (required)</td>
+<td>The value of MlsNumber field from list-commercial or list-residential endpoints</td>
+</tr>
+<tr>
+<td>PropertyID</td>
+<td>int (required)</td>
+<td>The value of Id field from list-commercial or list-residential endpoints</td>
+</tr>
+<tr>
+<td>PreferedMeasurementUnit</td>
+<td>int</td>
+<td>1-Metric&#124;2-Imperial</td>
+</tr>
+<tr>
+<td>CultureId</td>
+<td>int</td>
+<td>1 - English&#124;2 - French</td>
+</tr>
+</tbody></table>
+<h2 id='properties-get-statistics'>properties/get-statistics</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://realtor-canadian-real-estate.p.rapidapi.com/properties/get-statistics?CultureId=1&amp;Longitude=-85.8230136&amp;Latitude=49.1241922"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-key: meowmeowmeow"</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-host: realtor-canadian-real-estate.p.rapidapi.com"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"ErrorCode"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success - OK"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ProductName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"! Push to PR-Stage - Realtor API (Maintenance)^30626 [Friday, March 26, 2021 9:52:23 AM]"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.7755.17831"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Daytime Population"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"204"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="err">...</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint is used to get statistic information of surround area by GEO location</p>
+<h3 id='http-request-37'>HTTP Request</h3>
+<p><code>GET https://realtor-canadian-real-estate.p.rapidapi.com/properties/get-statistics</code></p>
+<h3 id='query-parameters-25'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Latitude</td>
+<td>double (required)</td>
+<td>Latitude of specific location</td>
+</tr>
+<tr>
+<td>Longitude</td>
+<td>double (required)</td>
+<td>Longitude of specific location</td>
+</tr>
+<tr>
+<td>CultureId</td>
+<td>int</td>
+<td>1 - English&#124;2 - French</td>
+</tr>
+</tbody></table>
+<h2 id='keywords-list'>keywords/list</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://realtor-canadian-real-estate.p.rapidapi.com/keywords/list"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-key: meowmeowmeow"</span>
+  <span class="nt">-H</span> <span class="s2">"x-rapidapi-host: realtor-canadian-real-estate.p.rapidapi.com"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"ErrorCode"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success - OK"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ProductName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"! Push to PR-Stage - Realtor API (Maintenance)^30626 [Friday, March 26, 2021 9:52:23 AM]"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.7755.17831"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"Words"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"Id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hot tub"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"CultureId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint is used to list all supported tags/keywords for filtering</p>
+<h3 id='http-request-38'>HTTP Request</h3>
+<p><code>GET https://realtor-canadian-real-estate.p.rapidapi.com/keywords/list</code></p>
 
       </div>
       <div class="dark-box">
