@@ -46,7 +46,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 
 # Redirected issues
 
-Some of our private APIs get redirected to other links because of new update made by RapidAPI. Please see the short video clip at https://www.youtube.com/watch?v=Ypf_938bJzA to know how to overcome this issue and access the API normally.
+Some of our private APIs get redirected to other links because of new update made by RapidAPI. Please see the short video clip at <a href='https://www.youtube.com/watch?v=Ypf_938bJzA'  target='_blank'>https://www.youtube.com/watch?v=Ypf_938bJzA</a> to know how to overcome this issue and access the API normally.
 
 # Bloomberg API
 
