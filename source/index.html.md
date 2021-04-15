@@ -5823,7 +5823,7 @@ limit | int | The number of items per response (max 30)
 bookable_first | BOOLEAN | Book online first
 subcategory | int | Attraction category - Check for suitable values of filters_v2/filter_sections/filter_groups/options/value field (only one value is allowed at a time) returned right in this endpoint
 
- ## attractions/list-by-latlng
+## attractions/list-by-latlng
 
 ```shell
 curl "https://tripadvisor1.p.rapidapi.com/attractions/list-by-latlng?latitude=12.235588&longitude=109.19553&lunit=km&currency=USD&lang=en_US&limit=30&offset=60&distance=25" \
