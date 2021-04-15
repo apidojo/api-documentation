@@ -5221,3 +5221,877 @@ This endpoint is used to list all supported tags/keywords for filtering
 ### HTTP Request
 
 `GET https://realtor-canadian-real-estate.p.rapidapi.com/keywords/list`
+
+# Trip Advisor API
+ 
+## airports/search
+
+```shell
+curl "https://tripadvisor1.p.rapidapi.com/airports/search?query=Chiangmai&locale=en_US" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: tripadvisor1.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+    {
+        "code": "CNX",
+        "country_code": "TH",
+        "name": "Chiang Mai Intl Airport",
+        "city_name": "Chiang Mai",
+        "display_name": "Chiang Mai, Thailand - Chiang Mai Intl (CNX)",
+        "display_title": "Chiang Mai, Thailand",
+        "display_sub_title": "Chiang Mai Intl (CNX)",
+        "location_id": 293917,
+        "time_zone_name": "Asia/Bangkok",
+        "latitude": 18.771944,
+        "longitude": 98.96833
+    }
+]
+```
+
+This endpoint is used to search for airport code by countries', cities', etc... name
+
+### HTTP Request
+
+`GET https://tripadvisor1.p.rapidapi.com/airports/search`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+query | string (required) | Name of cities, districts, places, etc...
+locale | string | The language code
+
+## flights/create-session
+
+```shell
+curl "https://tripadvisor1.p.rapidapi.com/flights/create-session?o1=CNX&d1=DMK&dd1=2021-04-02&currency=USD&c=0&ta=1" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: tripadvisor1.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+Try calling a request yourself
+```
+
+This endpoint is used to create new session for searching flights tickets of all airlines around the world. The flight APIs need to use as following : 
+Firstly, you init a search session by using the create-session endpoint and get sid value.
+Secondly, you repeatedly call poll endpoint until the summary/c field is true to get final total flight by summary/nr value. o parameter must be 0 otherwise the summary field is not returned. 
+Thirdly, you repeatedly call poll endpoint with o increasing by n value step by step until you reach total flight.
+
+### HTTP Request
+
+`GET https://tripadvisor1.p.rapidapi.com/flights/create-session`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+o1 | string (required) | Airport code of first origin
+d1 | string (required) | The airport code of first destination location
+dd1 | string (required) | The date of departure from first origin, the format is yyyy-MM-dd. Ex : 2020-05-15
+currency | string | The currency code. Ex : USD
+o2 | string | The airport code of second origin location
+d2 | string | The airport code of second destination location
+dd2 | string | The departure date of second origin, the format is yyyy-MM-dd. Ex : 2020-05-15
+ta | NUMBER | The number of adults
+ts | NUMBER | The number of seniors
+tc | string | The age of every children separated by comma. Ex : 11,5
+c | int | Cabin code, such as 0 - Economy | 1- Business Class | 2 - First Class | 3 - Premium Economy 
+
+## flights/poll
+
+```shell
+curl "https://tripadvisor1.p.rapidapi.com/flights/poll?currency=USD&sid=3180233b-7155-4c56-84d4-646f5c7dd628.710&so=PRICE&am=&ca&mc=&ns=&n=15&o=0" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: tripadvisor1.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+Try calling a request yourself
+```
+
+This endpoint is used to Poll for more available flight data until the value of "summary/c" field returned right in this endpoint is true. The flight APIs need to use as following : Firstly, you init a search session by using the create-session endpoint and get sid value Secondly, you repeatedly call poll endpoint until the summary/c field is true to get final total flight by summary/nr value. o parameter must be 0 otherwise the summary field is not returned. Thirdly, you repeatedly call poll endpoint with o increasing by n value step by step until you reach total flight.
+
+### HTTP Request
+
+`GET https://tripadvisor1.p.rapidapi.com/flights/poll`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+sid | string (required) | The value of sid returned in flights/create-session endpoint
+currency | string | The currency code
+n | int | The number of items per response (max 15)
+o | int | The offset of items to be ignored in response for paging. Use summary/nr field returned in response to get total flights
+mc | string | Check for suitable value of "summary/cp" or "summary/ocp" field (separated by comma to specify multiple values) returned in flights/create-session or right in this endpoint
+ca | string | Check for suitable value of "summary/ap" field (separated by comma to specify multiple values) returned in flights/create-session or right in this endpoint
+ns | string | One of following NON_STOP | ONE_STOP | TWO_PLUS or separated by comma to specify multiple values
+so | string | Check for suitable value of "so" field returned in flights/create-session or right in this endpoint
+am | string | Check for suitable value of "itineraries/ac" field (separated by comma to specify multiple values) returned in flights/create-session or right in this endpoint
+
+## flights/get-booking-url
+
+```shell
+curl "https://tripadvisor1.p.rapidapi.com/flights/get-booking-url?searchId=5aaa20e5-d5c8-4cdd-a657-b6453bb80756.1483&searchHash=2188ff0ed4e8e4ee7a50dc32b229e11d&id=AgodaFlights|1|68&impressionId=372e5654-b873-4c26-859b-633c29f7ad84.93175&Orig=NYC&Dest=HAN" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: tripadvisor1.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+Try calling a request yourself
+```
+
+This endpoint is used to generate booking url relating to a specific flight
+
+### HTTP Request
+
+`GET https://tripadvisor1.p.rapidapi.com/flights/get-booking-url`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+searchHash | string (required) | The value of summary/sh field returned in response of .../flights/create-session endpoint. For example : 2188ff0ed4e8e4ee7a50dc32b229e11d
+Dest | string (required) | Airport code of destination. For example : NYC
+id | string (required) | The value of itineraries/l/id field returned in response of .../flights/poll endpoint. For example : AgodaFlights|1|68
+Orig | string (required) | Airport code of origin. For example : DMK
+searchId | string (required) | The value of search_params/sid field returned in response of .../flights/create-session endpoint. For example : 5aaa20e5-d5c8-4cdd-a657-b6453bb80756.1483
+impressionId | string | The value of itineraries/l/impressionId field returned in response of .../flights/poll endpoint. For example : 372e5654-b873-4c26-859b-633c29f7ad84.93175
+
+## locations/auto-complete
+
+```shell
+curl "https://tripadvisor1.p.rapidapi.com/locations/auto-complete?query=chiang mai&lang=en_US&units=km" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: tripadvisor1.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+Try calling a request yourself
+```
+
+This endpoint is used to list suggested locations by term or phrase
+
+### HTTP Request
+
+`GET https://tripadvisor1.p.rapidapi.com/locations/auto-complete`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+query | string (required) | Name of cities, districts, places, etc...
+lang | string | The language code
+units | string | One of the followings : km|mi
+
+## locations/search
+
+```shell
+curl "https://tripadvisor1.p.rapidapi.com/locations/search?query=eiffel tower&lang=en_US&units=km&location_id=1&currency=USD&limit=30&offset=0&sort=relevance" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: tripadvisor1.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+Try calling a request yourself
+```
+
+This endpoint is used to search for related cities, countries, and suggestions
+
+### HTTP Request
+
+`GET https://tripadvisor1.p.rapidapi.com/locations/search`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+location_id | string (required) | The value of location_id field returned right in this endpoint or .../locations/auto-complete endpoint
+limit | int | The number of items per response (max 30)
+sort | string | One of the followings : relevance|distance
+offset | int | The number of items to ignore for paging purpose
+lang | string | The language code
+currency | string | The currency code
+units | string | One of the followings : km|mi
+query | string | Name of cities, districts, places, etc... 
+
+## hotels/list
+
+```shell
+curl "https://tripadvisor1.p.rapidapi.com/hotels/list?location_id=12397144&rooms=1&adults=1&checkin=2020-10-13&nights=1&limit=30&offset=0&currency=USD&lang=en_US&sort=recommended" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: tripadvisor1.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+Try calling a request yourself
+```
+
+This endpoint is used to list all hotels around the world with options and filters
+
+### HTTP Request
+
+`GET https://tripadvisor1.p.rapidapi.com/hotels/list`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+location_id | int (required) | The value of location_id field that returned in locations/search endpoint
+adults | int (required) | The number of adults in all rooms
+checkin | string (required) | The check-in date at hotel, the format is yyyy-MM-dd. Ex : 2020-05-15
+rooms | int (required) | The number of rooms
+nights | int (required) | The number of nights to live
+limit | int | The number of items per response (max 30)
+offset | int | The number of items to ignore for paging purpose
+sort | string | One of the followings : recommended|popularity|price
+order | string | One of the followings : asc|desc, this param is used with sort by price
+currency | string | The currency code
+child_rm_ages | string | The age of every children separated by comma in all rooms. Ex : 7,10
+lang | string | The language code
+zff | string | Hotel Style - Check for suitable value of filters/zff field (separated by comma to filter by multiple values. Ex : 4,6) returned in hotel-filters/list endpoint
+pricesmin | int | Check for suitable price range in filters/prices_slider field returned in hotel-filters/list endpoint. For exmaple : $10 -> 10
+pricesmax | int | Check for suitable price range in filters/prices_slider field returned in hotel-filters/list endpoint. For exmaple : $120 -> 120
+subcategory | string | Check for suitable value of filters/subcategory field (separated by comma to filter by multiple values. Ex : hotel,bb,specialty) returned in hotel-filters/list endpoint
+hotel_class | string | Check for suitable value of filters/hotel_class field (separated by comma to filter by multiple values. Ex : 1,2,3) returned in hotel-filters/list endpoint
+amenities | string | Check for suitable value of filters/amenities field (separated by comma to filter by multiple values. Ex : beach,bar_lounge,airport_transportation) returned in hotel-filters/list endpoint
+
+## hotel-filters/list
+
+```shell
+curl "https://tripadvisor1.p.rapidapi.com/hotel-filters/list?location_id=297684&rooms=1&adults=1&checkin=2020-09-29&nights=1&limit=10&offset=0&currency=USD&lang=en_US&sort=recommended" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: tripadvisor1.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+Try calling a request yourself
+```
+
+This endpoint is used to list all available options and filters
+
+### HTTP Request
+
+`GET https://tripadvisor1.p.rapidapi.com/hotel-filters/list`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+location_id | int (required) | The value of location_id field that returned in locations/search endpoint
+checkin | string (required) | The check-in date at hotel
+adults | int (required) | The number of adults in all rooms
+rooms | int (required) | The number of rooms
+nights | int (required) | The number of nights to live
+order | string | One of the followings asc|desc, this param is used with sort by price
+sort | string | One of the followings recommended|popularity|price
+lang | string | The language code
+currency | string | The currency code
+child_rm_ages | string | The age of every children separated by comma in all rooms
+subcategory | string | Check for suitable value of "filters/subcategory" field (separated by comma to specify multiple values) returned in hotel-filters/list endpoint
+pricesmin | int | Check for suitable price range in "filters/prices_slider" field returned in hotel-filters/list endpoint. For exmaple : $10 -> 10
+pricesmax | int | Check for suitable price range in "filters/prices_slider" field returned in hotel-filters/list endpoint. For exmaple : $120 -> 120
+zff | string | Hotel Style - Check for suitable value of "filters/zff" field (separated by comma to specify multiple values) returned in hotel-filters/list endpoint
+hotel_class | string | Check for suitable value of "filters/hotel_class" field (separated by comma to specify multiple values) returned in hotel-filters/list endpoint
+amenities | string | Check for suitable value of "filters/amenities" field (separated by comma to specify multiple values) returned in hotel-filters/list endpoint
+
+## hotels/list-in-boundary
+
+```shell
+curl "https://tripadvisor1.p.rapidapi.com/hotels/list-in-boundary?bl_latitude=11.847676067496902&bl_longitude=108.4732099995017&tr_latitude=12.838442658260522&tr_longitude=109.14935935288666&rooms=1&adults=1&checkin=2020-06-12&nights=1&limit=50&offset=0&currency=USD&lang=en_US&sort=price&order=asc" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: tripadvisor1.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+Try calling a request yourself
+```
+
+This endpoint is used to list hotels by specifying coordinates of bottom left and top right of boundary
+
+### HTTP Request
+
+`GET https://tripadvisor1.p.rapidapi.com/hotels/list-in-boundary`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+tr_latitude | double (required) | Latitude of top right coordinate
+tr_longitude | double (required) | Longitude of top right coordinate
+bl_latitude | double (required) | Latitude of bottom left coordinate
+bl_longitude | double (required) | Longitude of bottom left coordinate
+adults | int | The number of adults in all rooms
+limit | int | The number of items per response (max 30)
+offset | int | The number of items to ignore for paging purpose
+currency | string | The currency code
+pricesmin | int | Check for suitable price range in filters/prices_slider field returned in hotel-filters/list endpoint. For exmaple : $10 -> 10
+pricesmax | int | Check for suitable price range in filters/prices_slider field returned in hotel-filters/list endpoint. For exmaple : $120 -> 120
+rooms | int | The number of rooms
+zff | string | Hotel Style - Check for suitable value of "filters/zff" field (separated by comma to specify multiple values) returned in hotel-filters/list endpoint
+subcategory | string | Check for suitable value of "filters/subcategory" field (separated by comma to specify multiple values) returned in hotel-filters/list endpoint
+hotel_class | string | Check for suitable value of "filters/hotel_class" field (separated by comma to specify multiple values) returned in hotel-filters/list endpoint
+child_rm_ages | string | The age of every children separated by comma in all rooms
+amenities | string | Check for suitable value of filters/amenities field (separated by comma to specify multiple values) returned in hotel-filters/list endpoint
+
+## hotels/list-by-latlng
+
+```shell
+curl "https://tripadvisor1.p.rapidapi.com/hotels/list-by-latlng?latitude=41.899297&longitude=-87.6256441&rooms=1&adults=1&checkin=2020-06-25&nights=1&limit=50&offset=0&currency=USD&lang=en_US&sort=price&order=asc" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: tripadvisor1.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+Try calling a request yourself
+```
+
+This endpoint is used to list hotels around a coordinate and radius
+
+### HTTP Request
+
+`GET https://tripadvisor1.p.rapidapi.com/hotels/list-by-latlng`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+latitude | double (required) | Latitude of coordinate
+longitude | double (required) | Longitude of coordinate
+nights | string | The number of nights to live
+checkin | string  | The check-in date at hotel
+adults | int | The number of adults in all rooms
+rooms | int | The number of rooms
+lang | string | The language code
+offset | int | The number of items to ignore for paging purpose
+limit | int | The number of items per response (max 30)
+distance | int | The radius to look for nearest places
+currency | string | The currency code
+hotel_class | string | Check for suitable value of filters/hotel_class field (separated by comma to specify multiple values) returned in hotel-filters/list endpoint
+amenities | string | Check for suitable value of filters/amenities field (separated by comma to specify multiple values) returned in hotel-filters/list endpoint
+child_rm_ages | string | The age of every children separated by comma in all rooms
+pricesmin | int | Check for suitable price range in filters/prices_slider field returned in hotel-filters/list endpoint. For exmaple : $10 -> 10
+pricesmax | int | Check for suitable price range in filters/prices_slider field returned in hotel-filters/list endpoint. For exmaple : $120 -> 120
+
+zff | string | Hotel Style - Check for suitable value of \\\"filters/zff\\\" field (separated by comma to specify multiple values) returned in hotel-filters/list endpoint
+subcategory | string | Check for suitable value of filters/subcategory field (separated by comma to specify multiple values) returned in hotel-filters/list endpoint
+
+## hotels/get-details
+
+```shell
+curl "https://tripadvisor1.p.rapidapi.com/hotels/get-details?location_id=8014024&rooms=1&adults=2&checkin=2020-06-24&nights=2&currency=USD&lang=en_US" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: tripadvisor1.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+Try calling a request yourself
+```
+
+This endpoint is used to get all information of hotels
+
+### HTTP Request
+
+`GET https://tripadvisor1.p.rapidapi.com/hotels/get-details`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+location_id | int (required) | The value of location_id field that returned in hotels/list endpoint
+checkin | string (required) | The check-in date at hotel
+adults | int (required) | The number of adults in all rooms
+nights | string (required) | The number of nights to live
+currency | string | The currency code
+rooms | int (required) | The number of rooms
+lang | string | The language code
+child_rm_ages | string | The age of every children separated by comma in all rooms
+
+## restaurants/list
+
+```shell
+curl "https://tripadvisor1.p.rapidapi.com/restaurants/list?location_id=293928&restaurant_mealtype=all&restaurant_tagcategory=10591&restaurant_tagcategory_standalone=10591&combined_food=all&limit=30&offset=30&lunit=km&currency=USD&lang=en_US" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: tripadvisor1.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+Try calling a request yourself
+```
+
+This endpoint is used to list restaurants by location_id
+
+### HTTP Request
+
+`GET https://tripadvisor1.p.rapidapi.com/restaurants/list`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+location_id | int (required) | The value of location_id field that returned in locations/search endpoint
+restaurant_tagcategory_standalone | string | Establishment Type - Check for suitable values of filters_v2/filter_sections/filter_groups/options/value field (separated by comma to specify multiple values) returned right in this endpoint
+lunit | string | One of the followings km|mi
+currency | string | The currency code
+offset | int | The number of items to ignore for paging purpose
+limit | int | The number of items per response (max 30)
+lang | string | The language code
+restaurant_tagcategory | string | Establishment Type - Check for suitable values of filters_v2/filter_sections/filter_groups/options/value field (separated by comma to specify multiple values) returned right in this endpoint
+dietary_restrictions | string | Dietary Restrictions - Check for suitable values of filters_v2/filter_sections/filter_groups/options/value field (separated by comma to specify multiple values) returned right in this endpoint
+prices_restaurants | string | Prices - Check for suitable values of filters_v2/filter_sections/filter_groups/options/value field (separated by comma to filter by multiple values. Ex : 10953,10955) returned right in this endpoint
+restaurant_mealtype | string | Meals - Check for suitable values of filters_v2/filter_sections/filter_groups/options/value field (separated by comma to filter by multiple values. Ex : 10598,10599) returned right in this endpoint
+min_rating | int | Min 3 - Max 5
+combined_food | string | Cuisine Type - Check for suitable values of filters_v2/filter_sections/filter_groups/options/value field (separated by comma to specify multiple values) returned right in this endpoint
+open_now | boolean | Only returns restaurants which are opening now
+restaurant_dining_options | string | Restaurant Features - Check for suitable values of filters_v2/filter_sections/filter_groups/options/value field (separated by comma to specify multiple values) returned right in this endpoint
+restaurant_styles | string | Restaurant Features - Check for suitable values of filters_v2/filter_sections/filter_groups/options/value field (separated by comma to specify multiple values) returned right in this endpoint
+
+## restaurants/list-in-boundary
+
+```shell
+curl "https://tripadvisor1.p.rapidapi.com/restaurants/list-in-boundary?bl_latitude=12.113245&bl_longitude=109.095887&tr_latitude=12.346705&tr_longitude=109.262909&restaurant_mealtype=all&restaurant_tagcategory=10591&restaurant_tagcategory_standalone=10591&dietary_restrictions=all&limit=30&offset=0&lunit=km&currency=USD&lang=en_US&combined_food=all" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: tripadvisor1.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+Try calling a request yourself
+```
+
+This endpoint is used to list restaurants by specifying coordinates of bottom left and top right of a boundary
+
+### HTTP Request
+
+`GET https://tripadvisor1.p.rapidapi.com/restaurants/list-in-boundary`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+bl_latitude | double (required) | Latitude of bottom left coordinate
+bl_longitude | double (required) | Longitude of bottom left coordinate
+tr_latitude | double (required) | Latitude of top right coordinate
+tr_longitude | double (required) | Longitude of top right coordinate
+dietary_restrictions | string | Dietary Restrictions - Check for suitable values of filters_v2/filter_sections/filter_groups/options/value field (separated by comma to specify multiple values) returned right in this endpoint
+min_rating | int | Rating - Min 3, max 5
+lunit | string | One of the followings km|mi
+combined_food | string | Cuisine Type - Check for suitable values of filters_v2/filter_sections/filter_groups/options/value field (separated by comma to specify multiple values) returned right in this endpoint
+restaurant_tagcategory | string | Establishment Type - Check for suitable values of filters_v2/filter_sections/filter_groups/options/value field (separated by comma to specify multiple values) returned right in this endpoint
+limit | int | The number of items per response (max 30)
+currency | string | The currency code
+offset | int | The number of items to ignore for paging purpose
+prices_restaurants | string | Prices - Check for suitable values of filters_v2/filter_sections/filter_groups/options/value field (separated by comma to filter by multiple values. Ex : 10953,10955) returned right in this endpoint
+restaurant_tagcategory_standalone | string | Establishment Type - Check for suitable values of filters_v2/filter_sections/filter_groups/options/value field (separated by comma to specify multiple values) returned right in this endpoint
+restaurant_mealtype | string | Meals - Check for suitable values of filters_v2/filter_sections/filter_groups/options/value field (separated by comma to filter by multiple values. Ex : 10598,10599) returned right in this endpoint
+lang | string | The language code
+restaurant_dining_options | string | Restaurant Features - Check for suitable values of filters_v2/filter_sections/filter_groups/options/value field (separated by comma to specify multiple values) returned right in this endpoint
+restaurant_styles | string | Restaurant Features - Check for suitable values of filters_v2/filter_sections/filter_groups/options/value field (separated by comma to specify multiple values) returned right in this endpoint
+open_now | boolean | Only returns restaurants which are opening now
+
+## restaurants/list-by-latlng
+
+```shell
+curl "https://tripadvisor1.p.rapidapi.com/restaurants/list-by-latlng?latitude=12.235588&longitude=109.19553&distance=2&restaurant_mealtype=all&restaurant_tagcategory=10591&restaurant_tagcategory_standalone=10591&dietary_restrictions=all&combined_food=all&lunit=km&currency=USD&lang=en_US&limit=30&offset=0" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: tripadvisor1.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+Try calling a request yourself
+```
+
+This endpoint is used to list restaurants by specifying an coordinate and radius
+
+### HTTP Request
+
+`GET https://tripadvisor1.p.rapidapi.com/restaurants/list-by-latlng`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+latitude | double (required) | Latitude of coordinate
+longitude | double (required) | Longitude of coordinate
+limit | int | The number of items per response (max 30)
+currency | string | The currency code
+restaurant_dining_options | string | Restaurant Features - Check for suitable values of filters_v2/filter_sections/filter_groups/options/value field (separated by comma to specify multiple values) returned right in this endpoint
+prices_restaurants | string | Prices - Check for suitable values of filters_v2/filter_sections/filter_groups/options/value field (separated by comma to specify multiple values) returned right in this endpoint
+restaurant_styles | string | Restaurant Features - Check for suitable values of filters_v2/filter_sections/filter_groups/options/value field (separated by comma to specify multiple values) returned right in this endpoint
+combined_food | string | Cuisine Type - Check for suitable values of filters_v2/filter_sections/filter_groups/options/value field (separated by comma to specify multiple values) returned right in this endpoint
+distance | int | The radius around specified coordinate (max 10)
+restaurant_tagcategory | string | Establishment Type - Check for suitable values of filters_v2/filter_sections/filter_groups/options/value field (separated by comma to specify multiple values) returned right in this endpoint
+restaurant_mealtype | string | Meals - Check for suitable values of filters_v2/filter_sections/filter_groups/options/value field (separated by comma to specify multiple values) returned right in this endpoint
+open_now | BOOLEAN | Only returns restaurants which are opening now
+offset | int | The number of items to ignore for paging purpose
+dietary_restrictions | string | Dietary Restrictions - Check for suitable values of filters_v2/filter_sections/filter_groups/options/value field (separated by comma to specify multiple values) returned right in this endpoint
+lunit | string | One of the followings km|mi
+lang | string | The language code
+restaurant_tagcategory_standalone | string | Establishment Type - Check for suitable values of filters_v2/filter_sections/filter_groups/options/value field (separated by comma to specify multiple values) returned right in this endpoint
+min_rating | int | Min 3 - Max 5
+
+## restaurants/get-details
+
+```shell
+curl "https://tripadvisor1.p.rapidapi.com/restaurants/get-details?location_id=9782025&currency=USD&lang=en_US" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: tripadvisor1.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+Try calling a request yourself
+```
+
+This endpoint is used to get all information of a specific restaurant by its location_id
+
+### HTTP Request
+
+`GET https://tripadvisor1.p.rapidapi.com/restaurants/get-details`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+location_id | int (required) | The value of location_id field that returned in restaurants/list endpoint
+lang | string | The language code
+currency | string | The currency code
+
+## attractions/list
+
+```shell
+curl "https://tripadvisor1.p.rapidapi.com/attractions/list?location_id=298571&subcategory=0&sort=ranking&lunit=km&currency=USD&lang=en_US&limit=30&offset=0" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: tripadvisor1.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+Try calling a request yourself
+```
+
+This endpoint is used to list attractions by location_id
+
+### HTTP Request
+
+`GET https://tripadvisor1.p.rapidapi.com/attractions/list`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+location_id | int (required) | The value of location_id field that returned in locations/search endpoint
+lang | string | The language code
+currency | string | The currency code
+sort | string | One of following recommended|ranking
+lunit | string | One of the followings km|mi
+offset | int | The number of items to ignore for paging purpose
+min_rating | int | Rating - Min 3 max 5
+limit | int | The number of items per response (max 30)
+bookable_first | BOOLEAN | Book online first
+subcategory | int | Attraction category - Check for suitable values of filters_v2/filter_sections/filter_groups/options/value field (only one value is allowed at a time) returned right in this endpoint
+
+ ## attractions/list-by-latlng
+
+```shell
+curl "https://tripadvisor1.p.rapidapi.com/attractions/list-by-latlng?latitude=12.235588&longitude=109.19553&lunit=km&currency=USD&lang=en_US&limit=30&offset=60&distance=25" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: tripadvisor1.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+Try calling a request yourself
+```
+
+This endpoint is used to list attractions by specifying an coordinate and radius
+
+### HTTP Request
+
+`GET https://tripadvisor1.p.rapidapi.com/attractions/list-by-latlng`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+longitude | double (required) | Longitude of coordinate
+latitude | double (required) | Latitude of coordinate
+lunit | string | One of the followings km|mi
+currency | string | The currency code
+offset | int | The number of items to ignore for paging purpose lunit
+limit | int | The number of items per response (max 30)
+distance | int | The radius around specified coordinate (max 25)
+lang | string | The language code
+
+## attractions/list-in-boundary
+
+```shell
+curl "https://tripadvisor1.p.rapidapi.com/attractions/list-in-boundary" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: tripadvisor1.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+Try calling a request yourself
+```
+
+This endpoint is used to list attractions by specifying coordinates of bottom left and top right of a boundary
+
+### HTTP Request
+
+`GET https://tripadvisor1.p.rapidapi.com/attractions/list-in-boundary`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+tr_longitude | double (required) | Longitude of top right coordinate
+tr_latitude | double (required) | Latitude of top right coordinate
+bl_longitude | double (required) | Longitude of bottom left coordinate
+bl_latitude | double (required) | Latitude of bottom left coordinate
+offset | int | The number of items to ignore for paging purpose
+min_rating | int | Rating - Min 3 max 5
+currency | string | The currency code
+bookable_first | boolean | Book online first
+limit | int | The number of items per response (max 30)
+lunit | string | One of the followings km|mi
+lang | string | The language code
+subcategory | int | Attraction category - Check for suitable values of filters&#95;v2/filter&#95;sections/filter&#95;groups/options/value field (only one value is allowed at a time) returned right in this endpoint
+
+## attractions/get-details
+
+```shell
+curl "https://tripadvisor1.p.rapidapi.com/attractions/get-details?location_id=1451754&currency=USD&lang=en_US" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: tripadvisor1.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+Try calling a request yourself
+```
+
+This endpoint is used to get all information of specific attracting location by its location_id
+
+### HTTP Request
+
+`GET https://tripadvisor1.p.rapidapi.com/attractions/get-details`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+location_id | int (required) | The value of location_id field that returned in attractions/list endpoint
+currency | string | The currency code
+lang | string | The language code
+
+## questions/list
+
+```shell
+curl "https://tripadvisor1.p.rapidapi.com/questions/list?location_id=8014024&limit=10&offset=10" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: tripadvisor1.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+Try calling a request yourself
+```
+
+This endpoint is used to list questions related to a location by its id
+
+### HTTP Request
+
+`GET https://tripadvisor1.p.rapidapi.com/questions/list`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+location_id | int (required) | The value of location_id field that returned in hotels/list, restaurants/list, or attractions/list endpoints
+offset | int | The number of items to ignore for paging purpose
+limit | int | The number of items per response (max 10)
+
+## answers/list
+
+```shell
+curl "https://tripadvisor1.p.rapidapi.com/answers/list?question_id=5283833&limit=10&offset=0" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: tripadvisor1.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+Try calling a request yourself
+```
+
+This endpoint is used to list answers related to a questions by its id
+
+### HTTP Request
+
+`GET https://tripadvisor1.p.rapidapi.com/answers/list`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+question_id | int (required) | The value of id field that returned in questions/list endpoint 
+offset | int | The number of items to ignore for paging purpose
+limit | int | The number of items per response (max 10)
+
+## photos/list
+
+```shell
+curl "https://tripadvisor1.p.rapidapi.com/photos/list?location_id=2233968&currency=USD&lang=en_US&limit=50&offset=0" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: tripadvisor1.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+Try calling a request yourself
+```
+
+This endpoint is used to list photos related to a location by its id
+
+### HTTP Request
+
+`GET https://tripadvisor1.p.rapidapi.com/photos/list`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+location_id | int (required) | The value of location_id field that returned in hotels/list, restaurants/list, or attractions/list endpoints
+offset | int | The number of items to ignore for paging purpose
+lang | string | The language code
+currency | string | The currency code
+limit | int | The number of items per response (max 50)
+
+## tips/list
+
+```shell
+curl "https://tripadvisor1.p.rapidapi.com/tips/list?location_id=8014024&currency=USD&lang=en_US&limit=20&offset=0" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: tripadvisor1.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+Try calling a request yourself
+```
+
+This endpoint is used to list tips of specific hotel by its location_id
+
+### HTTP Request
+
+`GET https://tripadvisor1.p.rapidapi.com/tips/list`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+location_id | int (required) | The value of location_id field that returned in hotels/list endpoint
+lang | string | The language code
+currency | string | The currency code
+offset | int | The number of items to ignore for paging purpose
+limit | int | The number of items per response (max 20)
+
+## reviews/list
+
+```shell
+curl "https://tripadvisor1.p.rapidapi.com/reviews/list?location_id=8014024&currency=USD&lang=en_US&limit=20&offset=0&keyword" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: tripadvisor1.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+Try calling a request yourself
+```
+
+This endpoint is used to list reviews related to a location by its location_id
+
+### HTTP Request
+
+`GET https://tripadvisor1.p.rapidapi.com/reviews/list`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+location_id | int (required) | The value of location_id field that returned in hotels/list, restaurants/list, or attractions/list endpoints
+limit | int | The number of items per response (max 20)
+currency | string | The currency code
+offset | int | The number of items to ignore for paging purpose
+keyword | string | Check for suitable value of text field returned in keywords/list endpoint
+lang | string | The language code
+
+## keywords/list
+
+```shell
+curl "https://tripadvisor1.p.rapidapi.com/keywords/list?location_id=8014024&limit=10&offset=0" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: tripadvisor1.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+Try calling a request yourself
+```
+
+This endpoint is used to list interesting keywords related to a specific location by its location_id
+
+### HTTP Request
+
+`GET https://tripadvisor1.p.rapidapi.com/keywords/list`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+location_id | int (required) | The value of location_id field that returned in hotels/list, restaurants/list, or attractions/list endpoints
+limit | int | The number of items per response (max 10)
+offset | int | The number of items to ignore for paging purpose 
