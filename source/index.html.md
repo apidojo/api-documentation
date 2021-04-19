@@ -345,7 +345,7 @@ Get data to draw historical price chart.
 Parameter | Type | Description
 --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 id | string (required) | The value of id field returned in .../market/auto-complete endpoint.
-interval | string (required) | One of the followings : d1&#124;d3&#124;ytd&#124;m1&#124;m3&#124;m6&#124;y1&#124;y5
+interval | string (required) | One of the followings : d1 &#124; d3 &#124; ytd &#124; m1 &#124; m3 &#124; m6 &#124; y1 &#124; y5
 
 ## market/get-full
 
@@ -535,7 +535,7 @@ Get related data for drawing chart.
 Parameter | Type | Description
 --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 id | string (required) | The value of id field returned in .../market/auto-complete endpoint
-interval | string (required) | One of the followings : d1&#124;d3&#124;ytd&#124;m1&#124;m3&#124;m6&#124;y1&#124;y5
+interval | string (required) | One of the followings : d1 &#124; d3 &#124; ytd &#124; m1 &#124; m3 &#124; m6 &#124; y1 &#124; y5
 
 ## stock/get-statistics
 
@@ -621,7 +621,7 @@ Get statistics information of stocks, indices,etc...
 Parameter | Type | Description
 --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 id | string (required) | The value of id field returned in .../market/auto-complete endpoint
-template | string | One of the following COMMODITY&#124;CURRENCY&#124;INDEX&#124;INDEXFUTURE&#124;RATE&#124;STOCK
+template | string | One of the following COMMODITY &#124; CURRENCY &#124; INDEX &#124; INDEXFUTURE &#124; RATE &#124; STOCK
 
 ## stock/get-financials
 
@@ -887,7 +887,7 @@ List news by category.
 
 Parameter | Type | Description
 --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
-id | string (required) | One of the following is allowed markets&#124;technology&#124;view&#124;pursuits&#124;politics&#124;green&#124;citylab&#124;businessweek&#124;fixed-income&#124;hyperdrive&#124;cryptocurrencies&#124;wealth&#124;latest&#124;personalFinance&#124;quickTake&#124;world&#124;industries&#124;stocks&#124;currencies&#124;brexit
+id | string (required) | One of the following is allowed markets &#124; technology &#124; view &#124; pursuits &#124; politics &#124; green &#124; citylab &#124; businessweek &#124; fixed-income &#124; hyperdrive &#124; cryptocurrencies &#124; wealth &#124; latest &#124; personalFinance &#124; quickTake &#124; world &#124; industries &#124; stocks &#124; currencies &#124; brexit
 
 ## news/list-by-region
 
@@ -1062,7 +1062,7 @@ List latest news from different categories and grouped by region.
 
 Parameter | Type | Description
 --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
-id | string (required) | One of the followings : home-v3&#124;asia-home-v3&#124;europe-home-v3&#124;middle-east-home-v3&#124;africa-home-v3&#124;canada-home-v3
+id | string (required) | One of the followings : home-v3 &#124; asia-home-v3 &#124; europe-home-v3 &#124; middle-east-home-v3 &#124; africa-home-v3 &#124; canada-home-v3
 
 ## stories/list
 
@@ -1105,7 +1105,7 @@ Get a list of stories related to a sticker.
 Parameter | Type | Description
 --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 id | string (required) | The value of id field returned in .../market/auto-complete endpoint
-template | string | One of the followings : COMMODITY&#124;CURRENCY&#124;INDEX&#124;INDEXFUTURE&#124;RATE&#124;STOCK
+template | string | One of the followings : COMMODITY &#124; CURRENCY &#124; INDEX &#124; INDEXFUTURE &#124; RATE &#124; STOCK
 
 ## stories/detail
 
@@ -1548,7 +1548,7 @@ agent_rating_min | int | Rating (max 5)
 price_min | int | Option filter by setting min price
 price_max | int | Option filter by setting max price
 agent_type | string | One of the followings or leave empty : buyer &#124; seller
-sort | int | One of the followings : recent_activity_high&#124;recently_sold_high&#124;for_sale_count_high&#124;recommendations_count_high&#124;agent_rating_high
+sort | int | One of the followings : recent_activity_high &#124; recently_sold_high &#124; for_sale_count_high &#124; recommendations_count_high &#124; agent_rating_high
 
 ## properties/v2/list-sold
 
@@ -1745,8 +1745,8 @@ age_min | int | Min age of home
 age_max | int | Max age of home
 lot_sqft_max | int | Max Lot/Acreage size
 lot_sqft_min | int | Min Lot/Acreage size
-prop_type | string | One of the followings (separated by comma for multiple values): single_family&#124;multi_family&#124;condo&#124;mobile&#124;land&#124;farm&#124;other
-sort | string | One of the followings : sold_date&#124;beds_high&#124;price_low&#124;price_high&#124;lot_sqft_high
+prop_type | string | One of the followings (separated by comma for multiple values): single_family &#124; multi_family &#124; condo &#124; mobile &#124; land &#124; farm &#124; other
+sort | string | One of the followings : sold_date &#124; beds_high &#124; price_low &#124; price_high &#124; lot_sqft_high
 
 ## properties/v2/list-for-rent
 
@@ -1920,16 +1920,16 @@ baths_min | int | Min baths of properties
 beds_min | int | Min beds of properties
 price_min | int | Option filter by setting min price
 price_max | int | Option filter by setting max price
-prop_type | string | One of the followings (separated by comma for multiple values): single_family&#124;multi_family&#124;condo&#124;mobile&#124;land&#124;farm&#124;other
-prop_sub_type | string | One of the followings (separated by comma for multiple values): condo&#124;cond_op&#124;townhouse&#124;co_op
-sort | string | One of the followings : relevance&#124;newest&#124;price_low&#124;price_high&#124;photos&#124;open_house_date&#124;sqft_high&#124;price_reduced_date
+prop_type | string | One of the followings (separated by comma for multiple values): single_family &#124; multi_family &#124; condo &#124; mobile &#124; land &#124; farm &#124; other
+prop_sub_type | string | One of the followings (separated by comma for multiple values): condo &#124; cond_op &#124; townhouse &#124; co_op
+sort | string | One of the followings : relevance &#124; newest &#124; price_low &#124; price_high &#124; photos &#124; open_house_date &#124; sqft_high &#124; price_reduced_date
 allows_cats | boolean | false/true - Whether or not cats are allowed to live in properties
 allows_dogs | boolean | false/true - Whether or not dogs are allowed to live in properties
 lot_sqft_max | int | Max Lot/Acreage size
 lot_sqft_min | int | Min Lot/Acreage size
 sqft_min | int | Min size of the properties
 sqft_max | int | Max size of the properties
-features | string | One of the followings (separated by comma for multiple values): recreation_facilities&#124;swimming_pool&#124;washer_dryer&#124;garage_1_or_more&#124;central_air&#124;fireplace&#124;spa_or_hot_tub&#124;dishwasher&#124;community_doorman&#124;community_elevator&#124;furnished&#124;laundry_room&#124;community_no_fee&#124;community_outdoor_space&#124;pets_allowed
+features | string | One of the followings (separated by comma for multiple values): recreation_facilities &#124; swimming_pool &#124; washer_dryer &#124; garage_1_or_more &#124; central_air &#124; fireplace &#124; spa_or_hot_tub &#124; dishwasher &#124; community_doorman &#124; community_elevator &#124; furnished &#124; laundry_room &#124; community_no_fee &#124; community_outdoor_space &#124; pets_allowed
 
 ## properties/v2/list-for-sale
 
@@ -2130,8 +2130,8 @@ sqft_min | int | Min size of the properties
 sqft_max | int | Max size of the properties
 lot_sqft_max | int | Max Lot/Acreage size
 lot_sqft_min | int | Min Lot/Acreage size
-prop_type | string | One of the followings (separated by comma for multiple values): single_family&#124;multi_family&#124;condo&#124;mobile&#124;land&#124;farm&#124;other
-prop_sub_type | string | One of the followings (separated by comma for multiple values): condo&#124;cond_op&#124;townhouse&#124;co_op
+prop_type | string | One of the followings (separated by comma for multiple values): single_family &#124; multi_family &#124; condo &#124; mobile &#124; land &#124; farm &#124; other
+prop_sub_type | string | One of the followings (separated by comma for multiple values): condo &#124; cond_op &#124; townhouse &#124; co_op
 is_matterports | boolean | true/false - 3D tours only
 is_foreclosure | boolean | true/false - Foreclosures only
 has_open_house | boolean | true/false - Open houses only
@@ -2139,8 +2139,8 @@ is_pending | boolean | true/false - Pending only
 is_new_plan | boolean | true/false - Homes not yet built
 is_contingent | boolean | true/false - Contingent only
 is_new_construction | boolean | true/false - New construction only
-features | string | One of the followings (separated by comma for multiple values): garage_2_or_more&#124;view&#124;waterfront&#124;golf_course_view&#124;swimming_pool&#124;cul_de_sac&#124;hardwood_floors&#124;basement&#124;fireplace&#124;energy_efficient&#124;disability_features&#124;dining_room&#124;washer_dryer&#124;family_room&#124;den_or_office&#124;game_room&#124;central_air&#124;central_heat&#124;forced_air&#124;single_story&#124;two_or_more_stories&#124;corner_lot&#124;water_view&#124;golf_course_lot_or_frontage&#124;hill_or_mountain_view&#124;ocean_view&#124;city_view&#124;lake_view&#124;river_view&#124;community_security_features&#124;community_swimming_pool&#124;community_boat_facilities&#124;recreation_facilities&#124;community_clubhouse&#124;community_horse_facilities&#124;community_tennis_court&#124;community_park&#124;community_golf&#124;senior_community&#124;community_spa_or_hot_tub&#124;rv_or_boat_parking&#124;horse_facilities&#124;tennis_court&#124;spa_or_hot_tub&#124;garage_1_or_more&#124;garage_3_or_more&#124;carport
-sort | string | One of the followings (separated by comma for multiple values): relevance&#124;newest&#124;price_low&#124;price_high&#124;photos&#124;open_house_date&#124;sqft_high&#124;price_reduced_date
+features | string | One of the followings (separated by comma for multiple values): garage_2_or_more &#124; view &#124; waterfront &#124; golf_course_view &#124; swimming_pool &#124; cul_de_sac &#124; hardwood_floors &#124; basement &#124; fireplace &#124; energy_efficient &#124; disability_features &#124; dining_room &#124; washer_dryer &#124; family_room &#124; den_or_office &#124; game_room &#124; central_air &#124; central_heat &#124; forced_air &#124; single_story &#124; two_or_more_stories &#124; corner_lot &#124; water_view &#124; golf_course_lot_or_frontage &#124; hill_or_mountain_view &#124; ocean_view &#124; city_view &#124; lake_view &#124; river_view &#124; community_security_features &#124; community_swimming_pool &#124; community_boat_facilities &#124; recreation_facilities &#124; community_clubhouse &#124; community_horse_facilities &#124; community_tennis_court &#124; community_park &#124; community_golf &#124; senior_community &#124; community_spa_or_hot_tub &#124; rv_or_boat_parking &#124; horse_facilities &#124; tennis_court &#124; spa_or_hot_tub &#124; garage_1_or_more &#124; garage_3_or_more &#124; carport
+sort | string | One of the followings (separated by comma for multiple values): relevance &#124; newest &#124; price_low &#124; price_high &#124; photos &#124; open_house_date &#124; sqft_high &#124; price_reduced_date
 
 ## properties/v2/list-by-mls
 
@@ -2325,7 +2325,7 @@ This endpoint is used to list properties by mls id
 Parameter | Type | Description
 --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 mls_id | string (required) | The MLS ID
-prop_status | string (required) | One of the followings : for_sale&#124;for_rent&#124;recently_sold
+prop_status | string (required) | One of the followings : for_sale &#124; for_rent &#124; recently_sold
 offset | int | The offset of items to be ignored in response for paging
 limit | int | The number of items to be responded in every request (max 10)
 
@@ -3121,8 +3121,8 @@ age_min | int | Min age of home
 age_max | int | Max age of home
 lot_sqft_max | int | Max Lot/Acreage size
 lot_sqft_min | int | Min Lot/Acreage size
-prop_type | string | One of the followings (separated by comma for multiple values): single_family&#124; condo&#124; mobile&#124; multi_family&#124; farm&#124; land
-sort | string | One of the followings : sold_date&#124;beds_high&#124;price_low&#124;price_high&#124;lot_sqft_high
+prop_type | string | One of the followings (separated by comma for multiple values): single_family &#124;  condo &#124;  mobile &#124;  multi_family &#124;  farm &#124;  land
+sort | string | One of the followings : sold_date &#124; beds_high &#124; price_low &#124; price_high &#124; lot_sqft_high
 
 ## properties/list-for-sale
 
@@ -3300,13 +3300,13 @@ sqft_min | int | Min size of the properties
 sqft_max | int | Max size of the properties
 lot_sqft_max | int | Max Lot/Acreage size
 lot_sqft_min | int | Min Lot/Acreage size
-prop_type | string | One of the followings (separated by comma for multiple values): single_family&#124;condo&#124;mobile&#124;multi_family&#124;farm&#124;land
+prop_type | string | One of the followings (separated by comma for multiple values): single_family &#124; condo &#124; mobile &#124; multi_family &#124; farm &#124; land
 is_matterports | boolean | true/false - 3D tours only
 is_foreclosure | boolean | true/false - Foreclosures only
 is_pending | boolean | true/false - Pending only
 is_contingent | boolean | true/false - Contingent only
 is_new_construction | boolean | true/false - New construction only
-features | string | One of the followings (separated by comma for multiple values): basement&#124;den_or_office&#124;dining_room&#124;family_room&#124;game_room&#124;washer_dryer&#124;energy_efficient_home&#124;central_air&#124;central_heat&#124;forced_air&#124;carport&#124;garage_1_or_more&#124;garage_2_or_more&#124;garage_3_or_more&#124;rv_or_boat_parking&#124;disability_features&#124;fireplace&#124;hardwood_floors&#124;horse_facilities&#124;spa_or_hot_tub&#124;swimming_pool&#124;tennis_court&#124;single_story&#124;two_or_more_stories&#124;lease_option&#124;pets_allowed&#124;corner_lot&#124;cul_de_sac&#124;golf_course_lot_or_frontage&#124;waterfront&#124;city_view&#124;golf_course_view&#124;hill_mountain&#124;lake_view&#124;ocean_view&#124;river_view&#124;water_view&#124;view&#124;community_swimming_pool&#124;community_boat_facilities&#124;community_spa_or_hot_tub&#124;community_tennis_court&#124;community_golf&#124;community_clubhouse&#124;community_security_features&#124;senior_community&#124;community_horse_facilities&#124;community_park&#124;recreation_facilities&#124;exercise_area
+features | string | One of the followings (separated by comma for multiple values): basement &#124; den_or_office &#124; dining_room &#124; family_room &#124; game_room &#124; washer_dryer &#124; energy_efficient_home &#124; central_air &#124; central_heat &#124; forced_air &#124; carport &#124; garage_1_or_more &#124; garage_2_or_more &#124; garage_3_or_more &#124; rv_or_boat_parking &#124; disability_features &#124; fireplace &#124; hardwood_floors &#124; horse_facilities &#124; spa_or_hot_tub &#124; swimming_pool &#124; tennis_court &#124; single_story &#124; two_or_more_stories &#124; lease_option &#124; pets_allowed &#124; corner_lot &#124; cul_de_sac &#124; golf_course_lot_or_frontage &#124; waterfront &#124; city_view &#124; golf_course_view &#124; hill_mountain &#124; lake_view &#124; ocean_view &#124; river_view &#124; water_view &#124; view &#124; community_swimming_pool &#124; community_boat_facilities &#124; community_spa_or_hot_tub &#124; community_tennis_court &#124; community_golf &#124; community_clubhouse &#124; community_security_features &#124; senior_community &#124; community_horse_facilities &#124; community_park &#124; recreation_facilities &#124; exercise_area
 sort | string | One of the followings (relevance &#124; price_low &#124; price_high &#124; photos &#124; newest &#124; open_house_date &#124; sqft_high &#124; price_reduced_date)
 
 ## properties/list-for-rent
@@ -3423,14 +3423,14 @@ baths_min | int | Min baths of properties
 beds_min | int | Min beds of properties
 price_min | int | Option filter by setting min price
 price_max | int | Option filter by setting max price
-prop_type | string | One of the followings (separated by comma for multiple values): apartment&#124;single_family&#124;mapi_condo_townhome&#124;other
-sort | string | One of the followings : completeness&#124;photos&#124;freshest&#124;price_low&#124;price_high&#124;photos&#124;newest
+prop_type | string | One of the followings (separated by comma for multiple values): apartment &#124; single_family &#124; mapi_condo_townhome &#124; other
+sort | string | One of the followings : completeness &#124; photos &#124; freshest &#124; price_low &#124; price_high &#124; photos &#124; newest
 allows_cats | boolean | false/true - Whether or not cats are allowed to live in properties
 allows_dogs | boolean | false/true - Whether or not dogs are allowed to live in properties
-no_pets_allowed | boolean | true/false - Pets are allowed or not (cannot be used with allows_dogs&#124; allows_cats)
+no_pets_allowed | boolean | true/false - Pets are allowed or not (cannot be used with allows_dogs &#124;  allows_cats)
 sqft_min | int | Min size of the properties
 sqft_max | int | Max size of the properties
-mapi_community_features | string | One of the followings (separated by comma for multiple values): community_washer_dryer&#124;community_parking&#124;central_air&#124;community_pool&#124;community_gym
+mapi_community_features | string | One of the followings (separated by comma for multiple values): community_washer_dryer &#124; community_parking &#124; central_air &#124; community_pool &#124; community_gym
 listed_date_min | string | Date string format yyyy-MM-dd'T'HH:mm:ss'Z' , such as : 2019-08-01T16:24:40Z .The date from which the properties have been public
 
 ## properties/list-by-mls
@@ -3593,7 +3593,7 @@ Parameter | Type | Description
 mls_id | string (required) | The MLS ID
 offset | int | The offset of items to be ignored in response for paging
 limit | int | The number of items to be responded in every request
-sort | string | One of the followings : price_low&#124;price_high&#124;photos&#124;newest&#124;open_house_date
+sort | string | One of the followings : price_low &#124; price_high &#124; photos &#124; newest &#124; open_house_date
 
 ## properties/list-similarities
 
@@ -3719,7 +3719,7 @@ This endpoint is used to list similar properties
 Parameter | Type | Description
 --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 property_id | string (required) | The value of property_id field returned in  .../properties/list-.... or  .../properties/v2/list-... endpoints.
-prop_status | string (required) | One of the followings : for_sale&#124;for_rent
+prop_status | string (required) | One of the followings : for_sale &#124; for_rent
 limit | int | The number of items responded 
 
 ## properties/detail
@@ -4152,7 +4152,7 @@ This endpoint is used to ...
 
 Parameter | Type | Description
 --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
-prop_status | string (required) | One of the followings : for_sale&#124;for_rent
+prop_status | string (required) | One of the followings : for_sale &#124; for_rent
 property_id | string (required) | The value of property_id field returned in  .../properties/list-.... or  .../properties/v2/list-... endpoints.
 listing_id | string | The value of listing_id field returned in  .../properties/list-.... or  .../properties/v2/list-... endpoints.
 
@@ -4340,7 +4340,7 @@ This endpoint is used to get auto complete suggestions by city, ward, street nam
 Parameter | Type | Description
 --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 Area | string (required) | City, ward, street name
-CultureId | int | 1 - English&#124;2 - French
+CultureId | int | 1 - English &#124; 2 - French
 
 
 
@@ -4507,27 +4507,27 @@ LongitudeMax | double (required) | North East longitude
 LatitudeMax | double (required) | North East latitude
 CurrentPage | int | The current page on which items are displayed 
 RecordsPerPage | int | Number items returned per request, max 50
-BuildingSizeRange | string | 0-5000:0-5,000 sqft&#124;5001-10000:5,001-10,000 sqft&#124;10001-15000:10,001-15,000 sqft&#124;250001-0:Over 250,000 sqft
-BedRange | string | 0-0:Any&#124;1-1:1&#124;1-0:1+&#124;2-2:2&#124;2-0:2+&#124;3-3:3&#124;3-0:3+&#124;4-4:4&#124;4-0:4+&#124;5-5:5&#124;5-0:5+
-BathRange | string | 0-0:Any&#124;1-1:1&#124;1-0:1+&#124;2-2:2&#124;2-0:2+&#124;3-3:3&#124;3-0:3+&#124;4-4:4&#124;4-0:4+&#124;5-5:5&#124;5-0:5+
-UnitRange | string | 0-0:Any&#124;1-1:1&#124;1-0:1+&#124;2-2:2&#124;2-0:2+&#124;3-3:3&#124;3-0:3+&#124;4-4:4&#124;4-0:4+&#124;5-5:5&#124;5-0:5+&#124;....&#124;9-0:9+
-LandSizeRange | string | 0-0:Any&#124;1-0:1+ acres&#124;2-0:2+ acres&#124;5-0:5+ acres&#124;10-0:10+ acres&#124;50-0:50+ acres&#124;100-0:100+ acres&#124;200-0:200+ acres&#124;300-0:300+ acres&#124;400-0:400+ acres&#124;500-0:500+ acres&#124;1000-0:1000+ acres
-SortBy | int | 1-Price($)&#124;6-Date&#124;11-Virtual Tour&#124;12-Open Houses&#124;13-More Photos
+BuildingSizeRange | string | 0-5000:0-5,000 sqft &#124; 5001-10000:5,001-10,000 sqft &#124; 10001-15000:10,001-15,000 sqft &#124; 250001-0:Over 250,000 sqft
+BedRange | string | 0-0:Any &#124; 1-1:1 &#124; 1-0:1+ &#124; 2-2:2 &#124; 2-0:2+ &#124; 3-3:3 &#124; 3-0:3+ &#124; 4-4:4 &#124; 4-0:4+ &#124; 5-5:5 &#124; 5-0:5+
+BathRange | string | 0-0:Any &#124; 1-1:1 &#124; 1-0:1+ &#124; 2-2:2 &#124; 2-0:2+ &#124; 3-3:3 &#124; 3-0:3+ &#124; 4-4:4 &#124; 4-0:4+ &#124; 5-5:5 &#124; 5-0:5+
+UnitRange | string | 0-0:Any &#124; 1-1:1 &#124; 1-0:1+ &#124; 2-2:2 &#124; 2-0:2+ &#124; 3-3:3 &#124; 3-0:3+ &#124; 4-4:4 &#124; 4-0:4+ &#124; 5-5:5 &#124; 5-0:5+ &#124; .... &#124; 9-0:9+
+LandSizeRange | string | 0-0:Any &#124; 1-0:1+ acres &#124; 2-0:2+ acres &#124; 5-0:5+ acres &#124; 10-0:10+ acres &#124; 50-0:50+ acres &#124; 100-0:100+ acres &#124; 200-0:200+ acres &#124; 300-0:300+ acres &#124; 400-0:400+ acres &#124; 500-0:500+ acres &#124; 1000-0:1000+ acres
+SortBy | int | 1-Price($) &#124; 6-Date &#124; 11-Virtual Tour &#124; 12-Open Houses &#124; 13-More Photos
 SortOrder | string | A - ascending &#124; D - descending
 NumberOfDays | int | Listed since
 Keywords | string | Get suitable values from .../keywords/list endpoint, separated by comma for multiple keywords, Ex : Inlaw suite,Income suite
-BuildingTypeId | int | 0-No Preference&#124;1-House&#124;2-Duplex&#124;3-Triplex&#124;5-Residential Commercial Mix&#124;6-Mobile Home&#124;12-Special Purpose&#124;14-Other&#124;16-Row / Townhouse&#124;17-Apartment&#124;19-Fourplex&#124;20-Garden Home&#124;26-Modular&#124;27-Manufactured Home/Mobile&#124;28-Commercial Apartment&#124;29-Manufactured Home
+BuildingTypeId | int | 0-No Preference &#124; 1-House &#124; 2-Duplex &#124; 3-Triplex &#124; 5-Residential Commercial Mix &#124; 6-Mobile Home &#124; 12-Special Purpose &#124; 14-Other &#124; 16-Row / Townhouse &#124; 17-Apartment &#124; 19-Fourplex &#124; 20-Garden Home &#124; 26-Modular &#124; 27-Manufactured Home/Mobile &#124; 28-Commercial Apartment &#124; 29-Manufactured Home
 OpenHouseStartDate | string | Format date as MM/dd/yyyy, ex : 03/20/2020
 OpenHouseEndDate | string | Format date as MM/dd/yyyy, ex : 03/31/2020
 OpenHouse | boolean | false/true - Need to use together with OpenHouseStartDate and OpenHouseEndDate parameters
-CultureId | int | 1 - English&#124;2 - French
-FarmTypeId | int | 0-No Preference&#124;1-Animal&#124;2-Boarding&#124;3-Cash Crop&#124;4-Feed Lot&#124;5-Nursery&#124;6-Market Gardening&#124;7-Hobby Farm&#124;8-Vineyard&#124;9-Orchard&#124;10-Greenhouse&#124;12-Mixed
+CultureId | int | 1 - English &#124; 2 - French
+FarmTypeId | int | 0-No Preference &#124; 1-Animal &#124; 2-Boarding &#124; 3-Cash Crop &#124; 4-Feed Lot &#124; 5-Nursery &#124; 6-Market Gardening &#124; 7-Hobby Farm &#124; 8-Vineyard &#124; 9-Orchard &#124; 10-Greenhouse &#124; 12-Mixed
 PriceMin | int | Filter by min price, applied when TransactionTypeId = 2
 PriceMax | int | Filter by max price, applied when TransactionTypeId = 2
-TransactionTypeId | int | 2-For sale&#124;3-For lease
-ZoningTypeGroupId | int | 1-Agricultural&#124;2-Commercial Mixed&#124;3-Commercial Office&#124;4-Commercial Retail&#124;5-Industrial&#124;6-Industrial-Heavy&#124;7-Industrial-Light&#124;8-Industrial-Medium&#124;9-Institutional&#124;10-Other&#124;11-Recreational&#124;12-Residential-High Density&#124;13-Residential-Low Density&#124;14-Residential - Medium Density
-ConstructionStyleId | int | 0-No Preference&#124;1-Attached&#124;3-Detached&#124;5-Semi-detached&#124;7-Stacked&#124;9-Link
-PropertySearchTypeId | int | 0-No Preference&#124;1-Residential&#124;2-Recreational&#124;3-Condo/Strata&#124;4-Agriculture&#124;5-Parking&#124;6-Vacant Land&#124;8-Multi Family
+TransactionTypeId | int | 2-For sale &#124; 3-For lease
+ZoningTypeGroupId | int | 1-Agricultural &#124; 2-Commercial Mixed &#124; 3-Commercial Office &#124; 4-Commercial Retail &#124; 5-Industrial &#124; 6-Industrial-Heavy &#124; 7-Industrial-Light &#124; 8-Industrial-Medium &#124; 9-Institutional &#124; 10-Other &#124; 11-Recreational &#124; 12-Residential-High Density &#124; 13-Residential-Low Density &#124; 14-Residential - Medium Density
+ConstructionStyleId | int | 0-No Preference &#124; 1-Attached &#124; 3-Detached &#124; 5-Semi-detached &#124; 7-Stacked &#124; 9-Link
+PropertySearchTypeId | int | 0-No Preference &#124; 1-Residential &#124; 2-Recreational &#124; 3-Condo/Strata &#124; 4-Agriculture &#124; 5-Parking &#124; 6-Vacant Land &#124; 8-Multi Family
 
 ## properties/list-residential
 
@@ -4763,30 +4763,30 @@ LongitudeMax | double (required) | North East longitude
 LatitudeMax | double (required) | North East latitude
 CurrentPage | int | The current page on which items are displayed 
 RecordsPerPage | int | Number items returned per request, max 50
-BuildingSizeRange | string | 0-5000:0-5,000 sqft&#124;5001-10000:5,001-10,000 sqft&#124;10001-15000:10,001-15,000 sqft&#124;250001-0:Over 250,000 sqft
-BedRange | string | 0-0:Any&#124;1-1:1&#124;1-0:1+&#124;2-2:2&#124;2-0:2+&#124;3-3:3&#124;3-0:3+&#124;4-4:4&#124;4-0:4+&#124;5-5:5&#124;5-0:5+
-BathRange | string | 0-0:Any&#124;1-1:1&#124;1-0:1+&#124;2-2:2&#124;2-0:2+&#124;3-3:3&#124;3-0:3+&#124;4-4:4&#124;4-0:4+&#124;5-5:5&#124;5-0:5+
-UnitRange | string | 0-0:Any&#124;1-1:1&#124;1-0:1+&#124;2-2:2&#124;2-0:2+&#124;3-3:3&#124;3-0:3+&#124;4-4:4&#124;4-0:4+&#124;5-5:5&#124;5-0:5+&#124;....&#124;9-0:9+
-LandSizeRange | string | 0-0:Any&#124;1-0:1+ acres&#124;2-0:2+ acres&#124;5-0:5+ acres&#124;10-0:10+ acres&#124;50-0:50+ acres&#124;100-0:100+ acres&#124;200-0:200+ acres&#124;300-0:300+ acres&#124;400-0:400+ acres&#124;500-0:500+ acres&#124;1000-0:1000+ acres
-ZoningTypeGroupId | int | 1-Agricultural&#124;2-Commercial Mixed&#124;3-Commercial Office&#124;4-Commercial Retail&#124;5-Industrial&#124;6-Industrial-Heavy&#124;7-Industrial-Light&#124;8-Industrial-Medium&#124;9-Institutional&#124;10-Other&#124;11-Recreational&#124;12-Residential-High Density&#124;13-Residential-Low Density&#124;14-Residential - Medium Density
-ParkingTypeId | int | 1-Attached garage&#124;2-Integrated garage&#124;3-Detached garage&#124;4-Garage&#124;5-Carport&#124;6-Underground&#124;7-Indoor&#124;8-Open&#124;9-Covered&#124;10-Parking pad&#124;11-Paved Yard&#124;35-Boat House&#124;36-Concrete&#124;37-Heated Garage
+BuildingSizeRange | string | 0-5000:0-5,000 sqft &#124; 5001-10000:5,001-10,000 sqft &#124; 10001-15000:10,001-15,000 sqft &#124; 250001-0:Over 250,000 sqft
+BedRange | string | 0-0:Any &#124; 1-1:1 &#124; 1-0:1+ &#124; 2-2:2 &#124; 2-0:2+ &#124; 3-3:3 &#124; 3-0:3+ &#124; 4-4:4 &#124; 4-0:4+ &#124; 5-5:5 &#124; 5-0:5+
+BathRange | string | 0-0:Any &#124; 1-1:1 &#124; 1-0:1+ &#124; 2-2:2 &#124; 2-0:2+ &#124; 3-3:3 &#124; 3-0:3+ &#124; 4-4:4 &#124; 4-0:4+ &#124; 5-5:5 &#124; 5-0:5+
+UnitRange | string | 0-0:Any &#124; 1-1:1 &#124; 1-0:1+ &#124; 2-2:2 &#124; 2-0:2+ &#124; 3-3:3 &#124; 3-0:3+ &#124; 4-4:4 &#124; 4-0:4+ &#124; 5-5:5 &#124; 5-0:5+ &#124; .... &#124; 9-0:9+
+LandSizeRange | string | 0-0:Any &#124; 1-0:1+ acres &#124; 2-0:2+ acres &#124; 5-0:5+ acres &#124; 10-0:10+ acres &#124; 50-0:50+ acres &#124; 100-0:100+ acres &#124; 200-0:200+ acres &#124; 300-0:300+ acres &#124; 400-0:400+ acres &#124; 500-0:500+ acres &#124; 1000-0:1000+ acres
+ZoningTypeGroupId | int | 1-Agricultural &#124; 2-Commercial Mixed &#124; 3-Commercial Office &#124; 4-Commercial Retail &#124; 5-Industrial &#124; 6-Industrial-Heavy &#124; 7-Industrial-Light &#124; 8-Industrial-Medium &#124; 9-Institutional &#124; 10-Other &#124; 11-Recreational &#124; 12-Residential-High Density &#124; 13-Residential-Low Density &#124; 14-Residential - Medium Density
+ParkingTypeId | int | 1-Attached garage &#124; 2-Integrated garage &#124; 3-Detached garage &#124; 4-Garage &#124; 5-Carport &#124; 6-Underground &#124; 7-Indoor &#124; 8-Open &#124; 9-Covered &#124; 10-Parking pad &#124; 11-Paved Yard &#124; 35-Boat House &#124; 36-Concrete &#124; 37-Heated Garage
 RentMin | int | Filter by min price, applied when TransactionTypeId = 3
 RentMax | int | Filter by max price, applied when TransactionTypeId = 3
 PriceMin | int | Filter by min price, applied when TransactionTypeId = 2
 PriceMax | int | Filter by min price, applied when TransactionTypeId = 2
-TransactionTypeId | int | 2-For sale&#124;3-For rent
+TransactionTypeId | int | 2-For sale &#124; 3-For rent
 NumberOfDays | int | Listed since
 OpenHouseStartDate | string | Format date as MM/dd/yyyy, ex : 03/20/2020
 OpenHouseEndDate | string | Format date as MM/dd/yyyy, ex : 03/31/2020
 OpenHouse | boolean | false/true - Need to use together with OpenHouseStartDate and OpenHouseEndDate parameters
-CultureId | int | 1 - English&#124;2 - French
+CultureId | int | 1 - English &#124; 2 - French
 SortOrder | string | A - ascending &#124; D - descending
-SortBy | int | 1-Price($)&#124;6-Date&#124;11-Virtual Tour&#124;12-Open Houses&#124;13-More Photos
-BuildingTypeId | int | 0-No Preference&#124;1-House&#124;2-Duplex&#124;3-Triplex&#124;5-Residential Commercial Mix&#124;6-Mobile Home&#124;12-Special Purpose&#124;14-Other&#124;16-Row / Townhouse&#124;17-Apartment&#124;19-Fourplex&#124;20-Garden Home&#124;26-Modular&#124;27-Manufactured Home/Mobile&#124;28-Commercial Apartment&#124;29-Manufactured Home
+SortBy | int | 1-Price($) &#124; 6-Date &#124; 11-Virtual Tour &#124; 12-Open Houses &#124; 13-More Photos
+BuildingTypeId | int | 0-No Preference &#124; 1-House &#124; 2-Duplex &#124; 3-Triplex &#124; 5-Residential Commercial Mix &#124; 6-Mobile Home &#124; 12-Special Purpose &#124; 14-Other &#124; 16-Row / Townhouse &#124; 17-Apartment &#124; 19-Fourplex &#124; 20-Garden Home &#124; 26-Modular &#124; 27-Manufactured Home/Mobile &#124; 28-Commercial Apartment &#124; 29-Manufactured Home
 Keywords | string | Get suitable values from .../keywords/list endpoint, separated by comma for multiple keywords, Ex : Inlaw suite,Income suite
-FarmTypeId | int | 0-No Preference&#124;1-Animal&#124;2-Boarding&#124;3-Cash Crop&#124;4-Feed Lot&#124;5-Nursery&#124;6-Market Gardening&#124;7-Hobby Farm&#124;8-Vineyard&#124;9-Orchard&#124;10-Greenhouse&#124;12-Mixed
-PropertySearchTypeId | int | 0-No Preference&#124;1-Residential&#124;2-Recreational&#124;3-Condo/Strata&#124;4-Agriculture&#124;5-Parking&#124;6-Vacant Land&#124;8-Multi Family
-ConstructionStyleId | int | 0-No Preference&#124;1-Attached&#124;3-Detached&#124;5-Semi-detached&#124;7-Stacked&#124;9-Link
+FarmTypeId | int | 0-No Preference &#124; 1-Animal &#124; 2-Boarding &#124; 3-Cash Crop &#124; 4-Feed Lot &#124; 5-Nursery &#124; 6-Market Gardening &#124; 7-Hobby Farm &#124; 8-Vineyard &#124; 9-Orchard &#124; 10-Greenhouse &#124; 12-Mixed
+PropertySearchTypeId | int | 0-No Preference &#124; 1-Residential &#124; 2-Recreational &#124; 3-Condo/Strata &#124; 4-Agriculture &#124; 5-Parking &#124; 6-Vacant Land &#124; 8-Multi Family
+ConstructionStyleId | int | 0-No Preference &#124; 1-Attached &#124; 3-Detached &#124; 5-Semi-detached &#124; 7-Stacked &#124; 9-Link
 
 ## properties/list-by-mls
 
@@ -4954,7 +4954,7 @@ This endpoint is used to list properties by listing ID or MLS number
 Parameter | Type | Description
 --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 ReferenceNumber | string (required) | List ID or MLS number
-CultureId | int | 1 - English&#124;2 - French
+CultureId | int | 1 - English &#124; 2 - French
 
 ## properties/detail
 
@@ -5136,8 +5136,8 @@ Parameter | Type | Description
 --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 ReferenceNumber | string (required) | The value of MlsNumber field from list-commercial or list-residential endpoints
 PropertyID | int (required) | The value of Id field from list-commercial or list-residential endpoints
-PreferedMeasurementUnit | int | 1-Metric&#124;2-Imperial
-CultureId | int | 1 - English&#124;2 - French
+PreferedMeasurementUnit | int | 1-Metric &#124; 2-Imperial
+CultureId | int | 1 - English &#124; 2 - French
 
 ## properties/get-statistics
 
@@ -5185,7 +5185,7 @@ Parameter | Type | Description
 --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 Latitude | double (required) | Latitude of specific location
 Longitude | double (required) | Longitude of specific location
-CultureId | int | 1 - English&#124;2 - French
+CultureId | int | 1 - English &#124; 2 - French
 
 ## keywords/list
 
@@ -6809,7 +6809,7 @@ curl "https://morning-star.p.rapidapi.com/market/get-global-indices" \
 }
 ```
 
-This endpoint is used to query live data for one or multiple quotes at once.
+This endpoint is used to get information of global indices
 
 ### HTTP Request
 
@@ -6981,7 +6981,7 @@ curl "https://morning-star.p.rapidapi.com/market/get-summary" \
 }
 ```
 
-This endpoint is used to query live data for one or multiple quotes at once.
+This endpoint is used to query live summary information of the markey at the request time
 
 ### HTTP Request
 
@@ -7438,7 +7438,7 @@ This endpoint is used to mapped to trailing returns  tab
 Parameter | Type | Description
 --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 performanceId | string (required) | Value of performanceId field from .../auto-complete or /get-summary or .../get-movers endpoints
-dataType | string | One of the following : d - day|m - month|q - quarterly
+dataType | string | One of the following : d - day &#124; m - month &#124; q - quarterly
 
 ## stock/v2/get-analysis-data
 
@@ -7656,8 +7656,8 @@ This endpoint is used to mapped to financials  tab
 Parameter | Type | Description
 --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 performanceId | string (required) | Value of performanceId field from .../auto-complete or /get-summary or .../get-movers endpoints
-interval | string | One of the following : quarterly | annual
-reportType | string | One of the following : R - Restated | A - As originally reported
+interval | string | One of the following : quarterly &#124; annual
+reportType | string | One of the following : R - Restated &#124; A - As originally reported
 
 ## stock/v2/get-splits
 
@@ -7758,7 +7758,7 @@ This endpoint is used to mapped to executive tab
 Parameter | Type | Description
 --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 performanceId | string (required) | Value of performanceId field from .../auto-complete or /get-summary or .../get-movers endpoints
-executive | string | One of the following : keyExecutives | boardOfDirectors | committees | transactionHistory | transactionChart 
+executive | string | One of the following : keyExecutives &#124; boardOfDirectors &#124; committees &#124; transactionHistory &#124; transactionChart 
 
 ## stock/v2/get-competitors
 
@@ -8072,8 +8072,8 @@ This endpoint is used to mapped to ownership tab
 Parameter | Type | Description
 --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 performanceId | string (required) | Value of performanceId field from .../auto-complete or /get-summary or .../get-movers endpoints
-ownership | string | One of the following : OwnershipData | ConcentratedOwners | Sellers | Buyers
-asset | string | One of the following : mutualfund | institution
+ownership | string | One of the following : OwnershipData &#124; ConcentratedOwners &#124; Sellers &#124; Buyers
+asset | string | One of the following : mutualfund &#124; institution
 
 ## stock/v2/get-valuation
 
