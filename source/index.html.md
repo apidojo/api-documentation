@@ -5595,8 +5595,7 @@ amenities | string | Check for suitable value of filters/amenities field (separa
 child_rm_ages | string | The age of every children separated by comma in all rooms
 pricesmin | int | Check for suitable price range in filters/prices_slider field returned in hotel-filters/list endpoint. For exmaple : $10 -> 10
 pricesmax | int | Check for suitable price range in filters/prices_slider field returned in hotel-filters/list endpoint. For exmaple : $120 -> 120
-
-zff | string | Hotel Style - Check for suitable value of \\\"filters/zff\\\" field (separated by comma to specify multiple values) returned in hotel-filters/list endpoint
+zff | string | Hotel Style - Check for suitable value of "filters/zff" field (separated by comma to specify multiple values) returned in hotel-filters/list endpoint
 subcategory | string | Check for suitable value of filters/subcategory field (separated by comma to specify multiple values) returned in hotel-filters/list endpoint
 
 ## hotels/get-details
@@ -9154,3 +9153,6 @@ This endpoint is used to get articles details
 Parameter | Type | Description
 --------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
 id | string (required) | Value of id returned in .../articles/list endpoint
+
+
+
