@@ -6095,3 +6095,3062 @@ Parameter | Type | Description
 location_id | int (required) | The value of location_id field that returned in hotels/list, restaurants/list, or attractions/list endpoints
 limit | int | The number of items per response (max 10)
 offset | int | The number of items to ignore for paging purpose 
+
+# Morning Star API
+## market/v2/auto-complete
+
+```shell
+curl "https://morning-star.p.rapidapi.com/market/v2/auto-complete?q=nasdaq" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "count": 34,
+    "pages": 6,
+    "results": [
+        {
+            "id": "us_security-0P000003RU",
+            "name": "Nasdaq Inc",
+            "description": null,
+            "exchange": "XNAS",
+            "performanceId": "0P000003RU",
+            "securityType": "ST",
+            "ticker": "NDAQ",
+            "type": "us_security",
+            "url": null
+        },
+        ...
+    ]
+}
+```
+
+This endpoint is used to get auto suggestion by word or phase
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/market/v2/auto-complete`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+q | string (required) | Any thing you are familiar with, stock, index, organization, etc...
+
+## market/auto-complete
+
+curl "https://morning-star.p.rapidapi.com/market/auto-complete?query=nasdaq" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+    {
+        "Name": "Nasdaq Inc",
+        "Currency": "USD",
+        "Exchange": "XNAS",
+        "Type": "ST",
+        "TypeName": "Stock",
+        "ExchangeShortName": "NASDAQ",
+        "ExchangeTimeZoneOffsetFromUTCInSeconds": -14400,
+        "CompanyId": "0C000008J5",
+        "PerformanceId": "0P000003RU",
+        "ShareClassId": "0P000003RU",
+        "FundShareClassId": "0P000003RU",
+        "InceptionDate": "2002-07-01",
+        "Sector": "Financial Services",
+        "Industry": "Financial Data & Stock Exchanges",
+        "RegionAndTicker": "USA:NDAQ",
+        "Instrument": "126.1.NDAQ"
+    },
+    ...
+]
+```
+
+This endpoint is used to get auto complete suggestion for stocks
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/market/auto-complete`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+query | string (required) | The query value to get auto complete suggestions
+
+## market/v2/get-movers
+
+```shell
+curl "https://morning-star.p.rapidapi.com/market/v2/get-movers" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "actives": [
+        {
+            "exchange": "XNAS",
+            "lastPrice": 8.82,
+            "percentChange": 20.0,
+            "performanceId": "0P0001LH7T",
+            "priceChange": 1.47,
+            "standardName": "Clover Health Investments Corp Ordinary Shares - Class A",
+            "ticker": "CLOV",
+            "volume": 2.46288816E8
+        },
+        ...
+    ],
+    "gainers": [
+        {
+            "exchange": "XNAS",
+            "lastPrice": 31.3,
+            "percentChange": 73.8889,
+            "performanceId": "0P0001M4F7",
+            "priceChange": 13.3,
+            "standardName": "Recursion Pharmaceuticals Inc Class A",
+            "ticker": "RXRX",
+            "volume": 5653785.0
+        },
+        ...
+    ],
+    "losers": [
+        {
+            "exchange": "XNAS",
+            "lastPrice": 34.67,
+            "percentChange": -15.3978,
+            "performanceId": "0P00017C7L",
+            "priceChange": -6.31,
+            "standardName": "Editas Medicine Inc",
+            "ticker": "EDIT",
+            "volume": 6752792.0
+        },
+        ..
+    ]
+}
+```
+
+This endpoint is used to get movers, such as : actives, gainers, losers,  etc...
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/market/v2/get-movers`
+
+## market/get-movers
+
+curl "https://morning-star.p.rapidapi.com/market/get-movers?PerformanceId=0P00001GJH" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "Top10": {
+        "Actives": {
+            "Label": "Most Active",
+            "Securities": [
+                {
+                    "Security": {
+                        "Name": "Clover Health Investments Corp Ordinary Shares - Class A",
+                        "Currency": "USD",
+                        "Exchange": "XNAS",
+                        "Type": "ST",
+                        "TypeName": "Stock",
+                        "ExchangeShortName": "NASDAQ",
+                        "ExchangeTimeZoneOffsetFromUTCInSeconds": -14400,
+                        "CompanyId": "0C0000C1E4",
+                        "PerformanceId": "0P0001LH7T",
+                        "ShareClassId": "0P0001LH7T",
+                        "FundShareClassId": "0P0001LH7T",
+                        "Sector": "Healthcare",
+                        "Industry": "Healthcare Plans",
+                        "RequestKey": "126.1.CLOV",
+                        "Detail": {
+                            "StarRating": 3,
+                            "IsStarRatingBasedOnExtendedPerformance": false,
+                            "CreditRating": "Premium",
+                            "RevenueTTM": 0,
+                            "PriceProspectiveEarnings": -17.6056,
+                            "PriceBook": 4.516285,
+                            "ReturnOnInvestmentCapital": -1.73,
+                            "ReturnOnAssets": {
+                                "FinancialYear1": -1.57
+                            },
+                            "ReturnOnEquity": {
+                                "FinancialYear1": -1.7
+                            },
+                            "EarningsPerShare": {
+                                "TrailingTwelveMonths": -0.0167,
+                                "FinancialYear1": -0.0167
+                            },
+                            "OperatingMargin": {},
+                            "NetMargin": {},
+                            "FreeCashFlowMargin": {},
+                            "QuarterlyEarningsPerShare": {
+                                "TrailingTwelveMonths": -0.0167,
+                                "Quarter1": 0
+                            },
+                            "Valuation": {
+                                "AnalystCoverageStatus": "COVERED",
+                                "BestRatingType": "Premium",
+                                "PriceFairValue": {
+                                    "StarRating34": "Premium",
+                                    "StarRating45": "Premium",
+                                    "StarRating12": "Premium",
+                                    "StarRating23": "Premium"
+                                },
+                                "Take": {
+                                    "FairValue": "Premium",
+                                    "Assessment": "Premium",
+                                    "FairValueUncertainty": "Premium",
+                                    "PremiumDiscountCurrent": "Premium",
+                                    "PremiumDiscountValue": "Premium",
+                                    "EconomicMoat": "Premium"
+                                }
+                            },
+                            "BestRatingType": "Quan",
+                            "FairValue": 9.12093,
+                            "Assessment": "Fairly Valued"
+                        },
+                        "RegionAndTicker": "USA:CLOV",
+                        "Instrument": "126.1.CLOV"
+                    },
+                    "Quote": {
+                        "Price": 8.82,
+                        "PriceChange": 1.47,
+                        "PercentChange": 20.0,
+                        "OpenPrice": 7.36,
+                        "Volume": 7590180,
+                        "AverageVolume": 230080,
+                        "YesterdayPrice": 7.35,
+                        "DayHigh": 10.03,
+                        "DayLow": 7.23,
+                        "FiftyTwoWeekHigh": 17.45,
+                        "FiftyTwoWeekLow": 6.31,
+                        "Currency": "USD",
+                        "ActivityTimeUTC": "2021-04-16T12:36:59Z",
+                        "ExchangeActivityTimeLabel": "04/16/2021 08:36 AM EDT",
+                        "MarketPhase": "Premarket",
+                        "Bid": 9.48,
+                        "Ask": 9.49,
+                        "MarketCapInMillions": 3868.12058024,
+                        "Yield": null,
+                        "PriceToEarningRatio": null,
+                        "PremiumDiscount": null
+                    }
+                },
+                ...
+            ]
+        },
+        "Gainers": {
+            "Label": "Gainers",
+            "Securities": [
+                {
+                    "Security": {
+                        "Name": "Recursion Pharmaceuticals Inc Class A",
+                        "Currency": "USD",
+                        "Exchange": "XNAS",
+                        "Type": "ST",
+                        "TypeName": "Stock",
+                        "ExchangeShortName": "NASDAQ",
+                        "ExchangeTimeZoneOffsetFromUTCInSeconds": -14400,
+                        "CompanyId": "0C0000C3E9",
+                        "PerformanceId": "0P0001M4F7",
+                        "ShareClassId": "0P0001M4F7",
+                        "FundShareClassId": "0P0001M4F7",
+                        "Sector": "Healthcare",
+                        "Industry": "Biotechnology",
+                        "RequestKey": "126.1.RXRX",
+                        "Detail": {
+                            "IsStarRatingBasedOnExtendedPerformance": false,
+                            "RevenueTTM": 3.962,
+                            "PriceSales": 888.487567,
+                            "ReturnOnAssets": {
+                                "FinancialYear1": -43.5,
+                                "FinancialYear2": -61.01
+                            },
+                            "ReturnOnEquity": {},
+                            "EarningsPerShare": {
+                                "TrailingTwelveMonths": -0.77,
+                                "FinancialYear1": -0.77,
+                                "FinancialYear2": -0.5502
+                            },
+                            "OperatingMargin": {
+                                "TrailingTwelveMonths": -2135.66,
+                                "FinancialYear1": -2135.66,
+                                "FinancialYear2": -2692.58
+                            },
+                            "NetMargin": {
+                                "FinancialYear1": -2196.01,
+                                "FinancialYear2": -2668.35
+                            },
+                            "FreeCashFlowMargin": {},
+                            "QuarterlyEarningsPerShare": {
+                                "TrailingTwelveMonths": -0.77
+                            },
+                            "Valuation": {
+                                "AnalystCoverageStatus": "NOT_COVERED"
+                            }
+                        },
+                        "RegionAndTicker": "USA:RXRX",
+                        "Instrument": "126.1.RXRX"
+                    },
+                    "Quote": {
+                        "Price": 31.3,
+                        "PriceChange": 13.3,
+                        "PercentChange": 73.8889,
+                        "OpenPrice": 30.0,
+                        "Volume": 4781,
+                        "AverageVolume": 27116,
+                        "YesterdayPrice": 18.0,
+                        "DayHigh": 33.0,
+                        "DayLow": 25.17,
+                        "FiftyTwoWeekHigh": 33.0,
+                        "FiftyTwoWeekLow": 25.17,
+                        "Currency": "USD",
+                        "ActivityTimeUTC": "2021-04-16T12:35:40Z",
+                        "ExchangeActivityTimeLabel": "04/16/2021 08:35 AM EDT",
+                        "MarketPhase": "Premarket",
+                        "Bid": 28.75,
+                        "Ask": 29.5,
+                        "MarketCapInMillions": 4653.4596573,
+                        "Yield": null,
+                        "PriceToEarningRatio": null,
+                        "PremiumDiscount": null
+                    }
+                },
+                ...
+            ]
+        },
+        "Losers": {
+            "Label": "Losers",
+            "Securities": [
+                {
+                    "Security": {
+                        "Name": "Editas Medicine Inc",
+                        "Currency": "USD",
+                        "Exchange": "XNAS",
+                        "Type": "ST",
+                        "TypeName": "Stock",
+                        "ExchangeShortName": "NASDAQ",
+                        "ExchangeTimeZoneOffsetFromUTCInSeconds": -14400,
+                        "CompanyId": "0C0000B1VW",
+                        "PerformanceId": "0P00017C7L",
+                        "ShareClassId": "0P00017C7L",
+                        "FundShareClassId": "0P00017C7L",
+                        "InceptionDate": "2016-02-03",
+                        "Sector": "Healthcare",
+                        "Industry": "Biotechnology",
+                        "RequestKey": "126.1.EDIT",
+                        "Detail": {
+                            "StarRating": 3,
+                            "EquityStyle": 9,
+                            "IsStarRatingBasedOnExtendedPerformance": false,
+                            "CreditRating": "Premium",
+                            "RevenueTTM": 90.732,
+                            "PriceProspectiveEarnings": -10.4493,
+                            "PriceBook": 5.933819,
+                            "PriceSales": 22.395489,
+                            "ReturnOnInvestmentCapital": -33.34,
+                            "ReturnOnAssets": {
+                                "TrailingTwelveMonths": -21.44750,
+                                "FinancialYear1": -21.45,
+                                "FinancialYear2": -28.79,
+                                "FinancialYear3": -27.71,
+                                "FinancialYear4": -39.95,
+                                "FinancialYear5": -51.37
+                            },
+                            "ReturnOnEquity": {
+                                "TrailingTwelveMonths": -35.35730,
+                                "FinancialYear1": -35.36,
+                                "FinancialYear2": -53.65,
+                                "FinancialYear3": -49.5,
+                                "FinancialYear4": -70.22,
+                                "FinancialYear5": -377.64
+                            },
+                            "EarningsPerShare": {
+                                "TrailingTwelveMonths": -1.98,
+                                "FinancialYear1": -1.98,
+                                "FinancialYear2": -2.68,
+                                "FinancialYear3": -2.33,
+                                "FinancialYear4": -2.98,
+                                "FinancialYear5": -3.02
+                            },
+                            "OperatingMargin": {
+                                "TrailingTwelveMonths": -148.61,
+                                "FinancialYear1": -148.61,
+                                "FinancialYear2": -686.39,
+                                "FinancialYear3": -356.1,
+                                "FinancialYear4": -873.64,
+                                "FinancialYear5": -1605.62
+                            },
+                            "NetMargin": {
+                                "TrailingTwelveMonths": -127.8226,
+                                "FinancialYear1": -127.82,
+                                "FinancialYear2": -651.43,
+                                "FinancialYear3": -344.28,
+                                "FinancialYear4": -876.49,
+                                "FinancialYear5": -1606.31
+                            },
+                            "FreeCashFlowMargin": {},
+                            "QuarterlyEarningsPerShare": {
+                                "TrailingTwelveMonths": -1.98,
+                                "Quarter1": -1,
+                                "Quarter2": 0.12,
+                                "Quarter3": -0.43,
+                                "Quarter4": -0.69
+                            },
+                            "Valuation": {
+                                "AnalystCoverageStatus": "COVERED",
+                                "BestRatingType": "Premium",
+                                "PriceFairValue": {
+                                    "StarRating34": "Premium",
+                                    "StarRating45": "Premium",
+                                    "StarRating12": "Premium",
+                                    "StarRating23": "Premium"
+                                },
+                                "Take": {
+                                    "FairValue": "Premium",
+                                    "CompanyMediumProfile": "Editas Medicine Inc is a genome editing company which is engaged in treating patients with genetically defined diseases by correcting disease-causing genes.",
+                                    "Assessment": "Premium",
+                                    "FairValueUncertainty": "Premium",
+                                    "PremiumDiscountCurrent": "Premium",
+                                    "PremiumDiscountValue": "Premium",
+                                    "EconomicMoat": "Premium"
+                                }
+                            },
+                            "BestRatingType": "Quan",
+                            "FairValue": 41.4514,
+                            "Assessment": "Undervalued"
+                        },
+                        "RegionAndTicker": "USA:EDIT",
+                        "Instrument": "126.1.EDIT"
+                    },
+                    "Quote": {
+                        "Price": 34.67,
+                        "PriceChange": -6.31,
+                        "PercentChange": -15.3978,
+                        "OpenPrice": 38.27,
+                        "Volume": 8706,
+                        "AverageVolume": 7856,
+                        "YesterdayPrice": 40.98,
+                        "DayHigh": 39.22,
+                        "DayLow": 33.5828,
+                        "FiftyTwoWeekHigh": 99.95,
+                        "FiftyTwoWeekLow": 21.41,
+                        "Currency": "USD",
+                        "ActivityTimeUTC": "2021-04-16T12:36:23Z",
+                        "ExchangeActivityTimeLabel": "04/16/2021 08:36 AM EDT",
+                        "MarketPhase": "Premarket",
+                        "Bid": 34.02,
+                        "Ask": 34.13,
+                        "MarketCapInMillions": 2292.35577773,
+                        "Yield": null,
+                        "PriceToEarningRatio": null,
+                        "PremiumDiscount": null
+                    }
+                },
+                ...
+            ]
+        }
+    },
+    "Timestamp": "2021-04-19T12:52:00Z"
+}
+```
+
+This endpoint is used to get top 10 gainers, losers, actives of specific market
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/market/get-movers`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+PerformanceId | string (required) | Get value of PerformanceId field from /market/auto-complete and /market/get-summary APIs
+
+## market/v2/get-returns
+
+```shell
+curl "https://morning-star.p.rapidapi.com/market/v2/get-returns?performanceIds=0P0000OQN8,0P000000GY" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "0P0000OQN8": {
+        "marketReturn5Years": 70.797506,
+        "ticker": "TSLA",
+        "marketReturn1Year": 537.33779,
+        "securityId": "F00000ITT6",
+        "exchange": "XNAS",
+        "marketReturn3Years": 132.381744
+    },
+    ...
+}
+```
+
+This endpoint is used to get market return by years
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/market/v2/get-returns`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+performanceIds | string (required) | The value of performanceId returned in .../market/v2/get-movers , .../market/v2/auto-complete, etc... endpoints. Separated by comma to query multiple entities.
+
+## market/v2/get-realtime-data
+
+```shell
+curl "https://morning-star.p.rapidapi.com/market/v2/get-realtime-data?performanceIds=0P0000OQN8,0P000000GY" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "0P0000OQN8": {
+        "netChange": {
+            "value": 0.93,
+            "filtered": false
+        },
+        "previousClosePrice": {
+            "value": 738.85,
+            "filtered": false
+        },
+        "adjustedClosePrice": {
+            "value": 738.85,
+            "filtered": false
+        },
+        "name": {
+            "value": "Tesla",
+            "filtered": false
+        },
+        "percentNetChange": {
+            "value": 0.1259,
+            "filtered": false
+        },
+        "tradingStatus": {
+            "value": "Closed",
+            "filtered": false
+        },
+        "lastPrice": {
+            "value": 739.78,
+            "filtered": false,
+            "date": {
+                "value": "2021-04-16T16:15:02-04:00",
+                "filtered": false
+            }
+        }
+    },
+    ...
+}
+```
+
+This endpoint is used to query one or more entities data at once
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/market/v2/get-realtime-data`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+performanceIds | string (required) | The value of performanceId returned in .../market/v2/get-movers , .../market/v2/auto-complete, etc... endpoints. Separated by comma to query multiple entities.
+
+## market/v2/get-time-series
+
+```shell
+curl "https://morning-star.p.rapidapi.com/market/v2/get-time-series?0P0000OQN8,0P000000GY" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "0P0000OQN8": [
+        {
+            "datetime": "2021-04-16T20:00:00Z",
+            "volume": 328272,
+            "lastPrice": 739.78,
+            "openPrice": 739.67,
+            "lowPrice": 739.48,
+            "highPrice": 739.78
+        },
+        ...
+    ],
+    ...
+}
+```
+
+This endpoint is used to query one or more entities data at once in time series manner
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/market/v2/get-time-series`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+performanceIds | string (required) | The value of performanceId returned in .../market/v2/get-movers , .../market/v2/auto-complete, etc... endpoints. Separated by comma to query multiple entities.
+
+## market/v2/get-quotes
+
+```shell
+curl "https://morning-star.p.rapidapi.com/market/v2/get-quotes?performanceIds=0P000000GY" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "0P000000GY": {
+        "name": "Apple Inc",
+        "exchange": "XNAS",
+        "region": "USA",
+        "ticker": "AAPL",
+        "price": 134.15,
+        "priceChange": -0.35,
+        "percentChange": -0.2602,
+        "openPrice": 134.3,
+        "volume": 84922386,
+        "yesterdayPrice": 134.5,
+        "dayHigh": 134.67,
+        "dayLow": 133.28,
+        "fiftyTwoWeekHigh": 145.09,
+        "fiftyTwoWeekLow": 66.3575,
+        "currency": "USD",
+        "marketPhase": "Closed",
+        "activityTimeUTC": "2021-04-16T23:59:56Z",
+        "exchangeActivityTimeLabel": "04/16/2021 06:41 PM EDT",
+        "securityId": "0P000000GY"
+    },
+	...
+}
+```
+
+This endpoint is used to query live data for one or multiple quotes at once.
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/market/v2/get-quotes`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+performanceIds | string (required) | The value of performanceId returned in .../market/v2/get-movers , .../market/v2/auto-complete, etc... endpoints. Separated by comma to query multiple entities.
+
+## market/get-global-indices
+
+```shell
+curl "https://morning-star.p.rapidapi.com/market/get-global-indices" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "realTimeLastUpdateDate": "2021-04-19T12:51:19.000Z",
+    "gmbIndexDataList": [
+        {
+            "symbol": "33.10.!MSTAR",
+            "ticker": "!MSTAR",
+            "exchange": 33,
+            "securityType": 10,
+            "netChange": 31.95,
+            "netChangePer": 0.3011,
+            "companyName": "Morningstar U.S. Market Index",
+            "marketStatus": "Closed",
+            "currency": "USD",
+            "avgVolume": 0,
+            "volume": 0,
+            "recentTradingDayOpenPrice": 10640.54,
+            "lastClosePrice": 10610.9,
+            "lastPrice": 10642.85,
+            "lastUpdateDate": "2021-04-16T22:03:05.000Z",
+            "lastUpdateTime": "18:03:05.000",
+            "priceReturn1Week": 1.4429832,
+            "priceReturn1Month": 5.0235993,
+            "realTimeLastUpdateDate": "16-04-2021",
+            "realTimeLastUpdateTime": "18:03:06.000",
+            "isRunning": false
+        },
+        ...
+    ]
+}
+```
+
+This endpoint is used to query live data for one or multiple quotes at once.
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/market/get-global-indices`
+
+## market/get-summary
+
+```shell
+curl "https://morning-star.p.rapidapi.com/market/get-summary" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "MarketRegions": {
+        "USA": [
+            {
+                "PerformanceId": "0P00001GJH",
+                "RegionAndTicker": "USA:MSTAR",
+                "Currency": "USD",
+                "Exchange": "SPI",
+                "ExchangeShortName": "SPI",
+                "ExchangeTimeZoneOffsetFromUTCInSeconds": -14400,
+                "Name": "Morningstar US Market",
+                "StarRating": null,
+                "Type": "XI",
+                "Price": 10642.85,
+                "PriceChange": 31.95,
+                "PercentChange": 0.3011,
+                "OpenPrice": 10640.54,
+                "Volume": null,
+                "DayHigh": 10657.36,
+                "DayLow": 10604.57,
+                "ActivityTimeUTC": "2021-04-16T22:03:05Z",
+                "ExchangeActivityTimeLabel": "04/16/2021 06:03 PM EDT",
+                "AverageVolume": 169.5566,
+                "InceptionDate": "2002-07-03",
+                "YesterdayPrice": 10610.9
+            },
+            ...
+        ],
+        "Europe": [
+            {
+                "PerformanceId": "0P00001FKQ",
+                "RegionAndTicker": null,
+                "Currency": "GBP",
+                "Exchange": null,
+                "ExchangeShortName": null,
+                "ExchangeTimeZoneOffsetFromUTCInSeconds": 3600,
+                "Name": "FTSE 100",
+                "StarRating": null,
+                "Type": "XI",
+                "Price": 7016.33,
+                "PriceChange": -3.2,
+                "PercentChange": -0.0456,
+                "OpenPrice": 7019.53,
+                "Volume": null,
+                "DayHigh": 7040.26,
+                "DayLow": 7007.45,
+                "ActivityTimeUTC": "2021-04-19T12:40:50Z",
+                "ExchangeActivityTimeLabel": "04/19/2021 08:40 AM EDT",
+                "AverageVolume": null,
+                "InceptionDate": "1984-01-03",
+                "YesterdayPrice": 7019.53
+            },
+            ...
+        ],
+        "Asia": [
+            {
+                "PerformanceId": "0P00006MR4",
+                "RegionAndTicker": "JPN:100000018",
+                "Currency": "JPY",
+                "Exchange": "XOSE",
+                "ExchangeShortName": "XOSE",
+                "ExchangeTimeZoneOffsetFromUTCInSeconds": 32400,
+                "Name": "Nikkei 225 Average",
+                "StarRating": null,
+                "Type": "XI",
+                "Price": 29685.37,
+                "PriceChange": 2.0,
+                "PercentChange": 0.0067,
+                "OpenPrice": 29688.32,
+                "Volume": null,
+                "DayHigh": 29808.01,
+                "DayLow": 29530.84,
+                "ActivityTimeUTC": "2021-04-19T06:00:01Z",
+                "ExchangeActivityTimeLabel": "04/19/2021 02:00 AM EDT",
+                "AverageVolume": null,
+                "InceptionDate": "1950-09-07",
+                "YesterdayPrice": 29683.37
+            },
+            ...
+        ],
+        "CAN": [
+            {
+                "PerformanceId": "0P00008IVF",
+                "RegionAndTicker": "CAN:0000",
+                "Currency": "CAD",
+                "Exchange": "XTSE",
+                "ExchangeShortName": "XTSE",
+                "ExchangeTimeZoneOffsetFromUTCInSeconds": -14400,
+                "Name": "S&P/TSX Composite",
+                "StarRating": null,
+                "Type": "XI",
+                "Price": 19351.32,
+                "PriceChange": 29.4,
+                "PercentChange": 0.1522,
+                "OpenPrice": 19380.68,
+                "Volume": 238407251,
+                "DayHigh": 19380.68,
+                "DayLow": 19293.78,
+                "ActivityTimeUTC": "2021-04-16T20:59:23Z",
+                "ExchangeActivityTimeLabel": "04/16/2021 04:59 PM EDT",
+                "AverageVolume": 217.6816,
+                "InceptionDate": "1960-01-29",
+                "YesterdayPrice": 19321.92
+            },
+            ...
+        ]
+    },
+    "Barometers": {
+        "ThreeYears": [
+            {
+                "PercentChange": 10.31756,
+                "Level": 2
+            },
+            ...
+        ],
+        "OneYear": [
+            {
+                "PercentChange": 41.08093,
+                "Level": 3
+            },
+			...
+        ],
+        "ThreeMonths": [
+            {
+                "PercentChange": 9.74871,
+                "Level": 3
+            },
+            ...
+        ],
+        "OneWeek": [
+            {
+                "PercentChange": 0.77931,
+                "Level": 2
+            },
+            ...
+        ],
+        "OneDay": [
+            {
+                "PercentChange": 0.6279,
+                "Level": 2
+            },
+            ...
+        ],
+        "OneMonth": [
+            {
+                "PercentChange": 3.01136,
+                "Level": 2
+            },
+            ...
+        ]
+    },
+    "Timestamp": "2021-04-19T12:55:52Z"
+}
+```
+
+This endpoint is used to query live data for one or multiple quotes at once.
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/market/get-summary`
+
+## stock/v2/get-realtime-data
+
+```shell
+curl "https://morning-star.p.rapidapi.com/stock/v2/get-realtime-data?performanceId=0P0000OQN8" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "status": "OK",
+    "lastPrice": 739.78,
+    "bid": 739.1,
+    "bidSize": 15,
+    "ask": 739.25,
+    "askSize": 41,
+    "lotSize": 100,
+    "volume": 27979526,
+    "recentTradingDayOpenPrice": 728.65,
+    "dayRangeHigh": 749.41,
+    "dayRangeLow": 724.6,
+    "lastClose": 738.85,
+    "priceOfTradeAfter": 739.25,
+    "timeOfTradeAfter": "2021-04-16T20:14:56.000",
+    "recentTradingDay": "2021-04-16",
+    "lastUpdateTime": "2021-04-16T16:15:02.000",
+    "recentTradingDayJulian": "16-04-2021",
+    "tradingStatus": "Closed",
+    "marketCap": 710080425189.1199951172,
+    "dividendYield": null,
+    "yearRangeHigh": 900.4,
+    "yearRangeLow": 134.758,
+    "currencyCode": "USD",
+    "currencySymbol": "$",
+    "listedCurrency": "USD",
+    "tradedCurrency": null,
+    "avgVolume": 94717.2741935484,
+    "exchangeID": "XNAS",
+    "exchangeName": "NASDAQ",
+    "exchangeTimeZone": "EST",
+    "type": "Equity",
+    "ts": "1618622172000",
+    "dayChange": 0.93,
+    "dayChangePer": 0.1259,
+    "bidMarket": "16",
+    "askMarket": "16",
+    "originationMarket": "18",
+    "message": "126.1.TSLA",
+    "lastUpdateRealTimeDate": "16-04-2021",
+    "lastUpdateRealTimeTime": "21:16:12.000",
+    "nav": null,
+    "oneDayReturn": null,
+    "navLastDate": null,
+    "navLastDate1": null,
+    "navLastTime": null,
+    "isBats": true
+}
+```
+
+This endpoint is used to get detail information of stock, market
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/stock/v2/get-realtime-data`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+performanceId | string (required) | The value of performanceId returned in .../market/v2/get-movers , .../market/v2/auto-complete, etc... endpoints. 
+
+## stock/v2/get-mini-chart-realtime-data
+
+```shell
+curl "https://morning-star.p.rapidapi.com/stock/v2/get-mini-chart-realtime-data?performanceId=0P0000OQN8" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "iiv": null,
+    "status": "OK",
+    "idsMessage": "126.1.TSLA",
+    "lastPrice": 739.78,
+    "priceOfTradeAfter": 739.25,
+    "timeOfTradeAfter": "2021-04-16T20:14:56.000",
+    "lastUpdateTime": "2021-04-16T16:15:02.000",
+    "tradingStatus": "Closed",
+    "dayChange": 0.93,
+    "dayChangePer": 0.1259,
+    "lastClose": 738.85,
+    "exchangeId": "XNAS",
+    "ts": "1618622172000",
+    "currencyCode": "USD"
+}
+```
+
+This endpoint is used to draw chart in Quote tab
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/stock/v2/get-mini-chart-realtime-data`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+performanceId | string (required) | The value of performanceId returned in .../market/v2/get-movers , .../market/v2/auto-complete, etc... endpoints. 
+ 
+## stock/v2/get-security-info
+
+curl "https://morning-star.p.rapidapi.com/stock/v2/get-security-info?performanceId=0P0000OQN8" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "userType": "Free",
+    "performanceId": "0P0000OQN8",
+    "securityName": "Tesla Inc",
+    "ticker": "TSLA",
+    "starRating": "_PO_",
+    "qualRating": "_PO_",
+    "quantRating": "_PO_",
+    "bestRatingType": "Qual",
+    "investmentStyle": "3",
+    "priceEarnings": "1155.906250",
+    "priceBook": "31.949625",
+    "priceSale": "25.405306",
+    "forwardPE": "175.43859649122805",
+    "forwardDivYield": null,
+    "starRatingDate": "2021-04-16T21:19:00Z",
+    "returnStatistics": {
+        "numberOfMonths": 60.0,
+        "beta": 2.016234
+    }
+}
+```
+
+This endpoint is mapped to quote section in quote tab
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/stock/v2/get-security-info`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+performanceId | string (required) | Value of performanceId field from .../auto-complete or /get-summary or .../get-movers endpoints
+
+## stock/v2/get-price-fair-value
+
+curl "https://morning-star.p.rapidapi.com/stock/v2/get-price-fair-value?performanceId=0P0000OQN8" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "_meta": {
+        "responseStatus": "200700",
+        "hint": "Securities successfully returned",
+        "performanceId": "0P0000OQN8"
+    },
+    "columnDefs": [
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "YTD"
+    ],
+    "chart": {
+        "chartDatums": {
+            "recent": {
+                "latestFairValue": "_PO_",
+                "uncertainty": "_PO_",
+                "latestClose": "739.78",
+                "bf": [
+                    "2021-04-18",
+                    "_PO_",
+                    "_PO_",
+                    "_PO_",
+                    "_PO_",
+                    "_PO_"
+                ]
+            },
+            "yearly": [
+                {
+                    "annualHigh": "7",
+                    "annualLow": "4.2219999999999995",
+                    "monthly": [
+                        {
+                            "high": "5.742",
+                            "low": "4.474",
+                            "close": "4.82",
+                            "starRating": null,
+                            "bf": [
+                                "2011-01-31",
+                                "_PO_",
+                                "_PO_",
+                                "_PO_",
+                                "_PO_",
+                                "_PO_"
+                            ]
+                        },
+                        ..
+                    ]
+                },
+                ...
+            ]
+        },
+        "isQual": true,
+        "closePriceCurrency": null,
+        "realtimeCurrency": "USD",
+        "lastCloseCurrency": "USD",
+        "fairValCurrency": "USD"
+    },
+    "table": {
+        "rows": [
+            {
+                "label": "Price/Fair Value",
+                "salDataId": "price.fair.value.label",
+                "isQuantitative": false,
+                "datum": [
+                    "_PO_",
+                    "_PO_",
+                    "_PO_",
+                    "_PO_",
+                    "_PO_",
+                    "_PO_",
+                    "_PO_",
+                    "_PO_",
+                    "_PO_",
+                    "_PO_",
+                    "_PO_"
+                ]
+            },
+            ...
+        ]
+    },
+    "userType": "Free",
+    "footer": {
+        "asOfLabel": "As of",
+        "asOfDate": "2021-04-16T00:00:00.000",
+        "indexLabel": "Index:",
+        "indexName": "Morningstar US Market TR USD"
+    }
+}
+```
+
+This endpoint is used to mapped to price vs fair value  tab
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/stock/v2/get-price-fair-value`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+performanceId | string (required) | Value of performanceId field from .../auto-complete or /get-summary or .../get-movers endpoints
+
+## stock/v2/get-key-stats
+
+curl "https://morning-star.p.rapidapi.com/stock/v2/get-key-stats?performanceId=0P0000OQN8" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "revenue3YearGrowth": {
+        "stockValue": "38.9400",
+        "indAvg": "-3.2700"
+    },
+    "netIncome3YearGrowth": {
+        "stockValue": null,
+        "indAvg": "-13.4000"
+    },
+    "operatingMarginTTM": {
+        "stockValue": "6.3200",
+        "indAvg": "5.3200"
+    },
+    "netMarginTTM": {
+        "stockValue": "2.1900",
+        "indAvg": "3.2800"
+    },
+    "roaTTM": {
+        "stockValue": "1.6000",
+        "indAvg": "1.7900"
+    },
+    "roeTTM": {
+        "stockValue": "4.7800",
+        "indAvg": "6.2700"
+    },
+    "debitToEquity": {
+        "stockValue": "0.4887",
+        "indAvg": "0.8739"
+    },
+    "freeCashFlow": {
+        "cashFlowTTM": "2701000000",
+        "date": "2020-12-31T06:00:00.000"
+    }
+}
+```
+
+This endpoint is used to mapped to key ratios section in quote tab
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/stock/v2/get-key-stats`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+performanceId | string (required) | Value of performanceId field from .../auto-complete or /get-summary or .../get-movers endpoints
+
+## stock/v2/get-analysis-report
+
+curl "https://morning-star.p.rapidapi.com/stock/v2/get-analysis-report?performanceId=0P0000OQN8" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "userType": "Free",
+    "total": 110,
+    "rpsCovered": true,
+    "isLocalized": true,
+    "analysisReport": {
+        "headLine": "Tesla Continues Its Aggressive Growth Plans",
+        "investmentThesis": "Tesla has a chance to be the dominant electric vehicle firm long term and is a leading autonomous vehicle player as well as a vertically integrated sustainable energy company with energy generation and storage products, but we see immense competition coming this decade. Tesla's product plans for now do not mean an electric vehicle for every consume",
+        "investmentThesisDateUTC": "2021-02-24T00:43:00Z",
+        "economicMoat": null,
+        "economicMoatDateUTC": "2021-02-24T00:43:00Z",
+        "valuation": null,
+        "valuationDateUTC": "2021-02-24T01:43:00Z",
+        "risk": null,
+        "riskDateUTC": "2021-02-24T00:43:00Z",
+        "management": null,
+        "managementDateUTC": "2021-02-24T01:43:00Z",
+        "bullsSay": null,
+        "bearsSay": null,
+        "author": {
+            "authorId": 766,
+            "authorName": "David Whiston",
+            "authorImage": "https://im.mstar.com/Content/CMSImages/78x78/766-dwhisto-78x78.jpg",
+            "authorImageHeadshot": "https://im.mstar.com/im/BetaSiteHeadshots/David-Whiston_766.jpg",
+            "email": "david.whiston@morningstar.com",
+            "phoneNumber": "+1 312 384 5442",
+            "holdings": "AMZN BP DIS EXPR GOOG GOOGL IPI MELI MOAT AAPL AMAT ECPN FB GLW JNJ MSFT SYK",
+            "jobTitle": null,
+            "isPrimaryAuthor": true,
+            "profiles": [
+                {
+                    "byLine": "David Whiston",
+                    "isPrimaryProfile": true,
+                    "jobTitle": "Sector Strategist",
+                    "language": "en-US"
+                }
+            ]
+        }
+    },
+    "analystNote": {
+        "note": null,
+        "title": null,
+        "date": null,
+        "author": null
+    },
+    "lastUpdateBy": 766
+}
+```
+
+This endpoint is used to get detail information of stock, market
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/stock/v2/get-analysis-report`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+performanceId | string (required) | Value of performanceId field from .../auto-complete or /get-summary or .../get-movers endpoints
+
+## stock/v2/get-trailing-total-returns
+
+curl "https://morning-star.p.rapidapi.com/stock/v2/get-trailing-total-returns?performanceId=0P0000OQN8&dataType=d" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "returnDate": "2021-04-16T05:00:00.000",
+    "trailingTotalReturnsList": [
+        {
+            "name": "TSLA",
+            "trailing1DayReturn": "0.12587",
+            "trailing1WeekReturn": "9.27004",
+            "trailing1MonthReturn": "9.29264",
+            "trailing3MonthReturn": "-10.45560",
+            "trailing6MonthReturn": "68.25801",
+            "trailingYearToDateReturn": "4.83370",
+            "trailing1YearReturn": "396.35673",
+            "trailing3YearReturn": "133.32186",
+            "trailing5YearReturn": "70.79437",
+            "trailing10YearReturn": "64.44369",
+            "trailing15YearReturn": null
+        },
+        ...
+    ]
+}
+```
+
+This endpoint is used to mapped to trailing returns  tab
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/stock/v2/get-trailing-total-returns`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+performanceId | string (required) | Value of performanceId field from .../auto-complete or /get-summary or .../get-movers endpoints
+dataType | string | One of the following : d - day|m - month|q - quarterly
+
+## stock/v2/get-analysis-data
+
+curl "https://morning-star.p.rapidapi.com/stock/v2/get-analysis-data?performanceId=0P0000OQN8" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "ticker": "TSLA",
+    "isQuan": false,
+    "userType": "Free",
+    "valuation": {
+        "fairValue": "_PO_",
+        "fairValueDate": "2021-02-24T00:00:00.000",
+        "assessment": "_PO_",
+        "assessmentDate": "2021-04-18T00:00:00.000",
+        "uncertainty": "_PO_",
+        "moat": "_PO_",
+        "moatDate": "2021-04-18T00:00:00.000",
+        "moatTrendEvaluate": "Positive",
+        "premiumDisc": "_PO_",
+        "stewardship": "_PO_",
+        "stewardshipDate": "2021-04-18T00:00:00.000",
+        "premDiscDelta": "_PO_",
+        "oneStar": "_PO_",
+        "oneStarDate": "2021-04-18T00:00:00.000",
+        "fiveStar": "_PO_",
+        "fiveStarDate": "2021-04-18T00:00:00.000",
+        "fairValCurrency": "USD",
+        "bf2": "_PO_",
+        "bf3": "_PO_",
+        "bf4": "_PO_",
+        "bf5": "_PO_",
+        "lastClose": "_PO_",
+        "startRating": "_PO_",
+        "lastCloseCurrency": "USD"
+    },
+    "companyProfile": "Founded in 2003 and based in Palo Alto, California, Tesla is a vertically integrated sustainable energy company that also aims to transition the world to electric mobility by making electric vehicles. It sells solar panels and solar roofs for energy generation plus batteries for stationary storage for residential and commercial properties including utilities. It also makes solar roofs and plans to enter the HVAC market. The Tesla Roadster debuted in 2008, Model S in 2012, Model X in 2015, Model 3 in 2017, and Model Y in 2020. Global deliveries in 2020 were 499,647 units. Tesla went public in 2010 and employs about 71,000 people."
+}
+```
+
+This endpoint is used to mapped to analysis section in quote tab
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/stock/v2/get-analysis-data`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+performanceId | string (required) | Value of performanceId field from .../auto-complete or /get-summary or .../get-movers endpoints
+
+## stock/v2/get-financials
+
+curl "https://morning-star.p.rapidapi.com/stock/v2/get-financials?performanceId=0P0000OQN8" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "incomeStatement": {
+        "_meta": {
+            "companyId": "0C00004EP4",
+            "statementType": "income-statement",
+            "periodReport": "Success",
+            "latestReport": "Success"
+        },
+        "columnDefs": [
+            "2018",
+            "2019",
+            "2020",
+            "TTM"
+        ],
+        "filingIdList": [
+            "211708709",
+            "264149200",
+            "320461313",
+            null
+        ],
+        "columnDefs_labels": [
+            "20181231",
+            "20191231",
+            "20201231",
+            "20201231"
+        ],
+        "rows": [
+            {
+                "label": "Total Revenue",
+                "dataPointId": "IFIS001170",
+                "datum": [
+                    21.46,
+                    24.58,
+                    31.54,
+                    31.54
+                ]
+            },
+            ...
+        ],
+        "footer": {
+            "currency": "USD",
+            "currencySymbol": "$",
+            "orderOfMagnitude": "Billion",
+            "fiscalYearEndDate": "12-31"
+        }
+    },
+    "balanceSheet": {
+        "_meta": {
+            "companyId": "0C00004EP4",
+            "statementType": "balance-sheet",
+            "periodReport": "Success",
+            "latestReport": "Success"
+        },
+        "columnDefs": [
+            "2018",
+            "2019",
+            "2020",
+            "Q3 2020"
+        ],
+        "filingIdList": [
+            null,
+            null,
+            "320461313",
+            "305166809"
+        ],
+        "columnDefs_labels": [
+            "",
+            "",
+            "20201231",
+            "20230930"
+        ],
+        "rows": [
+            {
+                "label": "Total Assets",
+                "dataPointId": "IFBS002270",
+                "datum": [
+                    null,
+                    null,
+                    52.15,
+                    45.69
+                ]
+            },
+            ...
+        ],
+        "footer": {
+            "currency": "USD",
+            "currencySymbol": "$",
+            "orderOfMagnitude": "Billion",
+            "fiscalYearEndDate": "12-31"
+        }
+    },
+    "cashFlow": {
+        "_meta": {
+            "companyId": "0C00004EP4",
+            "statementType": "cash-flow",
+            "periodReport": "Success",
+            "latestReport": "Success"
+        },
+        "columnDefs": [
+            "2018",
+            "2019",
+            "2020",
+            "TTM"
+        ],
+        "filingIdList": [
+            "211708709",
+            "264149200",
+            "320461313",
+            null
+        ],
+        "columnDefs_labels": [
+            "20181231",
+            "20191231",
+            "20201231",
+            "20201231"
+        ],
+        "rows": [
+            {
+                "label": "Cash Flow from Operating Activities, Indirect",
+                "dataPointId": "IFCF000150",
+                "datum": [
+                    2.10,
+                    2.41,
+                    5.94,
+                    5.94
+                ]
+            },
+            ...
+        ],
+        "footer": {
+            "currency": "USD",
+            "currencySymbol": "$",
+            "orderOfMagnitude": "Billion",
+            "fiscalYearEndDate": "12-31"
+        }
+    }
+}
+```
+
+This endpoint is used to mapped to financials  tab
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/stock/v2/get-financials`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+performanceId | string (required) | Value of performanceId field from .../auto-complete or /get-summary or .../get-movers endpoints
+interval | string | One of the following : quarterly | annual
+reportType | string | One of the following : R - Restated | A - As originally reported
+
+## stock/v2/get-splits
+
+curl "https://morning-star.p.rapidapi.com/stock/v2/get-splits?performanceId=0P0000OQN8" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "splitHistory": [
+        {
+            "date": "2020-08-31T05:00:00.000",
+            "ratio": "5:1"
+        }
+    ],
+    "splitOffHistory": []
+}
+```
+
+This endpoint is used to mapped to dividends tab
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/stock/v2/get-splits`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+performanceId | string (required) | Value of performanceId field from .../auto-complete or /get-summary or .../get-movers endpoints
+
+## stock/v2/get-executive
+
+curl "https://morning-star.p.rapidapi.com/stock/v2/get-executive?performanceId=0P0000OQN8" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "rows": [
+        {
+            "type": "person",
+            "personId": "PS00005ROA",
+            "name": "Elon Musk",
+            "title": "Chief Executive Officer and Director",
+            "holding": "75.0000",
+            "memberSince": "2008",
+            "age": "48",
+            "totalCompensation": [
+                "37584.00",
+                "45936.00",
+                "49920.00",
+                "2284044884.00",
+                "23760.00"
+            ],
+            "compensation": [
+                {
+                    "nameId": "salary",
+                    "name": "Salary",
+                    "datum": [
+                        "37584.00",
+                        "45936.00",
+                        "49920.00",
+                        "56380.00",
+                        "23760.00"
+                    ]
+                },
+                ...
+            ]
+        },
+        ...
+    ],
+    "datesDef": [
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019"
+    ],
+    "currency": "USD"
+}
+```
+
+This endpoint is used to mapped to executive tab
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/stock/v2/get-executive`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+performanceId | string (required) | Value of performanceId field from .../auto-complete or /get-summary or .../get-movers endpoints
+executive | string | One of the following : keyExecutives | boardOfDirectors | committees | transactionHistory | transactionChart 
+
+## stock/v2/get-competitors
+
+curl "https://morning-star.p.rapidapi.com/stock/v2/get-competitors?performanceId=0P0000OQN8" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "userType": "Free",
+    "main": {
+        "ticker": "TSLA",
+        "name": "Tesla Inc",
+        "instrumentId": "126.1.TSLA",
+        "fairValue": "_PO_",
+        "moat": "_PO_",
+        "assessment": "_PO_",
+        "starRating": "_PO_",
+        "priceSale": "25.405306",
+        "priceBook": "31.949625",
+        "priceEarnings": "1155.906250",
+        "priceFair": "_PO_",
+        "isQuant": false,
+        "exchangeId": null,
+        "shareClassId": null,
+        "securityType": null,
+        "dividendYield": null,
+        "investmentStyle": "3",
+        "bf2": "610.75",
+        "bf3": "436.25000",
+        "bf4": "279.20000",
+        "bf5": "174.5",
+        "premiumDisc": "112",
+        "performanceId": "0P0000OQN8",
+        "uncertaintyCurrent": "_PO_",
+        "fairValCurrency": "USD",
+        "analyst": "David Whiston, Sector Strategist",
+        "fairValDate": "2021-02-24T01:40:32Z",
+        "starRatingDate": "2021-04-16T21:19:00Z",
+        "lastCloseDB": 739.78,
+        "lastCloseCurrencyDB": "USD"
+    },
+    "competitors": [
+        {
+            "ticker": "F",
+            "name": "Ford Motor Co",
+            "instrumentId": "126.1.F",
+            "fairValue": "_PO_",
+            "moat": "_PO_",
+            "assessment": "_PO_",
+            "starRating": "_PO_",
+            "priceSale": "0.382163",
+            "priceBook": "1.590497",
+            "priceEarnings": "29.829268",
+            "priceFair": "_PO_",
+            "isQuant": false,
+            "exchangeId": null,
+            "shareClassId": null,
+            "securityType": null,
+            "dividendYield": "0.0112",
+            "investmentStyle": "1",
+            "bf2": "26.25",
+            "bf3": "18.75000",
+            "bf4": "12.00000",
+            "bf5": "7.5",
+            "premiumDisc": "-18",
+            "performanceId": "0P0000029A",
+            "uncertaintyCurrent": "_PO_",
+            "fairValCurrency": "USD",
+            "analyst": "David Whiston, Sector Strategist",
+            "fairValDate": "2021-02-13T00:10:32Z",
+            "starRatingDate": "2021-04-16T21:19:00Z",
+            "lastCloseDB": 12.23,
+            "lastCloseCurrencyDB": "USD"
+        },
+        ...
+    ]
+}
+```
+
+This endpoint is used to mapped to competitors section in quote tab
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/stock/v2/get-competitors`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+performanceId | string (required) | Value of performanceId field from .../auto-complete or /get-summary or .../get-movers endpoints
+
+## stock/v2/get-mini-chart-quote
+
+curl "https://morning-star.p.rapidapi.com/stock/v2/get-mini-chart-quote?performanceId=0P0000OQN8" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "status": "OK",
+    "idsMessage": "126.1.TSLA",
+    "exchangeID": "XNAS",
+    "exchangeTimeZoneCode": "EST",
+    "exchangeTimeZoneOffset": "-4:00",
+    "previousTradingDayClosePrice": 738.85,
+    "recentTradingDay": "2021-04-16",
+    "lastUpdateDay": "2021-04-16",
+    "recentTradingDayOpenTime": "2021-04-16T13:30Z",
+    "recentTradingDayCloseTime": "2021-04-16T20:00Z",
+    "recentTradingDayOpenPrice": 728.65,
+    "exchangeName": "NASDAQ",
+    "priceOfTradeAfter": 739.25,
+    "tradingStatus": "Pre-Open",
+    "recentTradingDayTSPrices": [
+        {
+            "dateGMT": "16-04-2021",
+            "exchangeTime": "20:00",
+            "openPrice": 739.67,
+            "tradingVolume": 328272,
+            "gmtDateTime": "2021-04-16T20:00Z"
+        },
+        ...
+    ],
+    "chartStatus": "OK",
+    "marketOpenToday": true
+}
+```
+
+This endpoint is used to used to draw chart in quote tab
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/stock/v2/get-mini-chart-quote`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+performanceId | string (required) | Value of performanceId field from .../auto-complete or /get-summary or .../get-movers endpoints
+
+## stock/v2/get-profile
+
+curl "https://morning-star.p.rapidapi.com/stock/v2/get-profile?performanceId=0P0000OQN8" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "0P0000OQN8": {
+        "ticker": {
+            "value": "TSLA",
+            "filtered": false
+        },
+        "website": {
+            "value": "https://www.tesla.com",
+            "filtered": false
+        },
+        "headquarterCountry": {
+            "value": "United States",
+            "filtered": false
+        },
+        "stockType": {
+            "value": "Cyclical",
+            "filtered": false
+        },
+        "headquarterAddress1": {
+            "value": "3500 Deer Creek Road",
+            "filtered": false
+        },
+        "industry": {
+            "value": "Auto Manufacturers",
+            "filtered": false
+        },
+        "stockStarRating": {
+            "value": "8",
+            "filtered": true,
+            "date": {
+                "value": "2021-04-16",
+                "filtered": false
+            },
+            "text": {
+                "value": "Significantly Overvalued",
+                "filtered": false
+            },
+            "type": {
+                "value": "Qual",
+                "filtered": false
+            }
+        },
+        "fiscalYearEndDate": {
+            "value": "2021-12-31",
+            "filtered": false
+        },
+        "headquarterCity": {
+            "value": "Palo Alto",
+            "filtered": false
+        },
+        "headquarterState": {
+            "value": "CA",
+            "filtered": false
+        },
+        "reportDate": {
+            "value": "2020-12-31",
+            "filtered": false
+        },
+        "phone": {
+            "value": "+1 650 681-5000",
+            "filtered": false
+        },
+        "universe": {
+            "value": "EQ",
+            "filtered": false
+        },
+        "headquarterPostalCode": {
+            "value": "94304",
+            "filtered": false
+        },
+        "exchange": {
+            "value": "XNAS",
+            "filtered": false
+        },
+        "companyProfile": {
+            "value": "Founded in 2003 and based in Palo Alto, California, Tesla is a vertically integrated sustainable energy company that also aims to transition the world to electric mobility by making electric vehicles. It sells solar panels and solar roofs for energy generation plus batteries for stationary storage for residential and commercial properties including utilities. It also makes solar roofs and plans to enter the HVAC market. The Tesla Roadster debuted in 2008, Model S in 2012, Model X in 2015, Model 3 in 2017, and Model Y in 2020. Global deliveries in 2020 were 499,647 units. Tesla went public in 2010 and employs about 71,000 people.",
+            "filtered": false
+        },
+        "fax": {
+            "value": "+1 650 681-5101",
+            "filtered": false
+        },
+        "totalEmployees": {
+            "value": 70757,
+            "filtered": false
+        },
+        "sector": {
+            "value": "Consumer Cyclical",
+            "filtered": false
+        }
+    }
+}
+```
+
+This endpoint is used to mapped to company profile section in quote  tab
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/stock/v2/get-profile`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+performanceId | string (required) | Value of performanceId field from .../auto-complete or /get-summary or .../get-movers endpoints
+
+## stock/v2/get-ownership
+
+curl "https://morning-star.p.rapidapi.com/stock/v2/get-ownership?performanceId=0P0000OQN8" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "isRestricted": false,
+    "userType": "Free",
+    "country": "USA",
+    "rows": [
+        {
+            "secId": "FOUSA02W9R",
+            "name": "Baron Partners Retail",
+            "totalSharesHeld": 0.4349622085663606,
+            "totalAssets": 41.53428,
+            "currentShares": 4175000,
+            "changeAmount": -400000,
+            "changePercentage": -8.743169398907105,
+            "date": "2021-03-31T00:00:00.000",
+            "trend": "_PO_",
+            "starRating": "5"
+        },
+        ...
+    ],
+    "columnDefs": [
+        {
+            "columnId": "name",
+            "dataType": "string"
+        },
+        ...
+    ]
+}
+```
+
+This endpoint is used to mapped to ownership tab
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/stock/v2/get-ownership`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+performanceId | string (required) | Value of performanceId field from .../auto-complete or /get-summary or .../get-movers endpoints
+ownership | string | One of the following : OwnershipData | ConcentratedOwners | Sellers | Buyers
+asset | string | One of the following : mutualfund | institution
+
+## stock/v2/get-valuation
+
+curl "https://morning-star.p.rapidapi.com/stock/v2/get-valuation?performanceId=0P0000OQN8" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "Collapsed": {
+        "rows": [
+            {
+                "label": "Price/Sales",
+                "salDataId": "price.sales.label",
+                "isQuantitative": false,
+                "datum": [
+                    "13.9084",
+                    "8.7982",
+                    "10.3395",
+                    "9.6434",
+                    "8.0332",
+                    "4.9809",
+                    "4.7027",
+                    "3.2209",
+                    "2.9983",
+                    "25.4896",
+                    "25.4053",
+                    "6.7559",
+                    "2.9495"
+                ],
+                "subLevel": ""
+            },
+            ...
+        ],
+        "columnDefs": [
+            "Calendar",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "Current",
+            "5-Yr",
+            "Index"
+        ],
+        "columnDefs_labels": [
+            "tabular.data.label.column.year",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "valuation.headers.current",
+            "valuation.headers.fiveyear",
+            "valuation.headers.index"
+        ],
+        "userType": null,
+        "footer": {
+            "asOfLabel": "As of",
+            "asOfDate": "2021-04-18T00:00:00.000",
+            "indexLabel": "Index:",
+            "indexName": "Morningstar US Market TR USD",
+            "enterpriseValueCurrency": "USD"
+        }
+    },
+    "Expanded": {
+        "rows": [
+            {
+                "label": "Price/Forward Earnings",
+                "salDataId": "price.forward.earnings.label",
+                "isQuantitative": false,
+                "datum": [
+                    "-14.9031",
+                    "-49.7512",
+                    "133.3333",
+                    "65.3595",
+                    "156.25",
+                    "384.6154",
+                    "-70.922",
+                    "61.3497",
+                    "95.2381",
+                    "175.4386",
+                    "175.4386",
+                    "178.2437",
+                    null
+                ],
+                "subLevel": ""
+            },
+            ...
+        ],
+        "columnDefs": [
+            "Calendar",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "Current",
+            "5-Yr",
+            "Index"
+        ],
+        "columnDefs_labels": [
+            "tabular.data.label.column.year",
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "valuation.headers.current",
+            "valuation.headers.fiveyear",
+            "valuation.headers.index"
+        ]
+    }
+}
+```
+
+This endpoint is used to mapped to valuation  tab
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/stock/v2/get-valuation`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+performanceId | string (required) | Value of performanceId field from .../auto-complete or /get-summary or .../get-movers endpoints
+
+## stock/v2/get-dividends
+
+curl "https://morning-star.p.rapidapi.com/stock/v2/get-dividends?performanceId=0P0000OQN8" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "rows": [
+        {
+            "label": "Dividend Per Share",
+            "salDataId": "dividends.per.share.label",
+            "datum": []
+        },
+        {
+            "label": "Trailing Dividend Yield %",
+            "salDataId": "trailing.dividends.yield.label",
+            "datum": [],
+            "percentage": true
+        },
+        {
+            "label": "Buyback Yield %",
+            "salDataId": "buyback.yield.label",
+            "datum": [
+                null,
+                null,
+                null,
+                "0.00",
+                null,
+                null,
+                null,
+                "0.00",
+                null,
+                null,
+                null,
+                null,
+                null
+            ],
+            "percentage": true
+        },
+        ...
+    ],
+    "columnDefs_labels": [
+        "tabular.data.label.column.year",
+        "2011",
+        "2012",
+        "2013",
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "dividends.headers.current",
+        "dividends.headers.oneyearttm",
+        "dividends.headers.fiveyear"
+    ],
+    "dividendData": {
+        "label": [
+            "exdividend.date.label",
+            "declaration.date.label",
+            "record.date.label",
+            "payable.date.label",
+            "dividend.type.label",
+            "dividend.amount.label"
+        ],
+        "upcomingData": [],
+        "dividendHistory": []
+    },
+    "quoteData": [
+        {
+            "name": "dividendYield",
+            "label": "Dividend Yield",
+            "salDataId": "dividend.yield.label",
+            "date": null,
+            "value": null
+        },
+        ...
+    ],
+    "footer": {
+        "asOfLabel": "As of",
+        "distributionCurrency": null
+    }
+}
+```
+
+This endpoint is used to mapped to dividends tab
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/stock/v2/get-dividends`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+performanceId | string (required) | Value of performanceId field from .../auto-complete or /get-summary or .../get-movers endpoints
+
+## stock/v2/get-short-interest
+
+curl "https://morning-star.p.rapidapi.com/stock/v2/get-short-interest?performanceId=0P0000OQN8" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "sharesOutstanding": 959.8535,
+    "floatShares": 771.7854,
+    "sharesShorted": 4.6269602E7,
+    "sharesShortedDate": "2021-03-31T05:00:00.000",
+    "floatSharesShorted": 5.9951,
+    "daysToConver": 1.1289,
+    "sharesShortedChanged": 3.4355,
+    "previousSharesShortedDate": "2021-03-15T05:00:00.000"
+}
+```
+
+This endpoint is used to mapped to short interest section in quote tab
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/stock/v2/get-short-interest`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+performanceId | string (required) | Value of performanceId field from .../auto-complete or /get-summary or .../get-movers endpoints
+
+## stock/v2/get-operating-performance
+
+curl "https://morning-star.p.rapidapi.com/stock/v2/get-operating-performance?performanceId=0P0000OQN8" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "_meta": {
+        "responseStatus": "200700",
+        "hint": "Securities successfully returned",
+        "performanceId": "0P0000OQN8"
+    },
+    "reported": {
+        "reportType": "Fiscal",
+        "reportType_label": "operating.performance.report.type",
+        "columnDefs": [
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "TTM",
+            "5-Yr",
+            "Index"
+        ],
+        "columnDefs_labels": [
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "operating.performance.headers.oneyearttm",
+            "operating.performance.headers.fiveyear",
+            "operating.performance.headers.index"
+        ],
+        "Collapsed": {
+            "rows": [
+                {
+                    "label": "Return on Assets %",
+                    "salDataId": "return.on.assets.reported.label",
+                    "datum": [
+                        "-46.28",
+                        "-43.36",
+                        "-4.19",
+                        "-7.11",
+                        "-12.75",
+                        "-4.39",
+                        "-7.64",
+                        "-3.34",
+                        "-2.69",
+                        "1.60",
+                        "1.60",
+                        "-4.87",
+                        "7.23653"
+                    ],
+                    "percentage": true
+                },
+                ...
+            ]
+        },
+        "Expanded": {
+            "rows": [
+                {
+                    "label": "Financial Leverage",
+                    "salDataId": "financial.leverage.reported.label",
+                    "datum": [
+                        "3.184396",
+                        "8.934964",
+                        "3.622931",
+                        "6.415692",
+                        "7.431475",
+                        "4.768462",
+                        "6.762741",
+                        "6.040655",
+                        "5.184195",
+                        "2.346367",
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                ...
+            ]
+        }
+    },
+    "restated": {
+        "reportType": "Fiscal",
+        "reportType_label": "operating.performance.report.type",
+        "columnDefs": [
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "TTM",
+            "5-Yr",
+            "Index"
+        ],
+        "columnDefs_labels": [
+            "2011",
+            "2012",
+            "2013",
+            "2014",
+            "2015",
+            "2016",
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "operating.performance.headers.oneyearttm",
+            "operating.performance.headers.fiveyear",
+            "operating.performance.headers.index"
+        ],
+        "Collapsed": {
+            "rows": [
+                {
+                    "label": "Return on Assets %",
+                    "salDataId": "return.on.assets.restated.label",
+                    "datum": [
+                        "-46.28",
+                        "-43.36",
+                        "-4.19",
+                        "-7.13",
+                        "-12.79",
+                        "-4.39",
+                        "-7.65",
+                        "-3.34",
+                        "-2.72",
+                        "1.60",
+                        "1.60",
+                        "-4.87",
+                        "7.23653"
+                    ],
+                    "percentage": true
+                },
+                ...
+            ]
+        },
+        "Expanded": {
+            "rows": [
+                {
+                    "label": "Financial Leverage",
+                    "salDataId": "financial.leverage.restated.label",
+                    "datum": [
+                        "3.184396",
+                        "8.934964",
+                        "3.622931",
+                        "6.395309",
+                        "7.444781",
+                        "4.768462",
+                        "6.762741",
+                        "6.041032",
+                        "5.184195",
+                        "2.346367",
+                        null,
+                        null,
+                        null
+                    ]
+                },
+                ...
+            ]
+        }
+    },
+    "footer": {
+        "indexLabel": "Index:",
+        "indexName": "Morningstar US Market TR USD",
+        "ebitdaCurrency": "USD"
+    }
+}
+```
+
+This endpoint is used to mapped to operating performance tab
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/stock/v2/get-operating-performance`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+performanceId | string (required) | Value of performanceId field from .../auto-complete or /get-summary or .../get-movers endpoints
+
+## stock/v2/get-instruments
+
+curl "https://morning-star.p.rapidapi.com/stock/v2/get-instruments?instrumentIds=126.1.TSLA,213.1.BMW,126.1.F,126.1.GM" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+    {
+        "status": "OK",
+        "lastPrice": 739.78,
+        "lastClose": 738.85,
+        "tradingStatus": "Pre-Open",
+        "marketCap": 692812660652.1599121094,
+        "currencyCode": "USD",
+        "currencySymbol": "$",
+        "listedCurrency": "USD",
+        "tradedCurrency": null,
+        "exchangeID": "XNAS",
+        "exchangeName": "NASDAQ",
+        "exchangeTimeZone": "EST",
+        "type": "Equity",
+        "dayChange": 0.93,
+        "dayChangePer": 0.1259,
+        "message": "126.1.TSLA"
+    },
+    ...
+]
+```
+
+This endpoint is used to mapped to competitors section in quote tab
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/stock/v2/get-instruments`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+instrumentIds | string (required) | Value of instrumentId field from .../stock/v2/get-competitors endpoint
+
+
+## stock/get-histories
+
+curl "https://morning-star.p.rapidapi.com/stock/get-histories?PerformanceId=0P00001GJH" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+    {
+        "RequestKey": "0P00001GJH",
+        "1D": [],
+        "3M": [
+            {
+                "Volume": 0,
+                "Price": 9741.7,
+                "DateTime": "2021-01-19T00:00:00Z",
+                "Growth": 0.0000,
+                "CalcString": "9741.7-9741.7/9741.7",
+                "ReferenceDate": "2021-01-19T00:00:00Z"
+            },
+            ...
+        ],
+        "1Y": [
+            {
+                "Volume": 0,
+                "Price": 7071.52,
+                "DateTime": "2020-04-17T00:00:00Z",
+                "Growth": 0.0000,
+                "CalcString": "7071.52-7071.52/7071.52",
+                "ReferenceDate": "2020-04-17T00:00:00Z"
+            },
+            ...
+        ],
+        "5Y": [
+            {
+                "Volume": 0,
+                "Price": 5246.06,
+                "DateTime": "2016-04-19T00:00:00Z",
+                "Growth": 0.0000,
+                "CalcString": "5246.06-5246.06/5246.06",
+                "ReferenceDate": "2016-04-19T00:00:00Z"
+            },
+            ...
+        ],
+        "MAX": [
+            {
+                "Volume": 0,
+                "Price": 2626.75,
+                "DateTime": "2004-05-03T00:00:00Z",
+                "Growth": 0.0000,
+                "CalcString": "2626.75-2626.75/2626.75",
+                "ReferenceDate": "2004-05-03T00:00:00Z"
+            },
+            ...
+        ]
+    }
+]
+```
+
+This endpoint is used to get stock, market histories
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/stock/get-histories`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+PerformanceId | string (required) | Value of PerformanceId field from /market/auto-complete and /market/get-summary APIs
+
+## stock/get-quote (Deprecated)
+
+curl "https://morning-star.p.rapidapi.com/stock/get-quote (Deprecated)?PerformanceId=0P00001GJH" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+Try calling a request yourself
+```
+
+This endpoint is used to get stock quote information
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/stock/get-quote (Deprecated)`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+PerformanceId | string (required) | Value of PerformanceId field from /market/auto-complete and /market/get-summary APIs
+
+## stock/get-detail
+
+curl "https://morning-star.p.rapidapi.com/stock/get-detail?PerformanceId=0P00001GJH" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+    {
+        "Name": "Nasdaq Inc",
+        "Currency": "USD",
+        "Exchange": "XNAS",
+        "Type": "ST",
+        "TypeName": "Stock",
+        "ExchangeShortName": "NASDAQ",
+        "ExchangeTimeZoneOffsetFromUTCInSeconds": -14400,
+        "CompanyId": "0C000008J5",
+        "PerformanceId": "0P000003RU",
+        "ShareClassId": "0P000003RU",
+        "FundShareClassId": "0P000003RU",
+        "InceptionDate": "2002-07-01",
+        "Sector": "Financial Services",
+        "Industry": "Financial Data & Stock Exchanges",
+        "RequestKey": "0P000003RU",
+        "Detail": {
+            "StarRating": 2,
+            "EquityStyle": 5,
+            "IsStarRatingBasedOnExtendedPerformance": false,
+            "Yield": 1.2200,
+            "ConsiderBuying": "Premium",
+            "ConsiderSelling": "Premium",
+            "CreditRating": "Premium",
+            "RevenueTTM": 5627,
+            "PriceFairValue": "Premium",
+            "ForwardDividendYield": 1.22,
+            "PriceProspectiveEarnings": 25.4453,
+            "PriceBook": 4.103112,
+            "PriceSales": 4.750845,
+            "PriceCashFlow": 21.35224,
+            "ReturnOnInvestmentCapital": 9.39,
+            "OverUnderValued": "Premium",
+            "ReturnOnAssets": {
+                "TrailingTwelveMonths": 5.84900,
+                "FinancialYear1": 5.85,
+                "FinancialYear2": 5.23,
+                "FinancialYear3": 2.95,
+                "FinancialYear4": 4.94,
+                "FinancialYear5": 0.82
+            },
+            "ReturnOnEquity": {
+                "TrailingTwelveMonths": 15.45730,
+                "FinancialYear1": 15.46,
+                "FinancialYear2": 13.96,
+                "FinancialYear3": 8.09,
+                "FinancialYear4": 12.89,
+                "FinancialYear5": 1.92
+            },
+            "EarningsPerShare": {
+                "TrailingTwelveMonths": 5.59,
+                "FinancialYear1": 5.59,
+                "FinancialYear2": 4.63,
+                "FinancialYear3": 2.73,
+                "FinancialYear4": 4.3,
+                "FinancialYear5": 0.63
+            },
+            "OperatingMargin": {
+                "TrailingTwelveMonths": 23.37,
+                "FinancialYear1": 23.37,
+                "FinancialYear2": 25.48,
+                "FinancialYear3": 24.53,
+                "FinancialYear4": 26.22,
+                "FinancialYear5": 25.73
+            },
+            "NetMargin": {
+                "TrailingTwelveMonths": 16.5808,
+                "FinancialYear1": 16.58,
+                "FinancialYear2": 18.16,
+                "FinancialYear3": 10.71,
+                "FinancialYear4": 18.47,
+                "FinancialYear5": 2.86
+            },
+            "FreeCashFlowMargin": {
+                "TrailingTwelveMonths": 18.91,
+                "FinancialYear1": 18.91,
+                "FinancialYear2": 19.62,
+                "FinancialYear3": 21.44
+            },
+            "QuarterlyEarningsPerShare": {
+                "TrailingTwelveMonths": 5.59,
+                "Quarter1": 1.34,
+                "Quarter2": 1.58,
+                "Quarter3": 1.45,
+                "Quarter4": 1.22
+            },
+            "Valuation": {
+                "AnalystCoverageStatus": "COVERED",
+                "BestRatingType": "Premium",
+                "PriceFairValue": {
+                    "StarRating34": "Premium",
+                    "StarRating45": "Premium",
+                    "StarRating12": "Premium",
+                    "StarRating23": "Premium"
+                },
+                "Take": {
+                    "FairValue": "Premium",
+                    "TrendQualCurrent": "Premium",
+                    "CompanyMediumProfile": "Nasdaq Inc is a provider of trading, clearing, exchange technology, regulatory, securities listing, information and public company services.",
+                    "Assessment": "Premium",
+                    "FairValueUncertainty": "Premium",
+                    "PremiumDiscountCurrent": "Premium",
+                    "PremiumDiscountValue": "Premium",
+                    "EconomicMoat": "Premium",
+                    "StewardshipGrade": "Premium"
+                }
+            },
+            "BestRatingType": "Qual",
+            "FairValue": 108,
+            "Assessment": "Overvalued"
+        },
+        "RegionAndTicker": "USA:NDAQ",
+        "Instrument": "126.1.NDAQ"
+    }
+]
+```
+
+This endpoint is used to get detail information of stock, market
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/stock/get-detail`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+PerformanceId | string (required) | Value of PerformanceId field from /market/auto-complete and /market/get-summary APIs
+
+## news/list
+
+curl "https://morning-star.p.rapidapi.com/news/list?performanceId=0P0000OQN8" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+    {
+        "id": "20210419191",
+        "sourceId": "marketwatch",
+        "sourceName": "MarketWatch",
+        "providerName": "Dow Jones",
+        "title": "Nikola stock drops after Wedbush's Ives cuts price target nearly in half",
+        "publishedDate": "2021-04-19T07:43:00-05:00"
+    },
+    ...
+]
+```
+
+This endpoint is used to list latest news
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/news/list`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+performanceId | string (required) | Value of performanceId field from .../auto-complete or /get-summary or .../get-movers endpoints
+
+## news/get-details
+
+curl "https://morning-star.p.rapidapi.com/news/get-details?id=sourceId=" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "id": "2020050815238",
+    "sourceId": "dow-jones",
+    "sourceName": "Global News Select",
+    "providerName": "Dow Jones",
+    "title": "Elon Musk's Effort to Reopen U.S. Tesla Factory Stalls",
+    "publishedDate": "2020-05-08T19:05:46.483-05:00",
+    "body": [
+        {
+            "type": "p",
+            "contentObject": [
+                {
+                    "type": "text",
+                    "content": "  By Tim Higgins ",
+                    "gated": false
+                }
+            ],
+            "gated": false
+        },
+        ...
+    ]
+}
+```
+
+This endpoint is used to get news details
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/news/get-details`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+id | string (required) | Value of id returned in .../news/list endpoint
+sourceId | string (required) | Value of sourceId returned in .../news/list endpoint
+
+## articles/list
+
+curl "https://morning-star.p.rapidapi.com/articles/list?performanceId=0P0000OQN8" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+    {
+        "Id": 1033521,
+        "Title": "What Is Greenwashing (And What You Can Do About It)",
+        "Locale": "en-US",
+        "Status": "Live",
+        "Collection": {
+            "name": "The Short Answer",
+            "id": 374
+        },
+        "Content": {
+            "evergreen": true,
+            "LargeIconPath": null,
+            "SmallIconPath": null,
+            "ClosedCaptioning": null,
+            "HDVideoURL": null,
+            "VideoPodcastURL": null,
+            "VideoFileURL": null,
+            "Deck": "In this article, we’ll show you how to quickly size up ESG risk exposure in your investments. ",
+            "VideoDescription": null,
+            "RemoveArchive": true,
+            "Body": "<xhtml xmlns=\"http://cms.morningstar.com/api/v2\"><p><em>Greenwashing </em>is when companies exaggerate their commitment to mitigating risks from environmental, social, and governance factors. Companies can greenwash by making unsubstantiated claims and also by omitting relevant information.</p>\n<p>Greenwashing affects consumers and investors alike. Companies that make false claims about the sustainability of their products profit from duping consumers who believe they are making an earth-friendly or socially conscious choice. Asset managers who claim to follow a sustainability-led mandate but invest in companies with significant ESG-related risk are doing their fund investors a similar disservice. </p>\n<p>It can be very difficult for investors to distinguish between genuine and effective ESG risk-mitigation efforts and greenwashing. And there’s no question that subpar regulatory disclosure requirements have exacerbated the problem. Acknowledging increased investor demand for ESG information, the Securities and Exchange Commission has launched some <a href=\"https://www.sec.gov/sec-response-climate-and-esg-risks-and-opportunities\" target=\"_blank\">initiatives</a> including a <a href=\"https://www.sec.gov/news/press-release/2021-42\" target=\"_blank\">task force</a> focused on identifying material gaps or misstatements regarding ESG risk at the company level and also among investment advisors running ESG strategies. </p>\n<p>While that’s certainly encouraging, meaningful regulatory change is often slow to happen. Europe is just now seeing the fruits of increased disclosure efforts <a href=\"https://ec.europa.eu/info/publications/sustainable-finance-high-level-expert-group_en\" target=\"_blank\">years in the making</a> with the Sustainable Finance Disclosure Regulation. Although the details and timeline for implementation have yet to be finalized, the SFDR will require funds marketed in the European Union to disclose climate, diversity, and governance data. </p>\n<p>U.S. investors don't have to wait in the dark for better regulatory initiatives to come to fruition, though. Companies already disclose--through mandated regulatory filings and optional (for now) corporate sustainability reports--a wealth of information that sustainability-focused analysts use to evaluate companies' products, supply chains, policies, and impact. </p>\n<p>In this article, we’ll show you how to use Morningstar and Sustainalytics research and data to measure ESG risk exposure in your investments. </p>\n<p><strong>Stocks</strong><br/>\nSustainalytics’ ESG Risk Ratings can help investors measure the degree to which ESG issues are putting a company’s enterprise value at risk. The higher the ESG Risk Rating, the higher the company’s unmanaged ESG risk. (Sustainalytics, a Morningstar company, provides <a href=\"https://www.sustainalytics.com/esg-ratings/\" target=\"_blank\">free access to ESG Risk Ratings on over 4,000 companies</a>.)</p>\n<p>An important characteristic of the ESG Risk Rating is that it is an absolute measure of risk. In other words, the scores and ratings are comparable across different issues, companies, and industries.</p>\n<p>The rating is composed of two main parts: \"Exposure\" measures a company’s vulnerability or susceptibility to ESG risks. To a large degree, the industry a company operates in dictates the ESG risk it faces. For example, an oil and gas company will be highly exposed to environmental risk, while a consumer technology business will be more exposed to social issues, such as data privacy. </p>\n<p>The \"Management\" dimension refers to actions taken by a company to manage a particular ESG issue. This can include a company’s ESG issues and policies. Controversies can negatively impact a company’s management score because they often reveal that management initiatives were insufficient or ineffective.</p>\n<p>The ESG Risk Rating blends the exposure score and the management score together. </p>\n<p>Here's a closer look at Tesla <span class=\"CMS__Security\" title=\"0P0000OQN8\">TSLA</span>:</p>\n<p><a href=\"https://www.sustainalytics.com/esg-rating/tesla-inc/1035322998/\"><img alt=\"\" src=\"https://im.morningstar.com/content/CMSImages/15412.PNG\"/></a><br/>\n<em>  - source: Sustainalytics.com</em></p>\n<p>To be clear, we are not saying Tesla is greenwashing. As an electric vehicle producer, Tesla's exposure to carbon-related regulations is significantly lower than other automakers'. Tesla's operations are also relatively clean and efficient compared with those of industry peers, which typically use more energy and emit more pollution.   </p>\n<p>But the company can't escape all the native risks of the auto manufacturing industry--particularly product safety risks--which show up in the \"S\" and \"G\" parts of the ESG risk equation. And Tesla exposes itself to increased safety risks in areas where it is an innovator, such as its automated driving capabilities and autopilot technology.  </p>\n<p>When scoring how well Tesla is managing its exposure to those ESG risks, Sustainalytics analysts evaluate the quality and integrity of the company's board and management (<span class=\"CMS__Document\" title=\"884272\">and any controversies</span>). They also factor in CEO Elon Musk's <a href=\"https://www.sec.gov/Archives/edgar/data/1318605/000119312518035345/d524719ddef14a.htm\" target=\"_blank\">unothodox compensation plan</a>, shareholders' rights, and any negative events the company has had involving labor practices and product safety.  </p>\n<p><strong>Mutual Funds</strong><br/>\nSome funds take a rigorous, in-depth approach to integrating ESG. Others may be labeled ESG, or sustainable, but do very little to mitigate investors’ exposure to companies with unattractive ESG risk profiles. </p>\n<p>If a fund describes itself as an ESG fund in its prospectus and marketing materials, it is reasonable to expect the portfolio <span class=\"CMS__Document\" title=\"1033389\">to favor companies with leading environmental, social, and governance practices</span>. You would expect--at the very least--that the fund would not expose an investor to <em>more </em>ESG risk than a traditional (non-ESG) fund in the same category. </p>\n<p>The <span class=\"CMS__Document\" title=\"949095\">Morningstar Sustainability Rating</span>  is a quick way to measure ESG risk in a fund portfolio. The rating starts with each company’s Sustainalytics ESG Risk Rating, which measures the degree to which individual companies in the portfolio face financial risks from ESG issues. Those individual scores are asset-weighted and rolled up into an overall, portfolio-level rating. The rating is easy to interpret: 5 globes means the overall portfolio has negligible ESG risk; 1 globe means it is exposed to significant ESG risk.</p>\n<p>Here’s what the Sustainability Rating looks like for Calvert Equity <span class=\"CMS__Security\" title=\"FOUSA00G1X\">CEYIX</span>, a fund that states in its prospectus that it incorporates ESG considerations into its investment process.</p>\n<p><a href=\"https://www.morningstar.com/funds/xnas/ceyix/portfolio\"><img alt=\"\" src=\"https://im.morningstar.com/content/CMSImages/15423.png\"/></a><br/>\n<em>  - source: Morningstar.com</em></p>\n<p><span>Calvert Equity's Sustainability Score reveals that its portfolio exposes investors to less unmanaged ESG risk than nearly every other fund in the large-growth Morningstar Category. </span></p>\n<p>As Tony Thomas explains in the fund's <a href=\"https://www.morningstar.com/funds/xnas/ceyix/quote\" target=\"_blank\">analysis</a>, Calvert’s ESG team employs a topnotch approach to ESG research, using a proprietary system to rate and rank companies based on ESG criteria and assess material ESG risks. This helps ensure the fund remains invested in ESG leaders and avoids laggards: If a holding drops off Calvert’s approved list, the portfolio managers must sell within a reasonable time frame. </p>\n<p>Another metric that fund investors can use to evaluate mutual fund portfolios' ESG risk exposure is the Morningstar Low Carbon Designation.</p>\n<p>Developed with Sustainalytics, this designation evaluates how well companies in the portfolio are managing their exposure to climate risk by limiting <span>low carbon transition risks and how much exposure they have to fossil fuels. </span>It rolls the company risk scores up into a portfolio-level score.</p>\n<p><a href=\"https://www.morningstar.com/funds/xnas/esgkx/portfolio\"><img alt=\"\" src=\"https://im.morningstar.com/content/CMSImages/15425.png\"/></a><br/>\n<em>  - source: Morningstar.com</em></p>\n<p>While more funds appear to be avoiding fossil fuels, <span class=\"CMS__Document\" title=\"1033389\">investors should not assume that all sustainable funds do</span>. It's also possible that a portfolio earns a Low Carbon designation but has above-average exposure to ESG risk in the portfolio otherwise, as is the case with Gabelli ESG <span class=\"CMS__Security\" title=\"FOUSA06IGK\">ESGKX</span> (click the screenshot above to see Gabelli ESG's portfolio). </p>\n<p>You can use our <a href=\"https://www.morningstar.com/esg-screener\" target=\"_blank\">ESG Screener</a> to <span>search Morningstar's database for funds that score well in terms of the Sustainability Rating and/or have a Low Carbon designation. </span>See <a href=\"https://www.morningstar.com/articles/1032486\">\"How to Find the Right ESG Fund\"</a> for more.</p></xhtml>",
+            "Transcript": null
+        },
+        "Authors": [
+            {
+                "id": "352",
+                "isPrimary": true,
+                "name": "Karen Wallace",
+                "Holdings": "vinix newfx POAGX MORN artkx rysex",
+                "Profiles": [
+                    {
+                        "jobTitle": "",
+                        "byLine": "Karen Wallace",
+                        "shortBio": "Karen Wallace, CFP® is Morningstar’s director of investor education.",
+                        "longBio": "Karen Wallace, CFP® is Morningstar’s director of investor education.",
+                        "isPrimaryProfile": false
+                    },
+                    ...
+                ],
+                "image": "http://im.mstar.com/Content/CMSImages/78x78/352-kwallac-78x78.jpg"
+            }
+        ],
+        "RelatedDocuments": [
+            {
+                "id": 1033389,
+                "title": "Not All Sustainable Funds Are Equally Sustainable",
+                "publishDate": "2021-04-14"
+            },
+            ...
+        ],
+        "PublishDateUTC": "1618511400000",
+        "UpdateDateUTC": "1618586371000",
+        "Securities": [
+            {
+                "shareClassId": "0P0000OQN8",
+                "secId": "0P0000OQN8",
+                "name": "Tesla Inc",
+                "ticker": "TSLA",
+                "country": "USA",
+                "exchange": "NAS",
+                "currency": "USD",
+                "securityType": "E0",
+                "category": "Auto Manufacturers",
+                "parentId": "0C00004EP4"
+            },
+            ...
+        ],
+        "Keywords": [
+            {
+                "id": 2,
+                "name": "MUTUALFUNDS",
+                "isPrimary": false
+            },
+			...
+        ],
+        "AuthorDisclosure": "",
+        "Tags": [
+            {
+                "id": 1002,
+                "name": "Commentary",
+                "categoryId": 1
+            },
+            ...
+        ]
+    },
+    ...
+]
+```
+
+This endpoint is used to list latest articles
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/articles/list`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+performanceId | string (required) | Value of performanceId field from .../auto-complete or /get-summary or .../get-movers endpoints
+
+## articles/get-details
+
+curl "https://morning-star.p.rapidapi.com/articles/get-details?id=" \
+  -H "x-rapidapi-key: meowmeowmeow"
+  -H "x-rapidapi-host: morning-star.p.rapidapi.com"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+    "id": 981538,
+    "title": "Tesla Posts a 1Q Profit for the First Time",
+    "deck": "We are increasing our fair value estimate to $731 from $239. If a recession can’t stop Tesla then virtually nothing will, and we expect the company to remain a leader in autonomous technology and range. ",
+    "locale": "en-US",
+    "publishedDate": "2020-04-30",
+    "updatedDate": "2020-04-30",
+    "paywalled": false,
+    "articleType": "evergreen",
+    "authors": [
+        {
+            "holdings": [
+                "AMZN",
+                "BP",
+                "DIS",
+                "EXPR",
+                "GOOG",
+                "GOOGL",
+                "IPI",
+                "MELI",
+                "MOAT",
+                "AAPL",
+                "AMAT",
+                "ECPN",
+                "FB",
+                "GLW",
+                "JNJ",
+                "MSFT",
+                "SYK"
+            ],
+            "id": "766",
+            "name": "David Whiston",
+            "jobTitle": "Sector Strategist",
+            "byLine": "David Whiston, CFA, CPA, CFE",
+            "shortBio": "David Whiston, CFA, CPA, CFE, is an industrials strategist for Morningstar.",
+            "isPrimary": true
+        }
+    ],
+    "authorDisclosure": [],
+    "body": [
+        {
+            "type": "p",
+            "contentObject": [
+                {
+                    "type": "text",
+                    "content": "Tesla ",
+                    "gated": false
+                },
+                ...
+            ],
+            "gated": false
+        },
+        ...
+    ],
+    "collection": {
+        "name": "Stock Analyst Update",
+        "id": 181
+    },
+    "relatedArticles": [
+        {
+            "id": 981526,
+            "title": "Facebook’s Strong Q1 Encouraging; COVID-19 Risks Remain",
+            "publishDate": "2020-04-30"
+        },
+        ...
+    ],
+    "tags": [],
+    "securities": [
+        {
+            "shareClassId": "0P0000OQN8",
+            "secId": "0P0000OQN8",
+            "name": "Tesla Inc",
+            "ticker": "TSLA",
+            "country": "USA",
+            "exchange": "NAS",
+            "currency": "USD",
+            "securityType": "E0",
+            "category": "Auto Manufacturers",
+            "parentId": "0C00004EP4"
+        }
+    ],
+    "keywords": [
+        {
+            "id": 77,
+            "name": "EQUITYRESEARCH",
+            "isPrimary": true
+        }
+    ]
+}
+```
+
+This endpoint is used to get articles details
+
+### HTTP Request
+
+`GET https://morning-star.p.rapidapi.com/articles/get-details`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ------- | ----------------------------------------------------------------------------------------------------------------------------
+id | string (required) | Value of id returned in .../articles/list endpoint
