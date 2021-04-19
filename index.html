@@ -7425,10 +7425,17 @@ Thirdly, you repeatedly call poll endpoint with o increasing by n value step by 
 <td>int</td>
 <td>Check for suitable price range in filters/prices_slider field returned in hotel-filters/list endpoint. For exmaple : $120 -&gt; 120</td>
 </tr>
+<tr>
+<td>zff</td>
+<td>string</td>
+<td>Hotel Style - Check for suitable value of &quot;filters/zff&quot; field (separated by comma to specify multiple values) returned in hotel-filters/list endpoint</td>
+</tr>
+<tr>
+<td>subcategory</td>
+<td>string</td>
+<td>Check for suitable value of filters/subcategory field (separated by comma to specify multiple values) returned in hotel-filters/list endpoint</td>
+</tr>
 </tbody></table>
-
-<p>zff | string | Hotel Style - Check for suitable value of \\&quot;filters/zff\\&quot; field (separated by comma to specify multiple values) returned in hotel-filters/list endpoint
-subcategory | string | Check for suitable value of filters/subcategory field (separated by comma to specify multiple values) returned in hotel-filters/list endpoint</p>
 <h2 id='hotels-get-details'>hotels/get-details</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://tripadvisor1.p.rapidapi.com/hotels/get-details?location_id=8014024&amp;rooms=1&amp;adults=2&amp;checkin=2020-06-24&amp;nights=2&amp;currency=USD&amp;lang=en_US"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"x-rapidapi-key: meowmeowmeow"</span>
   <span class="nt">-H</span> <span class="s2">"x-rapidapi-host: tripadvisor1.p.rapidapi.com"</span>
